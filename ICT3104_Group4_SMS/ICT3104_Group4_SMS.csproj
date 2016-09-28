@@ -196,10 +196,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClassesController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HODController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\UiController.cs" />
+    <Compile Include="DAL\ClassDataGateway.cs" />
     <Compile Include="DAL\DataGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
     <Compile Include="DAL\SmsContext.cs" />
@@ -286,11 +290,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Classes\Create.cshtml" />
-    <Content Include="Views\Classes\Delete.cshtml" />
-    <Content Include="Views\Classes\Details.cshtml" />
-    <Content Include="Views\Classes\Edit.cshtml" />
-    <Content Include="Views\Classes\Index.cshtml" />
     <Content Include="Views\Ui\Dashboard.cshtml" />
     <Content Include="Views\Ui\Forms.cshtml" />
     <Content Include="Views\Ui\Grids.cshtml" />
@@ -299,9 +298,17 @@
     <Content Include="Views\Ui\Tables.cshtml" />
     <Content Include="Views\Ui\Typography.cshtml" />
     <Content Include="Views\Ui\UiElements.cshtml" />
+    <Content Include="Views\Lecturer\ClassIndex.cshtml" />
+    <Content Include="Views\Lecturer\ClassCreate.cshtml" />
+    <Content Include="Views\Lecturer\ClassDelete.cshtml" />
+    <Content Include="Views\Lecturer\ClassEdit.cshtml" />
+    <Content Include="Views\Lecturer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\HOD\" />
+    <Folder Include="Views\Student\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
