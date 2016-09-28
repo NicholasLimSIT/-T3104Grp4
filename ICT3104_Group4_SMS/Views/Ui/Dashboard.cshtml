@@ -1,0 +1,213 @@
+﻿
+@{
+    ViewBag.Title = "Sample Dashboard";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Email Statistics</h4>
+                <p class="category">Last Campaign Performance</p>
+            </div>
+            <div class="content">
+                <div id="chartPreferences" class="ct-chart ct-perfect-fourth"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-pie" style="width: 100%; height: 100%;"><g class="ct-series ct-series-c"><path d="M173.5,5A117.5,117.5,0,0,0,129.864,13.403L173.5,122.5Z" class="ct-slice-pie" value="6"></path></g><g class="ct-series ct-series-b"><path d="M130.245,13.251A117.5,117.5,0,0,0,93.365,208.434L173.5,122.5Z" class="ct-slice-pie" value="32"></path></g><g class="ct-series ct-series-a"><path d="M93.066,208.154A117.5,117.5,0,1,0,173.5,5L173.5,122.5Z" class="ct-slice-pie" value="62"></path></g><g><text dx="228.12436854593477" dy="144.12731747022482" text-anchor="middle" class="ct-label">62%</text><text dx="115.79062401968952" dy="111.49134776808874" text-anchor="middle" class="ct-label">32%</text><text dx="162.49134776808862" dy="64.79062401968955" text-anchor="middle" class="ct-label">6%</text></g></svg></div>
+
+                <div class="footer">
+                    <div class="legend">
+                        <i class="fa fa-circle text-info"></i> Open
+                        <i class="fa fa-circle text-danger"></i> Bounce
+                        <i class="fa fa-circle text-warning"></i> Unsubscribe
+                    </div>
+                    <hr>
+                    <div class="stats">
+                        <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Users Behavior</h4>
+                <p class="category">24 Hours performance</p>
+            </div>
+            <div class="content">
+                <div id="chartHours" class="ct-chart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="245px" class="ct-chart-line" style="width: 100%; height: 245px;"><g class="ct-grids"><line y1="210" y2="210" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="185.625" y2="185.625" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="161.25" y2="161.25" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="136.875" y2="136.875" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="112.5" y2="112.5" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="88.125" y2="88.125" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="63.75" y2="63.75" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="39.375" y2="39.375" x1="50" x2="740" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="740" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M50,210L50,140.044C78.75,140.044,107.5,116.156,136.25,116.156C165,116.156,193.75,90.563,222.5,90.563C251.25,90.563,280,90.075,308.75,90.075C337.5,90.075,366.25,74.963,395,74.963C423.75,74.963,452.5,67.163,481.25,67.163C510,67.163,538.75,39.863,567.5,39.863C596.25,39.863,625,40.594,653.75,40.594C682.5,40.594,711.25,26.7,740,26.7C768.75,26.7,797.5,17.925,826.25,17.925C855,17.925,883.75,3.787,912.5,3.787C941.25,3.787,970,-20.1,998.75,-20.1L998.75,210Z" class="ct-area" values="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"></path></g><g class="ct-series ct-series-b"><path d="M50,210L50,193.669C78.75,193.669,107.5,172.95,136.25,172.95C165,172.95,193.75,175.144,222.5,175.144C251.25,175.144,280,151.5,308.75,151.5C337.5,151.5,366.25,140.044,395,140.044C423.75,140.044,452.5,128.344,481.25,128.344C510,128.344,538.75,103.969,567.5,103.969C596.25,103.969,625,103.481,653.75,103.481C682.5,103.481,711.25,78.619,740,78.619C768.75,78.619,797.5,77.887,826.25,77.887C855,77.887,883.75,77.4,912.5,77.4C941.25,77.4,970,52.294,998.75,52.294L998.75,210Z" class="ct-area" values="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"></path></g><g class="ct-series ct-series-c"><path d="M50,210L50,204.394C78.75,204.394,107.5,182.456,136.25,182.456C165,182.456,193.75,193.669,222.5,193.669C251.25,193.669,280,183.675,308.75,183.675C337.5,183.675,366.25,163.688,395,163.688C423.75,163.688,452.5,151.744,481.25,151.744C510,151.744,538.75,135.169,567.5,135.169C596.25,135.169,625,134.925,653.75,134.925C682.5,134.925,711.25,102.994,740,102.994C768.75,102.994,797.5,110.063,826.25,110.063C855,110.063,883.75,110.063,912.5,110.063C941.25,110.063,970,85.931,998.75,85.931L998.75,210Z" class="ct-area" values="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"></path></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">9:00AM</span></foreignObject><foreignObject style="overflow: visible;" x="136.25" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">12:00AM</span></foreignObject><foreignObject style="overflow: visible;" x="222.5" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">3:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="308.75" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">6:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="395" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">9:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="481.25" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">12:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="567.5" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">3:00AM</span></foreignObject><foreignObject style="overflow: visible;" x="653.75" y="215" width="86.25" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">6:00AM</span></foreignObject><foreignObject style="overflow: visible;" y="185.625" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">0</span></foreignObject><foreignObject style="overflow: visible;" y="161.25" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">100</span></foreignObject><foreignObject style="overflow: visible;" y="136.875" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">200</span></foreignObject><foreignObject style="overflow: visible;" y="112.5" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">300</span></foreignObject><foreignObject style="overflow: visible;" y="88.125" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">400</span></foreignObject><foreignObject style="overflow: visible;" y="63.75" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">500</span></foreignObject><foreignObject style="overflow: visible;" y="39.375" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">600</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="24.375" width="30"><span class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">700</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" style="height: 30px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">800</span></foreignObject></g></svg></div>
+                <div class="footer">
+                    <div class="legend">
+                        <i class="fa fa-circle text-info"></i> Open
+                        <i class="fa fa-circle text-danger"></i> Click
+                        <i class="fa fa-circle text-warning"></i> Click Second Time
+                    </div>
+                    <hr>
+                    <div class="stats">
+                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">2014 Sales</h4>
+                <p class="category">All products including Taxes</p>
+            </div>
+            <div class="content">
+                <div id="chartActivity" class="ct-chart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="245px" class="ct-chart-bar" style="width: 100%; height: 245px;"><g class="ct-grids"><line y1="210" y2="210" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="188.33333333333334" y2="188.33333333333334" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="166.66666666666666" y2="166.66666666666666" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="145" y2="145" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="123.33333333333333" y2="123.33333333333333" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="101.66666666666667" y2="101.66666666666667" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="80" y2="80" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="58.33333333333334" y2="58.33333333333334" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="36.66666666666666" y2="36.66666666666666" x1="50" x2="536" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="536" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="65.25" x2="65.25" y1="210" y2="92.56666666666666" class="ct-bar" value="542"></line><line x1="105.75" x2="105.75" y1="210" y2="114.01666666666667" class="ct-bar" value="443"></line><line x1="146.25" x2="146.25" y1="210" y2="140.66666666666669" class="ct-bar" value="320"></line><line x1="186.75" x2="186.75" y1="210" y2="41" class="ct-bar" value="780"></line><line x1="227.25" x2="227.25" y1="210" y2="90.18333333333334" class="ct-bar" value="553"></line><line x1="267.75" x2="267.75" y1="210" y2="111.85" class="ct-bar" value="453"></line><line x1="308.25" x2="308.25" y1="210" y2="139.36666666666667" class="ct-bar" value="326"></line><line x1="348.75" x2="348.75" y1="210" y2="115.96666666666667" class="ct-bar" value="434"></line><line x1="389.25" x2="389.25" y1="210" y2="86.93333333333334" class="ct-bar" value="568"></line><line x1="429.75" x2="429.75" y1="210" y2="77.83333333333334" class="ct-bar" value="610"></line><line x1="470.25" x2="470.25" y1="210" y2="46.19999999999999" class="ct-bar" value="756"></line><line x1="510.75" x2="510.75" y1="210" y2="16.083333333333343" class="ct-bar" value="895"></line></g><g class="ct-series ct-series-b"><line x1="75.25" x2="75.25" y1="210" y2="120.73333333333333" class="ct-bar" value="412"></line><line x1="115.75" x2="115.75" y1="210" y2="157.35" class="ct-bar" value="243"></line><line x1="156.25" x2="156.25" y1="210" y2="149.33333333333334" class="ct-bar" value="280"></line><line x1="196.75" x2="196.75" y1="210" y2="84.33333333333333" class="ct-bar" value="580"></line><line x1="237.25" x2="237.25" y1="210" y2="111.85" class="ct-bar" value="453"></line><line x1="277.75" x2="277.75" y1="210" y2="133.51666666666665" class="ct-bar" value="353"></line><line x1="318.25" x2="318.25" y1="210" y2="145" class="ct-bar" value="300"></line><line x1="358.75" x2="358.75" y1="210" y2="131.13333333333333" class="ct-bar" value="364"></line><line x1="399.25" x2="399.25" y1="210" y2="130.26666666666665" class="ct-bar" value="368"></line><line x1="439.75" x2="439.75" y1="210" y2="121.16666666666667" class="ct-bar" value="410"></line><line x1="480.25" x2="480.25" y1="210" y2="72.19999999999999" class="ct-bar" value="636"></line><line x1="520.75" x2="520.75" y1="210" y2="59.41666666666666" class="ct-bar" value="695"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Jan</span></foreignObject><foreignObject style="overflow: visible;" x="90.5" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Feb</span></foreignObject><foreignObject style="overflow: visible;" x="131" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Mar</span></foreignObject><foreignObject style="overflow: visible;" x="171.5" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Apr</span></foreignObject><foreignObject style="overflow: visible;" x="212" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Mai</span></foreignObject><foreignObject style="overflow: visible;" x="252.5" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Jun</span></foreignObject><foreignObject style="overflow: visible;" x="293" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Jul</span></foreignObject><foreignObject style="overflow: visible;" x="333.5" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Aug</span></foreignObject><foreignObject style="overflow: visible;" x="374" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Sep</span></foreignObject><foreignObject style="overflow: visible;" x="414.5" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Oct</span></foreignObject><foreignObject style="overflow: visible;" x="455" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Nov</span></foreignObject><foreignObject style="overflow: visible;" x="495.5" y="215" width="40.5" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 41px; height: 20px" xmlns="http://www.w3.org/1999/xhtml">Dec</span></foreignObject><foreignObject style="overflow: visible;" y="188.33333333333334" x="10" height="21.666666666666668" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">0</span></foreignObject><foreignObject style="overflow: visible;" y="166.66666666666669" x="10" height="21.666666666666668" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">100</span></foreignObject><foreignObject style="overflow: visible;" y="145" x="10" height="21.666666666666664" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">200</span></foreignObject><foreignObject style="overflow: visible;" y="123.33333333333333" x="10" height="21.66666666666667" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">300</span></foreignObject><foreignObject style="overflow: visible;" y="101.66666666666667" x="10" height="21.666666666666657" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">400</span></foreignObject><foreignObject style="overflow: visible;" y="80" x="10" height="21.66666666666667" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">500</span></foreignObject><foreignObject style="overflow: visible;" y="58.33333333333334" x="10" height="21.666666666666657" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">600</span></foreignObject><foreignObject style="overflow: visible;" y="36.66666666666666" x="10" height="21.666666666666686" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">700</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="21.666666666666657" width="30"><span class="ct-label ct-vertical ct-start" style="height: 22px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">800</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" style="height: 30px; width: 30px" xmlns="http://www.w3.org/1999/xhtml">900</span></foreignObject></g></svg></div>
+
+                <div class="footer">
+                    <div class="legend">
+                        <i class="fa fa-circle text-info"></i> Tesla Model S
+                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                    </div>
+                    <hr>
+                    <div class="stats">
+                        <i class="fa fa-check"></i> Data information certified
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Tasks</h4>
+                <p class="category">Backend development</p>
+            </div>
+            <div class="content">
+                <div class="table-full-width">
+                    <form>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                Sign contract for "What are conference organizers afraid of?"
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Task">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                Lines From Great Russian Literature? Or E-mails From My Boss?
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Task">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Task">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                Create 4 Invisible User Experiences you Never Knew About
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Task">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                Read "Following makes Medium better"
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Task">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="" checked>
+                                                Unfollow 5 enemies from twitter
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Task">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <div class="footer">
+                    <hr>
+                    <div class="stats">
+                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
