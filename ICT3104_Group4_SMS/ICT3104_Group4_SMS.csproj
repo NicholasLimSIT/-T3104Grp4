@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -177,8 +179,50 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Class.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Module.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Programme.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recommendation.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -191,6 +235,16 @@
     <Content Include="fonts\Pe-icon-7-stroke.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\SMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMS.edmx</DependentUpon>
+      <LastGenOutput>SMS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMS.edmx</DependentUpon>
+      <LastGenOutput>SMS.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap-notify.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -198,6 +252,13 @@
     <Content Include="fonts\Pe-icon-7-stroke.eot" />
     <Content Include="fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="fonts\Pe-icon-7-stroke.woff" />
+    <EntityDeploy Include="Models\SMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SMS.edmx.diagram">
+      <DependentUpon>SMS.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -266,6 +327,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c6499e21c73431d8344675f39a28e80" Name="Diagram1">
+        <EntityTypeShape EntityType="SmsDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.AspNetRole" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.AspNetUser" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.Class" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.Module" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.Programme" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmsDBModel.Recommendation" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="SmsDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SmsDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SmsDBModel.FK_Module_ToUser" ManuallyRouted="false" />
+        <AssociationConnector Association="SmsDBModel.FK_Module_ToClass" ManuallyRouted="false" />
+        <AssociationConnector Association="SmsDBModel.FK_Module_ToProgramme" ManuallyRouted="false" />
+        <AssociationConnector Association="SmsDBModel.FK_Recommendation_ToModule" ManuallyRouted="false" />
+        <AssociationConnector Association="SmsDBModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
