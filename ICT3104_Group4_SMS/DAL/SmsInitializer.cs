@@ -20,11 +20,11 @@ namespace ICT3104_Group4_SMS.DAL
 
             var userRole = new IdentityRole { Name = "Admin", Id = Guid.NewGuid().ToString() };
             context.Roles.Add(userRole);
-            if (!context.Users.Any(t => t.UserName.Equals("admin123")))
+            if (!context.Users.Any(t => t.UserName.Equals("admin@mail.com")))
             {
                 var adminUser = new ApplicationUser         // role = admin
                 {
-                    UserName = "admin123",
+                    UserName = "admin@mail.com",
                     PasswordHash = hasher.HashPassword("Password1!"),
                     Email = "admin@mail.com",
                     EmailConfirmed = true,
