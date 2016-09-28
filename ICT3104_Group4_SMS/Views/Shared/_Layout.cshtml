@@ -90,6 +90,24 @@
                             </li>
                         </ul>
                     </li>
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li>
+                            <a href="#" class="" aria-expanded="true">
+                                <i class="pe-7s-id"></i>
+                                <p>Admin Layout</p>
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="#collapsed-menu" data-toggle="collapse" class="" aria-expanded="true">
+                                <i class="pe-7s-paint"></i>
+                                <p>Guest Layout</p>
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
