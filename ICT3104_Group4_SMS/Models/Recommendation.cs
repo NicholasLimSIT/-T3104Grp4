@@ -16,8 +16,9 @@ namespace ICT3104_Group4_SMS.Models
     {
         public int Id { get; set; }
         public string recomendation { get; set; }
-        public int User_ModuleId { get; set; }
+        public int gradeId { get; set; }
+        public string lecturerId { get; set; }
     
-        public virtual User_Module User_Module { get; set; }
+        public virtual Grade Grade { get; set; }
     }
 }

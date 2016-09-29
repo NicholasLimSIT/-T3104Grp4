@@ -11,25 +11,30 @@ namespace ICT3104_Group4_SMS.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
     public partial class Module
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Module()
         {
-            this.Grades = new HashSet<Grade>();
-            this.User_Module = new HashSet<User_Module>();
+            this.Lecturer_Module = new HashSet<Lecturer_Module>();
+            this.Module_Programme = new HashSet<Module_Programme>();
         }
     
         public int Id { get; set; }
-        public string name { get; set; }
-        public int programmeId { get; set; }
-        public int freezeStatus { get; set; }
-        public int publishStatus { get; set; }
+        [DefaultValue(0)]
+        public string status { get; set; }
+        public Nullable<System.DateTime> frozenDateTime { get; set; }
+        public Nullable<System.DateTime> publishDateTime { get; set; }
+        public int year { get; set; }
+        public int moduleDetailsId { get; set; }
+        public string hodId { get; set; }
+        public string lecturerId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grade> Grades { get; set; }
+        public virtual ICollection<Lecturer_Module> Lecturer_Module { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User_Module> User_Module { get; set; }
+        public virtual ICollection<Module_Programme> Module_Programme { get; set; }
+        public virtual Module_Detail Module_Detail { get; set; }
     }
 }

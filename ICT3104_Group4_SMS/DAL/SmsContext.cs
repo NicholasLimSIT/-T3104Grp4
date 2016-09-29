@@ -17,9 +17,11 @@ namespace ICT3104_Group4_SMS.DAL
         }
 
         public virtual DbSet<Grade> Grades { get; set; }
+        public virtual DbSet<Lecturer_Module> Lecturer_Module { get; set; }
         public virtual DbSet<Module> Modules { get; set; }
+        public virtual DbSet<Module_Detail> Module_Detail { get; set; }
+        public virtual DbSet<Module_Programme> Module_Programme { get; set; }
         public virtual DbSet<Programme> Programmes { get; set; }
         public virtual DbSet<Recommendation> Recommendations { get; set; }
-        public virtual DbSet<User_Module> User_Module { get; set; }
     }
 }

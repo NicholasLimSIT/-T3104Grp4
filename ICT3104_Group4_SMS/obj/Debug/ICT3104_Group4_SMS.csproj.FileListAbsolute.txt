@@ -328,3 +328,6 @@ C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_G
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial.resources
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
+E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial.resources
+E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
+E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial1.resources
