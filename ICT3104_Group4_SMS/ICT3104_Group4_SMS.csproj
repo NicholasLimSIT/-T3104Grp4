@@ -80,6 +80,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -203,7 +205,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\UiController.cs" />
-    <Compile Include="DAL\ClassDataGateway.cs" />
     <Compile Include="DAL\DataGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
     <Compile Include="DAL\SmsContext.cs" />
@@ -211,14 +212,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609290855375_Initial.cs" />
+    <Compile Include="Migrations\201609290855375_Initial.Designer.cs">
+      <DependentUpon>201609290855375_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Module.cs" />
     <Compile Include="Models\Programme.cs" />
     <Compile Include="Models\Recommendation.cs" />
+    <Compile Include="Models\User_Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -298,10 +304,6 @@
     <Content Include="Views\Ui\Tables.cshtml" />
     <Content Include="Views\Ui\Typography.cshtml" />
     <Content Include="Views\Ui\UiElements.cshtml" />
-    <Content Include="Views\Lecturer\ClassIndex.cshtml" />
-    <Content Include="Views\Lecturer\ClassCreate.cshtml" />
-    <Content Include="Views\Lecturer\ClassDelete.cshtml" />
-    <Content Include="Views\Lecturer\ClassEdit.cshtml" />
     <Content Include="Views\Lecturer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +319,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609290855375_Initial.resx">
+      <DependentUpon>201609290855375_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

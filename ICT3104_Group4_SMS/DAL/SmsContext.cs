@@ -16,9 +16,10 @@ namespace ICT3104_Group4_SMS.DAL
             //Database.SetInitializer<CafeWithLoveContext>(new CafeWithLoveInitializer());
         }
 
-        public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<Grade> Grades { get; set; }
         public virtual DbSet<Module> Modules { get; set; }
         public virtual DbSet<Programme> Programmes { get; set; }
         public virtual DbSet<Recommendation> Recommendations { get; set; }
+        public virtual DbSet<User_Module> User_Module { get; set; }
     }
 }
