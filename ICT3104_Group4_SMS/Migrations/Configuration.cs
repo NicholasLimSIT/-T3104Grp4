@@ -13,14 +13,57 @@ namespace ICT3104_Group4_SMS.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            createRolesandUsers();
         }
 
+        // In this method we will create default User roles and Admin user for login   
+        private void createRolesandUsers()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+
+            // In Startup iam creating first Admin Role and creating a default Admin User    
+            if (!roleManager.RoleExists("Admin"))
+            {
+
+                // first we create Admin rool   
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+                
+            }
+
+            // creating Creating Manager role    
+            if (!roleManager.RoleExists("Lecturer"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Lecturer";
+                roleManager.Create(role);
+        
+            }
+
+            // creating Creating Manager role    
+            if (!roleManager.RoleExists("HOD"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "HOD";
+                roleManager.Create(role);
+
+            }
+
+            // creating Creating Employee role    
+            if (!roleManager.RoleExists("Student"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Student";
+                roleManager.Create(role);
+
+            }
+        }
         protected override void Seed(ICT3104_Group4_SMS.DAL.SmsContext context)
         {
-
-
-
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

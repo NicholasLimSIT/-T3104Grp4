@@ -90,7 +90,7 @@
                             </li>
                         </ul>
                     </li>
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    @if ( User.IsInRole("Admin"))
                     {
                         <li>
                             <a href="#" class="" aria-expanded="true">
@@ -98,6 +98,20 @@
                                 <p>Admin Layout</p>
                             </a>
                         </li>
+                        <li class="@(ViewBag.Title=="Index"? "active" : "")">
+                            <a href="@Url.Action("Index", "Admin")">
+                                <i class="pe-7s-id"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+
+                        <li class="@(ViewBag.Title=="CreateAccount"? "active" : "")">
+                            <a href="@Url.Action("CreateAccount", "Admin")">
+                                <i class="pe-7s-id"></i>
+                                <p>Create Account</p>
+                            </a>
+                        </li>
+
                     }
                     else
                     {

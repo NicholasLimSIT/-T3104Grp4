@@ -18,6 +18,8 @@ namespace ICT3104_Group4_SMS.DAL
             var userManager = new UserManager<ApplicationUser>(userStore);
             var hasher = new PasswordHasher();
 
+
+
             var userRole = new IdentityRole { Name = "Admin", Id = Guid.NewGuid().ToString() };
             context.Roles.Add(userRole);
             if (!context.Users.Any(t => t.UserName.Equals("admin@mail.com")))

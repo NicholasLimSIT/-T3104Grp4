@@ -79,6 +79,9 @@ namespace ICT3104_Group4_SMS.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string UserRole { get; set; }
     }
 
     public class ResetPasswordViewModel
