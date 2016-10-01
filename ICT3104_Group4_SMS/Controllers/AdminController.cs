@@ -12,7 +12,7 @@ using System.Web.Mvc;
 namespace ICT3104_Group4_SMS.Controllers
 {
 
-    [Authorize(Roles = "Admin")]
+   [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private ApplicationUserManager _userManager;
@@ -51,9 +51,9 @@ namespace ICT3104_Group4_SMS.Controllers
         }
 
 
-       //POST: /Admin/CreateAccount
-       [HttpPost]
-       [ValidateAntiForgeryToken]
+        //POST: /Admin/CreateAccount
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> CreateAccount(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -63,8 +63,8 @@ namespace ICT3104_Group4_SMS.Controllers
 
                 if (result.Succeeded)
                 {
-                   
-                    await this.UserManager.AddToRoleAsync(user.Id,model.UserRole);
+
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
                 }
 
             }

@@ -12,9 +12,9 @@ namespace ICT3104_Group4_SMS.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     public partial class Module
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Module()
         {
             this.Lecturer_Module = new HashSet<Lecturer_Module>();
@@ -22,19 +22,18 @@ namespace ICT3104_Group4_SMS.Models
         }
     
         public int Id { get; set; }
+        [Display(Name = "Module Name")]
+        public string name { get; set; }
         [DefaultValue(0)]
         public string status { get; set; }
         public Nullable<System.DateTime> frozenDateTime { get; set; }
         public Nullable<System.DateTime> publishDateTime { get; set; }
+        [Display(Name = "Year")]
         public int year { get; set; }
-        public int moduleDetailsId { get; set; }
         public string hodId { get; set; }
         public string lecturerId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lecturer_Module> Lecturer_Module { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Module_Programme> Module_Programme { get; set; }
-        public virtual Module_Detail Module_Detail { get; set; }
     }
 }

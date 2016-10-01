@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.Programme>
+
+@{
+    ViewBag.Title = "View all Programme";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.programmeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.programmeName)
+          
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ProgrammeEdit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "ProgrammeDelete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D861A351-ABF0-488C-AA7A-BDAFA682C81F}</ProjectGuid>
+    <ProjectGuid>{58410822-D7FF-43B8-B996-AF53C22B0489}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -80,8 +80,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -203,22 +201,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ModulesController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\UiController.cs" />
     <Compile Include="DAL\DataGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
+    <Compile Include="DAL\Lecturer_ModuleDataGateway.cs" />
+    <Compile Include="DAL\ProgrammeDataGateway.cs" />
     <Compile Include="DAL\SmsContext.cs" />
     <Compile Include="DAL\SmsInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609290855375_Initial.cs" />
-    <Compile Include="Migrations\201609290855375_Initial.Designer.cs">
-      <DependentUpon>201609290855375_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609291507575_Initial1.cs" />
-    <Compile Include="Migrations\201609291507575_Initial1.Designer.cs">
-      <DependentUpon>201609291507575_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -227,7 +220,6 @@
     <Compile Include="Models\Lecturer_Module.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Module.cs" />
-    <Compile Include="Models\Module_Detail.cs" />
     <Compile Include="Models\Module_Programme.cs" />
     <Compile Include="Models\Programme.cs" />
     <Compile Include="Models\Recommendation.cs" />
@@ -302,25 +294,25 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Ui\Dashboard.cshtml" />
-    <Content Include="Views\Ui\Forms.cshtml" />
-    <Content Include="Views\Ui\Grids.cshtml" />
-    <Content Include="Views\Ui\Icons.cshtml" />
-    <Content Include="Views\Ui\Notifications.cshtml" />
-    <Content Include="Views\Ui\Tables.cshtml" />
-    <Content Include="Views\Ui\Typography.cshtml" />
-    <Content Include="Views\Ui\UiElements.cshtml" />
-    <Content Include="Views\Lecturer\Index.cshtml" />
+    <Content Include="Views\Lecturer\ProgrammeCreate.cshtml" />
+    <Content Include="Views\Lecturer\ProgrammeDelete.cshtml" />
+    <Content Include="Views\Lecturer\ProgrammeEdit.cshtml" />
+    <Content Include="Views\Lecturer\ProgrammeIndex.cshtml" />
     <Content Include="Views\Admin\CreateAccount.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Student\ViewGrade.cshtml" />
+    <Content Include="Views\HOD\Index.cshtml" />
     <Content Include="Views\Lecturer\EditStudentParticulars.cshtml" />
     <Content Include="Views\Lecturer\GradeAssign.cshtml" />
-    <Content Include="Views\HOD\Index.cshtml" />
+    <Content Include="Views\Lecturer\Index.cshtml" />
+    <Content Include="Views\Lecturer\ModuleCreate.cshtml" />
+    <Content Include="Views\Lecturer\ModuleDelete.cshtml" />
+    <Content Include="Views\Lecturer\ModuleEdit.cshtml" />
+    <Content Include="Views\Lecturer\ModuleIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Student\" />
+    <Folder Include="Views\Ui\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -329,17 +321,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609290855375_Initial.resx">
-      <DependentUpon>201609290855375_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609291507575_Initial1.resx">
-      <DependentUpon>201609291507575_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -357,9 +338,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58164</DevelopmentServerPort>
+          <DevelopmentServerPort>50453</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58164/</IISUrl>
+          <IISUrl>http://localhost:50453/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

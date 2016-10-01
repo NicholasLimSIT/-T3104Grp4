@@ -11,20 +11,19 @@ namespace ICT3104_Group4_SMS.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Programme
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Programme()
         {
             this.Module_Programme = new HashSet<Module_Programme>();
         }
     
         public int Id { get; set; }
+        [Display(Name = "Programme Name")]
         public string programmeName { get; set; }
         public string lecturerId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Module_Programme> Module_Programme { get; set; }
     }
 }

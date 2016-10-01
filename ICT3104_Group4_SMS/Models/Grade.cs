@@ -14,18 +14,16 @@ namespace ICT3104_Group4_SMS.Models
     
     public partial class Grade
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Grade()
         {
             this.Recommendations = new HashSet<Recommendation>();
         }
     
         public int Id { get; set; }
-        public double score { get; set; }
         public string studentId { get; set; }
-        public string lecturermoduleId { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public int lecturermoduleId { get; set; }
+        public double score { get; set; }
+
         public virtual ICollection<Recommendation> Recommendations { get; set; }
     }
 }

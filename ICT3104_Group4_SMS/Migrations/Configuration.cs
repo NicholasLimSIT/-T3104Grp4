@@ -32,7 +32,7 @@ namespace ICT3104_Group4_SMS.Migrations
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
-                
+
             }
 
             // creating Creating Manager role    
@@ -41,7 +41,7 @@ namespace ICT3104_Group4_SMS.Migrations
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Lecturer";
                 roleManager.Create(role);
-        
+
             }
 
             // creating Creating Manager role    

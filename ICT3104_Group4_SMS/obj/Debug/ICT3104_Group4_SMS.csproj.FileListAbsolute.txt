@@ -1,503 +1,82 @@
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ApplicationInsights.config
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\csc.exe
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CSharp.Core.targets
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\System.Collections.Immutable.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\System.Reflection.Metadata.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\vbc.exe
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe.config
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll.config
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.pdb
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Antlr3.Runtime.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.Agent.Intercept.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.PerfCounterCollector.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Owin.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Optimization.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Razor.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\WebGrease.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Helpers.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Mvc.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Optimization.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Razor.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Antlr3.Runtime.pdb
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
-E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\ApplicationInsights.config
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\csc.exe
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\vbc.exe
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll.config
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.pdb
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Owin.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\WebGrease.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.pdb
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ApplicationInsights.config
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\csc.exe
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CSharp.Core.targets
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Collections.Immutable.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Reflection.Metadata.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\vbc.exe
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe.config
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll.config
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.pdb
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Agent.Intercept.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.PerfCounterCollector.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Owin.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\WebGrease.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.pdb
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ApplicationInsights.config
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\csc.exe
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\vbc.exe
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll.config
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.pdb
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Owin.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\WebGrease.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.pdb
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial.resources
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial.resources
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial1.resources
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\ApplicationInsights.config
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\csc.exe
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\vbc.exe
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll.config
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.pdb
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Owin.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\WebGrease.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.pdb
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial.resources
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial1.resources
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
-C:\Users\Fendi\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\ApplicationInsights.config
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\csc.exe
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\vbc.exe
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll.config
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.pdb
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Owin.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\WebGrease.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Optimization.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Razor.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Antlr3.Runtime.pdb
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial.resources
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Initial1.resources
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
-C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ApplicationInsights.config
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\csc.exe
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\System.Collections.Immutable.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\System.Reflection.Metadata.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\vbc.exe
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\roslyn\VBCSCompiler.exe.config
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll.config
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\ICT3104_Group4_SMS.pdb
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Antlr3.Runtime.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Owin.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Optimization.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Razor.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\WebGrease.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.DependencyCollector.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.Web.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AI.WindowsServer.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.ApplicationInsights.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Helpers.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Mvc.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Optimization.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.Razor.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Deployment.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\System.Web.WebPages.Razor.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Antlr3.Runtime.pdb
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\EntityFramework.SqlServer.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
+E:\Source\Repos\ICT3104_Group4_SMS\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
