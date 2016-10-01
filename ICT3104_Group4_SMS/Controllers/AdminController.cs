@@ -11,6 +11,8 @@ using System.Web.Mvc;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
+
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private ApplicationUserManager _userManager;
@@ -43,7 +45,6 @@ namespace ICT3104_Group4_SMS.Controllers
         }
 
         // GET: /Admin/Register
-        [AllowAnonymous]
         public ActionResult CreateAccount()
         {
             return View();
@@ -52,7 +53,6 @@ namespace ICT3104_Group4_SMS.Controllers
 
        //POST: /Admin/CreateAccount
        [HttpPost]
-       [AllowAnonymous]
        [ValidateAntiForgeryToken]
         public async Task<ActionResult> CreateAccount(RegisterViewModel model)
         {

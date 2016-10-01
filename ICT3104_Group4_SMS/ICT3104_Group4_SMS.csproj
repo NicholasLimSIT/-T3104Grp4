@@ -313,11 +313,14 @@
     <Content Include="Views\Lecturer\Index.cshtml" />
     <Content Include="Views\Admin\CreateAccount.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\ViewGrade.cshtml" />
+    <Content Include="Views\Lecturer\EditStudentParticulars.cshtml" />
+    <Content Include="Views\Lecturer\GradeAssign.cshtml" />
+    <Content Include="Views\HOD\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\HOD\" />
-    <Folder Include="Views\Student\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

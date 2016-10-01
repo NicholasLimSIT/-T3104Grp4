@@ -28,13 +28,112 @@
                     </a>
                 </div>
                 <ul class="nav">
-                    <li class="@(ViewBag.Title=="Home Page"? "active" : "")">
-                        <a href="@Url.Action("Index", "Home")">
-                            <i class="pe-7s-graph"></i>
-                            <p>Index</p>
-                        </a>
-                    </li>
+                    <!----------  Admin  ---------->
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <!-- Home -->
+                        <li class="@(ViewBag.Title=="Index"? "active" : "")">
+                            <a href="@Url.Action("Index", "Admin")">
+                                <i class="pe-7s-graph"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+
+                        <!-- Create Account -->
+                        <li class="@(ViewBag.Title=="CreateAccount"? "active" : "")">
+                            <a href="@Url.Action("CreateAccount", "Admin")">
+                                <i class="pe-7s-id"></i>
+                                <p>Create Account</p>
+                            </a>
+                        </li>
+                    }
+                    
+
+                    <!---------- Student ---------->
+                    @if (User.IsInRole("Student"))
+                    {
+                        <!-- Home -->
+                        <li class="@(ViewBag.Title=="Index"? "active" : "")">
+                            <a href="@Url.Action("Index", "Student")">
+                                <i class="pe-7s-graph"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+
+                        <!-- View Grade -->
+                        <li class="@(ViewBag.Title=="ViewGrade"? "active" : "")">
+                            <a href="@Url.Action("ViewGrade", "Student")">
+                                <i class="pe-7s-graph"></i>
+                                <p>View Grades</p>
+                            </a>
+                        </li>
+
+                    }
+
+                    <!---------- Lecturer ---------->
+                    @if (User.IsInRole("Lecturer"))
+                    {
+                        <!-- Home -->
+                        <li class="@(ViewBag.Title=="Index"? "active" : "")">
+                            <a href="@Url.Action("Index", "Lecturer")">
+                                <i class="pe-7s-graph"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+
+                        <!-- Student Related -->
+
+                        <li>
+                            <a href="#collapsed-menu0" data-toggle="collapse" class="" aria-expanded="true">
+                                <i class="pe-7s-paint"></i>
+                                <p>Student Related</p>
+                            </a>
+                            <ul class="nav collapsed-menu collapse" id="collapsed-menu0" aria-expanded="true">
+
+                                <!-- Edit Student Particulars -->
+                                <li class="@(ViewBag.Title=="EditStudentParticulars"? "active" : "")">
+                                    <a href="@Url.Action("EditStudentParticulars", "Lecturer")">
+                                        <i class="pe-7s-paint-bucket"></i>
+                                        <p>Edit Particulars</p>
+                                    </a>
+                                </li>
+
+                                <!-- Grade Assign -->
+                                <li class="@(ViewBag.Title=="GradeAssign"? "active" : "")">
+                                    <a href="@Url.Action("GradeAssign", "Lecturer")">
+                                        <i class="pe-7s-keypad"></i>
+                                        <p>Assign Grades</p>
+                                    </a>
+                                </li>                                
+                            </ul>
+                        </li>                        
+
+                    }
+
+                    
+
+                    <!---------- H  O  D ---------->
+                    @if (User.IsInRole("HOD"))
+                    {
+                        <!-- Home -->
+                        <li class="@(ViewBag.Title=="Index"? "active" : "")">
+                            <a href="@Url.Action("Index", "HOD")">
+                                <i class="pe-7s-graph"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                    }
+
+                    
+                    
+                    
+                    <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
+
+                    <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
+
+
                     <li>
+                        <hr />
                         <a href="#collapsed-menu" data-toggle="collapse" class="" aria-expanded="true">
                             <i class="pe-7s-paint"></i>
                             <p>UI Related</p>
@@ -90,8 +189,7 @@
                             </li>
                         </ul>
                     </li>
-                    @if ( User.IsInRole("Admin"))
-                    {
+
                         <li>
                             <a href="#" class="" aria-expanded="true">
                                 <i class="pe-7s-id"></i>
@@ -105,23 +203,15 @@
                             </a>
                         </li>
 
-                        <li class="@(ViewBag.Title=="CreateAccount"? "active" : "")">
-                            <a href="@Url.Action("CreateAccount", "Admin")">
-                                <i class="pe-7s-id"></i>
-                                <p>Create Account</p>
-                            </a>
-                        </li>
+                        
 
-                    }
-                    else
-                    {
                         <li>
                             <a href="#collapsed-menu" data-toggle="collapse" class="" aria-expanded="true">
                                 <i class="pe-7s-paint"></i>
                                 <p>Guest Layout</p>
                             </a>
                         </li>
-                    }
+
                 </ul>
             </div>
         </div>
