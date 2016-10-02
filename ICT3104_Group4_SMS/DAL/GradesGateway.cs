@@ -40,14 +40,20 @@ namespace ICT3104_Group4_SMS.DAL
             {
                 moduleNameList.Add(ml.name);
             }
+            
+
+            List<String> scoreList = new List<string>();
+            foreach (var gl in gradeList) {
+                string score = Convert.ToString(gl.score);
+                scoreList.Add(score);
+            }
 
 
             //put the grade and module name together.
             List<String> gradeNameList = new List<String>();
-            for (int i = 0; i < gradeList.Count(); i++)
+            for (int i = 0; i < scoreList.Count(); i++)
             {
-                String gradeString = Convert.ToString(gradeList[i]);
-                gradeNameList.Add(moduleNameList[i] + "," + gradeString);
+                gradeNameList.Add(moduleNameList[i] + "," +scoreList[i]);
             }
 
             return gradeNameList;
