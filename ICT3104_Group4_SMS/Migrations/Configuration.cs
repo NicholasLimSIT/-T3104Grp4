@@ -22,7 +22,8 @@ namespace ICT3104_Group4_SMS.Migrations
             ApplicationDbContext context = new ApplicationDbContext();
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var hasher = new PasswordHasher();
 
             // In Startup iam creating first Admin Role and creating a default Admin User    
             if (!roleManager.RoleExists("Admin"))
@@ -33,9 +34,29 @@ namespace ICT3104_Group4_SMS.Migrations
                 role.Name = "Admin";
                 roleManager.Create(role);
 
+
+                //Create a Admin super user who will maintain the website                  
+                var user = new ApplicationUser();
+             
+                user.UserName = "admin@mail.com",
+                user.PasswordHash = hasher.HashPassword("Password1!"),
+                user.Email = "admin@mail.com",
+                user.EmailConfirmed = true,
+                user.SecurityStamp = Guid.NewGuid().ToString();
+
+
+                var chkUser = UserManager.Create(user,user.PasswordHash);
+
+                //Add default User to Role Admin   
+                if (chkUser.Succeeded)
+                {
+                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+
+                }
+
             }
 
-            // creating Creating Manager role    
+            // creating Creating Lecturer role    
             if (!roleManager.RoleExists("Lecturer"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
@@ -44,7 +65,7 @@ namespace ICT3104_Group4_SMS.Migrations
 
             }
 
-            // creating Creating Manager role    
+            // creating Creating HOD role    
             if (!roleManager.RoleExists("HOD"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
@@ -53,7 +74,7 @@ namespace ICT3104_Group4_SMS.Migrations
 
             }
 
-            // creating Creating Employee role    
+            // creating Creating Student role    
             if (!roleManager.RoleExists("Student"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
