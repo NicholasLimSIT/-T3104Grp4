@@ -5,3 +5,35 @@
 
 <h2>ViewGrade</h2>
 
+div class="row">
+<div class="col-md-12">
+    <div class="card">
+
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Grade</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var mg in ViewBag.ModuleGrades) {
+                    string[] tokens = mg.Split(',');
+                    <tr>
+                        <td>
+                            tokens[0]
+                        </td>
+                        <td>
+                            tokens[1]
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+</div>
