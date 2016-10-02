@@ -204,6 +204,7 @@
     <Compile Include="Controllers\ModulesController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\UiController.cs" />
+    <Compile Include="DAL\ApplicationUserDataGateway.cs" />
     <Compile Include="DAL\DataGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
     <Compile Include="DAL\Lecturer_ModuleDataGateway.cs" />
@@ -308,6 +309,8 @@
     <Content Include="Views\Lecturer\ModuleDelete.cshtml" />
     <Content Include="Views\Lecturer\ModuleEdit.cshtml" />
     <Content Include="Views\Lecturer\ModuleIndex.cshtml" />
+    <Content Include="Views\Lecturer\SearchStudentParticulars.cshtml" />
+    <Content Include="Views\Lecturer\DeleteStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
+@{
+    ViewBag.Title = "SearchStudentParticulars";
+}
+<h2>SearchStudentParticulars</h2>
+<strong>Search:</strong>
+@using (Html.BeginForm("SearchStudentParticulars", "Lecturer", FormMethod.Get))
+{
+    <input type="text" name="name" id="name" style="width: 250px" placeholder="Enter Student's Name" />
+    <input type="submit" value="Search" />
+}
+
+<div>
+    <h3>Search Results</h3>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+    @if (ViewBag.List != null)
+    {
+        foreach (var student in @ViewBag.List)
+        {
+            <tr>
+                <td>
+                    @student[1]
+                </td>
+                <td>
+                    @student[2]
+                </td>
+                <td>
+                    @student[3]
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditStudentParticulars", new { id = @student[0] })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteStudent", new { id = @student[0] })
+                </td> 
+            </tr>
+        }
+    }
+
+
+</table>
+

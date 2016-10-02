@@ -85,15 +85,15 @@
 
                         <li>
                             <a href="#collapsed-menu0" data-toggle="collapse" class="" aria-expanded="true">
-                                <i class="pe-7s-paint"></i>
+                                <i class="pe-7s-users"></i>
                                 <p>Student Related</p>
                             </a>
                             <ul class="nav collapsed-menu collapse" id="collapsed-menu0" aria-expanded="true">
 
                                 <!-- Edit Student Particulars -->
-                                <li class="@(ViewBag.Title=="EditStudentParticulars"? "active" : "")">
-                                    <a href="@Url.Action("EditStudentParticulars", "Lecturer")">
-                                        <i class="pe-7s-paint-bucket"></i>
+                                <li class="@(ViewBag.Title=="SearchStudentParticulars"? "active" : "")">
+                                    <a href="@Url.Action("SearchStudentParticulars", "Lecturer")">
+                                        <i class="pe-7s-id"></i>
                                         <p>Edit Particulars</p>
                                     </a>
                                 </li>
@@ -101,13 +101,36 @@
                                 <!-- Grade Assign -->
                                 <li class="@(ViewBag.Title=="GradeAssign"? "active" : "")">
                                     <a href="@Url.Action("GradeAssign", "Lecturer")">
-                                        <i class="pe-7s-keypad"></i>
+                                        <i class="pe-7s-note2"></i>
                                         <p>Assign Grades</p>
                                     </a>
                                 </li>                                
                             </ul>
-                        </li>                        
+                        </li>
+                        <!-- Course Related -->
 
+                        <li>
+                            <a href="#collapsed-menu1" data-toggle="collapse" class="" aria-expanded="true">
+                                <i class="pe-7s-study"></i>
+                                <p>Course Related</p>
+                            </a>
+                            <ul class="nav collapsed-menu collapse" id="collapsed-menu1" aria-expanded="true">
+                                <!-- Programme Management -->
+                                <li class="@(ViewBag.Title=="View all Programme"? "active" : "")">
+                                    <a href="@Url.Action("ProgrammeIndex", "Lecturer")">
+                                        <i class="pe-7s-paint-bucket"></i>
+                                        <p>Programme Management</p>
+                                    </a>
+                                </li>
+                                <!-- Module Management -->
+                                <li class="@(ViewBag.Title=="View All  Modules"? "active" : "")">
+                                    <a href="@Url.Action("ModuleIndex", "Lecturer")">
+                                        <i class="pe-7s-keypad"></i>
+                                        <p>Module Management</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     }
 
                     

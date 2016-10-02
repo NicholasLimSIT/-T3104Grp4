@@ -17,21 +17,83 @@ namespace ICT3104_Group4_SMS.Controllers
         private SmsContext db = new SmsContext();
         internal IDataGateway<Programme> ProgrammeGateway;
         internal IDataGateway<Lecturer_Module> Lecturer_ModuleGateway;
+        internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         public LecturerController()
         {
             Lecturer_ModuleGateway = new Lecturer_ModuleDataGateway();
             ProgrammeGateway = new ProgrammeDataGateway();
+            ApplicationUserGateway = new ApplicationUserDataGateway();
         }
 
 
         public ActionResult Index()
         {
+           
             return View();
         }
-
-        public ActionResult EditStudentParticulars()
+        [HttpGet]
+        public ActionResult SearchStudentParticulars(string name)
         {
+            if (name != null)
+            {
+                ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchStudent(name);
+            }
             return View();
+        }
+       
+        public ActionResult EditStudentParticulars(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            if (Applicationuser == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Applicationuser);
+        }
+
+
+        // POST: Programmes/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditStudentParticulars([Bind(Include = "Id,UserName,Email,PhoneNumber")] Models.ApplicationUser Applicationuser)
+        {
+            if (ModelState.IsValid)
+            {
+
+                db.Entry(Applicationuser).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("SearchStudentParticulars");
+            }
+            return View(Applicationuser);
+        }
+        public ActionResult DeleteStudent(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            if (Applicationuser == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Applicationuser);
+        }
+
+        [HttpPost, ActionName("DeleteStudent")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(string id)
+        {
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            db.Users.Remove(Applicationuser);
+            db.SaveChanges();
+            return RedirectToAction("SearchStudentParticulars");
         }
 
         public ActionResult GradeAssign()
@@ -225,7 +287,12 @@ namespace ICT3104_Group4_SMS.Controllers
             db.SaveChanges();
             return RedirectToAction("ModuleIndex");
         }
+
+        
+
+
+
     }
 
-   
+
 }
