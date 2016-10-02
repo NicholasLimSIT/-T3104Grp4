@@ -19,14 +19,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
                     @foreach (var mg in ViewBag.ModuleGrades) {
-                    string[] tokens = mg.Split(',');
+                    string[] tokens = @mg.Split(',');
                     <tr>
                         <td>
-                            tokens[0]
+                            @tokens[0]
                         </td>
                         <td>
-                            tokens[1]
+                            @tokens[1]
                         </td>
                     </tr>
                     }
