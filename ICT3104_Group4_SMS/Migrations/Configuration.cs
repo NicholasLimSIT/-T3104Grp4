@@ -37,11 +37,11 @@ namespace ICT3104_Group4_SMS.Migrations
 
                 //Create a Admin super user who will maintain the website                  
                 var user = new ApplicationUser();
-             
-                user.UserName = "admin@mail.com",
-                user.PasswordHash = hasher.HashPassword("Password1!"),
-                user.Email = "admin@mail.com",
-                user.EmailConfirmed = true,
+
+                user.UserName = "admin@mail.com";
+                user.PasswordHash = hasher.HashPassword("Password1!");
+                user.Email = "admin@mail.com";
+                user.EmailConfirmed = true;
                 user.SecurityStamp = Guid.NewGuid().ToString();
 
 
