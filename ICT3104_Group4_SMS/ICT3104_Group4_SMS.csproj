@@ -206,6 +206,7 @@
     <Compile Include="Controllers\UiController.cs" />
     <Compile Include="DAL\ApplicationUserDataGateway.cs" />
     <Compile Include="DAL\DataGateway.cs" />
+    <Compile Include="DAL\GradesGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
     <Compile Include="DAL\Lecturer_ModuleDataGateway.cs" />
     <Compile Include="DAL\ProgrammeDataGateway.cs" />
