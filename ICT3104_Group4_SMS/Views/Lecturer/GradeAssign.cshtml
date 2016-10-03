@@ -1,7 +1,48 @@
-﻿
+﻿@model List<ICT3104_Group4_SMS.Models.Grade>
+
 @{
     ViewBag.Title = "GradeAssign";
 }
 
-<h2>Grade Assign</h2>
+<h2>Assign Grade for @ViewBag.selectedModule.name </h2>
 
+@using (Html.BeginForm("GradeAssign", "Lecturer", FormMethod.Post))
+{
+    @Html.Hidden("moduleId", (string)(ViewBag.selectedModule.Id.ToString()))
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th></th>
+            <th colspan="2">
+                Student ID
+            </th>
+            <th>
+                Score
+            </th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+
+            <tr>
+                <td>@Html.HiddenFor(model => model[i].Id)</td>
+
+                <td>@Html.HiddenFor(model => model[i].lecturermoduleId)</td>
+                <td colspan="2">@Html.TextBoxFor(model => model[i].studentId, new { @readonly = "readonly", style = "border-style:none" })</td>
+
+                <td>@Html.EditorFor(model => model[i].score)</td>
+            </tr>
+        }
+
+
+    </table>
+
+    <p><input type="submit" value="Update Grade" /> </p>
+    <p style="color:green; font-size:12px">@ViewBag.Message</p>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

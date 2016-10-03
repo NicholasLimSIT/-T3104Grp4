@@ -20,6 +20,8 @@ namespace ICT3104_Group4_SMS.Controllers
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<Grade> GradesGateway;
         internal IDataGateway<Recommendation> RecommendationGateway;
+        internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
+        private Lecturer_ModuleDataGateway lmDW = new Lecturer_ModuleDataGateway();
 
         public LecturerController()
         {
@@ -100,9 +102,65 @@ namespace ICT3104_Group4_SMS.Controllers
             return RedirectToAction("SearchStudentParticulars");
         }
 
-        public ActionResult GradeAssign()
+        public ActionResult ModuleTeach()
         {
-            return View();
+
+            var userID = User.Identity.GetUserId();
+            return View(lmDW.selectModuleByLecturer(userID));
+        }
+
+        public ActionResult GradeAssign(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
+            if (gradeList.Count() == 0)
+            {
+                var module1 = ModuleGateway.SelectById(id);
+                ViewBag.selectedModule = module1;
+                return View(gradeList);
+            }
+
+            var module = ModuleGateway.SelectById(id);
+            ViewBag.selectedModule = module;
+            return View(gradeList);
+
+        }
+        [HttpPost]
+        public ActionResult GradeAssign(List<Grade> list, string moduleId)
+        {
+            int? modId = Convert.ToInt32(moduleId);
+            if (ModelState.IsValid && list != null)
+            {
+
+                foreach (var i in list)
+                {
+                    var c = db.Grades.Where(a => a.Id.Equals(i.Id)).FirstOrDefault();
+                    if (c != null)
+                    {
+                        c.lecturermoduleId = i.lecturermoduleId;
+                        c.score = i.score;
+                        c.studentId = i.studentId;
+                    }
+
+                }
+                db.SaveChanges();
+                ViewBag.Message = "Successfully Updated";
+
+                //return View("GradeAssign(" + modId+")");
+                return RedirectToAction("GradeAssign/" + modId);
+
+            }
+            else
+            {
+                ViewBag.Message = "Failed! Please try again";
+                return RedirectToAction("ModuleTeach");
+                //return View(list);
+            }
+
         }
 
         // GET: Programmes
