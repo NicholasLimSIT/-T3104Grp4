@@ -209,6 +209,7 @@
     <Compile Include="DAL\GradesGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
     <Compile Include="DAL\Lecturer_ModuleDataGateway.cs" />
+    <Compile Include="DAL\RecommendationDataGateway.cs" />
     <Compile Include="DAL\ProgrammeDataGateway.cs" />
     <Compile Include="DAL\SmsContext.cs" />
     <Compile Include="DAL\SmsInitializer.cs" />
@@ -320,6 +321,7 @@
     <Content Include="Views\Lecturer\ModuleIndex.cshtml" />
     <Content Include="Views\Lecturer\SearchStudentParticulars.cshtml" />
     <Content Include="Views\Lecturer\DeleteStudent.cshtml" />
+    <Content Include="Views\Lecturer\RecommendationCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

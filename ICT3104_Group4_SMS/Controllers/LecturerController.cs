@@ -18,13 +18,17 @@ namespace ICT3104_Group4_SMS.Controllers
         internal IDataGateway<Programme> ProgrammeGateway;
         internal IDataGateway<Lecturer_Module> Lecturer_ModuleGateway;
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
+        internal IDataGateway<Grade> GradesGateway;
+        internal IDataGateway<Recommendation> RecommendationGateway;
+
         public LecturerController()
         {
             Lecturer_ModuleGateway = new Lecturer_ModuleDataGateway();
             ProgrammeGateway = new ProgrammeDataGateway();
             ApplicationUserGateway = new ApplicationUserDataGateway();
+            GradesGateway = new GradesGateway();
+            RecommendationGateway = new RecommendationDataGateway();
         }
-
 
         public ActionResult Index()
         {
@@ -288,10 +292,28 @@ namespace ICT3104_Group4_SMS.Controllers
             return RedirectToAction("ModuleIndex");
         }
 
-        
+        // GET: Modules/Create
+        public ActionResult RecommendationCreate()
+        {
+            ViewBag.gradeId = new SelectList(db.Grades, "Id", "Name");
 
+            return View();
+        }
 
+        // POST: Modules/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId")] Recommendation rec)
+        {
+            if (ModelState.IsValid)
+            {
+                rec.lecturerId = User.Identity.GetUserId();
+                RecommendationGateway.Insert(rec);
+                return RedirectToAction("RecommendationCreate");
+            }
 
+            return View(rec);
+        }
     }
 
 
