@@ -25,7 +25,6 @@ namespace ICT3104_Group4_SMS.Controllers
             ApplicationUserGateway = new ApplicationUserDataGateway();
         }
 
-
         public ActionResult Index()
         {
            

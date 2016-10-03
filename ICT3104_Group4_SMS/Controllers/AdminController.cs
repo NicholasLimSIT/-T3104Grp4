@@ -1,4 +1,5 @@
-﻿using ICT3104_Group4_SMS.Models;
+﻿using ICT3104_Group4_SMS.DAL;
+using ICT3104_Group4_SMS.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -15,14 +16,20 @@ namespace ICT3104_Group4_SMS.Controllers
    //[Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
+        private SmsContext db = new SmsContext();
         private ApplicationUserManager _userManager;
+
+        internal IDataGateway<ApplicationUser> ApplicationUserGateway;
 
         public AdminController()
         {
+            ApplicationUserGateway = new ApplicationUserDataGateway();
         }
 
         public AdminController(ApplicationUserManager userManager)
         {
+            ApplicationUserGateway = new ApplicationUserDataGateway();
+           
             UserManager = userManager;
         }
 
@@ -41,10 +48,14 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchUsers();
+
+
             return View();
+  
         }
 
-        // GET: /Admin/Register
+        // GET: /Admin/CreateAccount
         public ActionResult CreateAccount()
         {
             return View();
@@ -71,6 +82,18 @@ namespace ICT3104_Group4_SMS.Controllers
 
             //If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        // GET: /Admin/EditAccount
+        public ActionResult EditAccount()
+        {
+            return View();
+        }
+
+        // GET: /Admin/DeleteAccount
+        public ActionResult DeleteAccount()
+        {
+            return View();
         }
     }
 }

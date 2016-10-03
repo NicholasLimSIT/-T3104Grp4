@@ -1,4 +1,5 @@
 ﻿using ICT3104_Group4_SMS.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,33 @@ namespace ICT3104_Group4_SMS.DAL
         {
             this.data = db.Set<ApplicationUser>();
         }
+
+        //Function to return all users
+        public List<string[]> searchUsers()
+        {
+            List<string[]> UserList;
+            UserList = new List<string[]>();
+            var context = new SmsContext();
+            users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();
+
+           
+
+            foreach (var item in users)
+            {
+                // User is in the Admin Role
+                string[] listString = new string[4];
+                listString[0] = item.Id.ToString();
+                listString[1] = item.UserName;
+                listString[2] = item.Email;
+                listString[3] = item.PhoneNumber;           
+                UserList.Add(listString);
+            }
+
+            return UserList;
+
+        }
+
+        //Function to search and return a student
         public List<string[]> searchStudent(string name)
         {
             if (name.Length > 5){
@@ -48,5 +76,7 @@ namespace ICT3104_Group4_SMS.DAL
             return UserList;
 
         }
+
+
     }
 }

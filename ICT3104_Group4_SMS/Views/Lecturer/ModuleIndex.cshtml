@@ -1,54 +1,79 @@
 ﻿@model IEnumerable<ICT3104_Group4_SMS.Models.Module>
 
 @{
-    ViewBag.Title = "View All Modules";
+    ViewBag.Title = "Module";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "ModuleCreate")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
+<div class="row">
+    <div class="col-md-12">
+        <button onclick="location.href='@Url.Action("ModuleCreate", "Lecturer")';return false;" class="btn btn-primary"><i class="fa fa-edit "></i>Create New Module</button>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-12">
 
-        <th>
-            @Html.DisplayNameFor(model => model.frozenDateTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.publishDateTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.year)
-        </th>       
-        
-        <th></th>
-    </tr>
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Programme Management</h4>
+                <p class="category">List of created Programme</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.name)
+                            </th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
+                            <th>
+                                @Html.DisplayNameFor(model => model.frozenDateTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.publishDateTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.year)
+                            </th>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.frozenDateTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.publishDateTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.year)
-        </td>
-       
-        <td>
-            @Html.ActionLink("Edit", "ModuleEdit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "ModuleDelete", new { id=item.Id })
-        </td>
-    </tr>
-}
+                            <th></th>
+                        </tr>
+                    </thead>
 
-</table>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.frozenDateTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.publishDateTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.year)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Edit", "ModuleEdit", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "ModuleDelete", new { id = item.Id })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

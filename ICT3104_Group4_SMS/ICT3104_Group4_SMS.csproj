@@ -320,6 +320,7 @@
     <Content Include="Views\Lecturer\ModuleIndex.cshtml" />
     <Content Include="Views\Lecturer\SearchStudentParticulars.cshtml" />
     <Content Include="Views\Lecturer\DeleteStudent.cshtml" />
+    <Content Include="Views\Admin\EditAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

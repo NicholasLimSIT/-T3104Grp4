@@ -23,9 +23,33 @@
         <div class="sidebar" data-color="azure">
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="#" class="simple-text">
-                        S M S
-                    </a>
+
+                    <!----------  Header  ---------->
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a href="#" class="simple-text">
+                            S M S / ADMIN
+                        </a>
+                    }
+                    @if (User.IsInRole("Student"))
+                    {
+                        <a href="#" class="simple-text">
+                            S M S / STUDENT
+                        </a>
+                    }
+                    @if (User.IsInRole("Lecturer"))
+                    {
+                        <a href="#" class="simple-text">
+                            S M S / LECTURER
+                        </a>
+                    }
+                    @if (User.IsInRole("HOD"))
+                    {
+                        <a href="#" class="simple-text">
+                            S M S / HOD
+                        </a>
+                    }
+
                 </div>
                 <ul class="nav">
                     <!----------  Admin  ---------->
@@ -46,6 +70,7 @@
                                 <p>Create Account</p>
                             </a>
                         </li>
+
                     }
                     
 
@@ -91,7 +116,7 @@
                             <ul class="nav collapsed-menu collapse" id="collapsed-menu0" aria-expanded="true">
 
                                 <!-- Edit Student Particulars -->
-                                <li class="@(ViewBag.Title=="SearchStudentParticulars"? "active" : "")">
+                                <li class="@(ViewBag.Title=="Edit Student's Particular"? "active" : "")">
                                     <a href="@Url.Action("SearchStudentParticulars", "Lecturer")">
                                         <i class="pe-7s-id"></i>
                                         <p>Edit Particulars</p>
@@ -116,17 +141,17 @@
                             </a>
                             <ul class="nav collapsed-menu collapse" id="collapsed-menu1" aria-expanded="true">
                                 <!-- Programme Management -->
-                                <li class="@(ViewBag.Title=="View all Programme"? "active" : "")">
+                                <li class="@(ViewBag.Title=="Programme"? "active" : "")">
                                     <a href="@Url.Action("ProgrammeIndex", "Lecturer")">
                                         <i class="pe-7s-paint-bucket"></i>
-                                        <p>Programme Management</p>
+                                        <p>Programme</p>
                                     </a>
                                 </li>
                                 <!-- Module Management -->
-                                <li class="@(ViewBag.Title=="View All  Modules"? "active" : "")">
+                                <li class="@(ViewBag.Title=="Module"? "active" : "")">
                                     <a href="@Url.Action("ModuleIndex", "Lecturer")">
                                         <i class="pe-7s-keypad"></i>
-                                        <p>Module Management</p>
+                                        <p>Module</p>
                                     </a>
                                 </li>
                             </ul>
@@ -152,9 +177,10 @@
                     
                     <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
 
-                    <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
+                    <!---------- ===== ===== ===== ===== ===== ===== ===== Nobody ===== ===== ===== ===== ===== ===== ===== ---------->
 
-
+                    @if (!User.IsInRole("Admin") && !(User.IsInRole("HOD")) && !User.IsInRole("Student") && !User.IsInRole("Lecturer"))
+                    {
                     <li>
                         <hr />
                         <a href="#collapsed-menu" data-toggle="collapse" class="" aria-expanded="true">
@@ -212,28 +238,9 @@
                             </li>
                         </ul>
                     </li>
-
-                        <li>
-                            <a href="#" class="" aria-expanded="true">
-                                <i class="pe-7s-id"></i>
-                                <p>Admin Layout</p>
-                            </a>
-                        </li>
-                        <li class="@(ViewBag.Title=="Index"? "active" : "")">
-                            <a href="@Url.Action("Index", "Admin")">
-                                <i class="pe-7s-id"></i>
-                                <p>Home</p>
-                            </a>
-                        </li>
-
-                        
-
-                        <li>
-                            <a href="#collapsed-menu" data-toggle="collapse" class="" aria-expanded="true">
-                                <i class="pe-7s-paint"></i>
-                                <p>Guest Layout</p>
-                            </a>
-                        </li>
+                    }
+                   
+                    <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
 
                 </ul>
             </div>
@@ -251,7 +258,7 @@
                         <a class="navbar-brand" href="#">@ViewBag.Title</a>
                     </div>
                     <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-left">
+                        @*<ul class="nav navbar-nav navbar-left">
                             <li>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-dashboard"></i>
@@ -271,14 +278,14 @@
                                     <li><a href="#">Another notification</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul>*@
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="">
                                     @currentUser
                                 </a>
                             </li>
-                            <li class="dropdown">
+                            @*<li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     Dropdown
                                     <b class="caret"></b>
@@ -292,7 +299,7 @@
                                     <li class="divider"></li>
                                     <li><a href="#">Separated link</a></li>
                                 </ul>
-                            </li>
+                            </li>*@
                             <li>
                                 @Html.Partial("_LoginPartial")
                             </li>
@@ -311,11 +318,7 @@
                 <div class="container-fluid">
                     <nav class="pull-left">
                         <ul>
-                            <li>
-                                <a href="@Url.Action("Index", "Home")">
-                                    Home
-                                </a>
-                            </li>
+         
                         </ul>
                     </nav>
                     <p class="copyright pull-right">
