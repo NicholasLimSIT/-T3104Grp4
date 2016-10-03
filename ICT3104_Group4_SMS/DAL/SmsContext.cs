@@ -11,7 +11,7 @@ namespace ICT3104_Group4_SMS.DAL
 {
     public class SmsContext : IdentityDbContext<ApplicationUser>
     {
-        public SmsContext() : base("3104_SmsDB")
+        public SmsContext() : base("3104group4")
         {
             //Database.SetInitializer<CafeWithLoveContext>(new CafeWithLoveInitializer());
         }

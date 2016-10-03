@@ -21,7 +21,7 @@ namespace ICT3104_Group4_SMS.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("3104group4", throwIfV1Schema: false)
         {
         }
 

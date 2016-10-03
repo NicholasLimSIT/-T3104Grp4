@@ -12,7 +12,7 @@ using System.Web.Mvc;
 namespace ICT3104_Group4_SMS.Controllers
 {
 
-   [Authorize(Roles = "Admin")]
+   //[Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private ApplicationUserManager _userManager;
