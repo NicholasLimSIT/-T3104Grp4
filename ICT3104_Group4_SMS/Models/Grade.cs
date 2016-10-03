@@ -11,7 +11,8 @@ namespace ICT3104_Group4_SMS.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Grade
     {
         public Grade()
