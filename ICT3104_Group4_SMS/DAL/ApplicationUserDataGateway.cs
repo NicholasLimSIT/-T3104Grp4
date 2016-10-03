@@ -56,7 +56,7 @@ namespace ICT3104_Group4_SMS.DAL
             var context = new SmsContext();
             users = data.SqlQuery("SELECT * From dbo.AspNetUsers WHERE UserName LIKE '%" + name + "%'").ToList();
 
-            var role = (from r in db.Roles where r.Name.Contains("Admin") select r).FirstOrDefault();
+            var role = (from r in db.Roles where r.Name.Contains("Student") select r).FirstOrDefault();
             var user = db.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role.Id)).ToList();
             
             foreach (var item in users)

@@ -3,56 +3,80 @@
     ViewBag.Title = "Edit Student's Particular";
 }
 
-
-<strong>Search:</strong>
-@using (Html.BeginForm("SearchStudentParticulars", "Lecturer", FormMethod.Get))
-{
-    <input type="text" name="name" id="name" style="width: 250px" placeholder="Enter Student's Name" />
-    <input type="submit" value="Search" />
-}
-
-<div>
-    <h3>Search Results</h3>
-</div>
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th></th>
-        <th></th>
-    </tr>
-    @if (ViewBag.List != null)
-    {
-        foreach (var student in @ViewBag.List)
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("SearchStudentParticulars", "Lecturer", FormMethod.Get))
         {
-            <tr>
-                <td>
-                    @student[1]
-                </td>
-                <td>
-                    @student[2]
-                </td>
-                <td>
-                    @student[3]
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "EditStudentParticulars", new { id = @student[0] })
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "DeleteStudent", new { id = @student[0] })
-                </td> 
-            </tr>
+            <input type="text" name="name" id="name" placeholder="Enter Student's Name" class="form-control" />
         }
-    }
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary" value="Search"><i class="pe-7s-search"></i></button>
+    </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Search Result</h4>
+                    <p class="category">List of student</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UserName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @if (ViewBag.List != null)
+            {
+                foreach (var student in @ViewBag.List)
+                {
+                                    <tr>
+                                        <td>
+                                            @student[1]
+                                        </td>
+                                        <td>
+                                            @student[2]
+                                        </td>
+                                        <td>
+                                            @student[3]
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "EditStudentParticulars", new { id = @student[0] })
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Delete", "DeleteStudent", new { id = @student[0] })
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-</table>
+
+
+
+
 

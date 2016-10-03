@@ -4,45 +4,65 @@
     ViewBag.Title = "GradeAssign";
 }
 
-<h2>Assign Grade for @ViewBag.selectedModule.name </h2>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Grade Assignment @ViewBag.selectedModule.name</h4>
+                <p class="category">Assign Grade for @ViewBag.selectedModule.name</p>
+            </div>
+            <div class="content table-responsive table-full-width">
 
-@using (Html.BeginForm("GradeAssign", "Lecturer", FormMethod.Post))
-{
-    @Html.Hidden("moduleId", (string)(ViewBag.selectedModule.Id.ToString()))
+                @using (Html.BeginForm("GradeAssign", "Lecturer", FormMethod.Post))
+                {
+                    @Html.Hidden("moduleId", (string)(ViewBag.selectedModule.Id.ToString()))
 
-    <table class="table">
-        <tr>
-            <th></th>
-            <th></th>
-            <th colspan="2">
-                Student ID
-            </th>
-            <th>
-                Score
-            </th>
-            <th></th>
-        </tr>
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    Student ID
+                                </th>
+                                <th>
+                                    Score
+                                </th>
+                        
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count(); i++)
+                            {
 
-        @for (int i = 0; i < Model.Count(); i++)
-        {
+                                <tr>
+                                    <td>@Html.HiddenFor(model => model[i].Id)</td>
 
-            <tr>
-                <td>@Html.HiddenFor(model => model[i].Id)</td>
+                                    <td>@Html.HiddenFor(model => model[i].lecturermoduleId)</td>
+                                    <td>@Html.TextBoxFor(model => model[i].studentId, new { @readonly = "readonly", style = "border-style:none" })</td>
 
-                <td>@Html.HiddenFor(model => model[i].lecturermoduleId)</td>
-                <td colspan="2">@Html.TextBoxFor(model => model[i].studentId, new { @readonly = "readonly", style = "border-style:none" })</td>
-
-                <td>@Html.EditorFor(model => model[i].score)</td>
-            </tr>
-        }
-
-
-    </table>
-
-    <p><input type="submit" value="Update Grade" /> </p>
-    <p style="color:green; font-size:12px">@ViewBag.Message</p>
-}
+                                    <td>@Html.EditorFor(model => model[i].score)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+            <div class="col-md-offset-5">
+                <input type="submit" class="btn btn-default" value="Update Grade" />
+                <p style="color:green; font-size:12px">@ViewBag.Message</p>
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>
 
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+
+
+
+
