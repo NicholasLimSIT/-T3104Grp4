@@ -14,12 +14,6 @@
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
-                    @*<div class="form-group">
-                            @Html.LabelFor(model => model.gradeId, "gradeId", htmlAttributes: new { @class = "" })
-                            @Html.DropDownList("gradeId", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.gradeId, "", new { @class = "text-danger" })
-                        </div>*@
-
                     <div class="form-group">
                         <label for="studentId">Student ID</label>
                         <input type="text" class="form-control" id="studentId" value="@ViewBag.gradeItem.studentId" disabled>
@@ -31,23 +25,16 @@
 
                     @Html.HiddenFor(model => model.gradeId, new { Value = ViewBag.gradeItem.Id })
                     <div class="form-group">
-                        @Html.LabelFor(model => model.recomendation, htmlAttributes: new { @class = "control-label" })
-                        @Html.TextAreaFor(model => model.recomendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
-                        @Html.ValidationMessageFor(model => model.recomendation, "", new { @class = "text-danger" })
+                        @Html.LabelFor(model => model.recommendation, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextAreaFor(model => model.recommendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
+                        @Html.ValidationMessageFor(model => model.recommendation, "", new { @class = "text-danger" })
                     </div>
                     <button type="submit" class="btn btn-default">Add Recommendation</button>
-                }
-                @if (TempData["Success"] != null)
-                {
-                    <br/>
-                    <p class="text-success">
-                        Recommendation added successfully.
-                    </p>
                 }
             </div>
         </div>
         <div>
-            @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+            @Html.ActionLink("Back to students list", "GradesView", "Lecturer", new { id = ViewBag.moduleId }, null)
         </div>
     </div>
 </div>

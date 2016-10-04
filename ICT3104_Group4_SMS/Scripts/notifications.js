@@ -1,35 +1,16 @@
 ﻿type = ['', 'info', 'success', 'warning', 'danger'];
 
-notifCreateAccount = {
+notif = {
     showNotification: function (from, align) {
         color = Math.floor((Math.random() * 4) + 1);
 
         $.notify({
-            icon: "pe-7s-bell",
-            message: "Account has <b>Succesfully</b> created."
+            icon: "pe-7s-gift",
+            message: "A <b>notification</b> example."
 
         }, {
-            type: 'info',
-            timer: 1000,
-            placement: {
-                from: from,
-                align: align
-            }
-        });
-    }
-}
-
-notifCreateAccountFail = {
-    showNotification: function (from, align) {
-        color = Math.floor((Math.random() * 4) + 1);
-
-        $.notify({
-            icon: "pe-7s-bell",
-            message: "Account creation is <b>Unsuccessful</b>."
-
-        }, {
-            type: 'alert',
-            timer: 1000,
+            type: type[color],
+            timer: 4000,
             placement: {
                 from: from,
                 align: align

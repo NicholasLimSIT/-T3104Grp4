@@ -1,9 +1,10 @@
-﻿@model IEnumerable<ICT3104_Group4_SMS.Models.Grade>
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
 
 @{
     ViewBag.Title = "View Grades";
 }
 
+<h2>View Grades</h2>
 
 <div class="row">
     <div class="col-md-12">
@@ -30,10 +31,13 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.studentId)
+                                    @Html.DisplayNameFor(model => model.GradeItem.studentId)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.score)
+                                    @Html.DisplayNameFor(model => model.GradeItem.score)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RecItem.recommendation)
                                 </th>
                                 <th>
                                 </th>
@@ -45,13 +49,24 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.studentId)
+                                        @Html.DisplayFor(modelItem => item.GradeItem.studentId)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.score)
+                                        @Html.DisplayFor(modelItem => item.GradeItem.score)
                                     </td>
                                     <td>
-                                        <button onclick="location.href='@Url.Action("RecommendationCreate", "Lecturer", new { id = item.Id })';return false;" class="btn btn-primary"><i class="pe-7s-rocket"></i> Add Recommendation</button>
+                                        @Html.DisplayFor(modelItem => item.RecItem.recommendation)
+                                    </td>
+                                    <td>
+                                        @if (item.RecItem.recommendation == "-")
+                                        {
+                                            <button onclick="location.href='@Url.Action("RecommendationCreate", "Lecturer", new { id = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Add Recommendation</button>
+                                        }
+                                        else
+                                        {
+                                            <button onclick="location.href='@Url.Action("RecommendationEdit", "Lecturer", new { id = item.RecItem.Id, gradeId = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Update Recommendation</button>
+                                        }
+                                        
                                     </td>
                                 </tr>
                             }
@@ -59,6 +74,9 @@
                     </table>
                 </div>
             }
+        </div>
+        <div>
+            @Html.ActionLink("Back to modules list", "ModuleTeach", "Lecturer", null, null)
         </div>
     </div>
 </div>

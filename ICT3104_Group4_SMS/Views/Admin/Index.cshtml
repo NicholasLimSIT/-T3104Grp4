@@ -25,8 +25,10 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.PhoneNumber)
                             </th>
-                            <th></th>
-                     
+                            <th>
+                                Role
+                            </th>
+                            <th></th><th></th>
 
                         </tr>
                     </thead>
@@ -34,22 +36,27 @@
 
                         @if (ViewBag.List != null)
                         {
-                            foreach (var student in @ViewBag.List)
+                            foreach (var user in @ViewBag.List)
                             {
                                 <tr>
                                     <td>
-                                        @student[1]
+                                        @user[1]
                                     </td>
                                     <td>
-                                        @student[2]
+                                        @user[2]
                                     </td>
                                     <td>
-                                        @student[3]
+                                        @user[3]
                                     </td>
                                     <td>
-                                        @Html.ActionLink("Edit", "EditAccount", new { id = @student[0] })
+                                        @user[4]
                                     </td>
-
+                                    <td>
+                                        @Html.ActionLink("Edit", "EditAccount", new { id = @user[0] })
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Delete", "DeleteAccount", new { id = @user[0] })
+                                    </td>
                                 </tr>
                             }
                         }

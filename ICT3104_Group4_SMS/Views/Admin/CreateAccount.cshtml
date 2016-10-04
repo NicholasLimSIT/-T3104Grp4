@@ -1,26 +1,8 @@
 ﻿@model ICT3104_Group4_SMS.Models.RegisterViewModel
-@Scripts.Render("~/bundles/notifications")
 @{
     ViewBag.Title = "Create Account";
 }
 
-
-@if (ViewBag.createNotif == "activeSuccess")
-{
-    ViewBag.createNotif = "not-active";
-
-    <script type="text/javascript">
-        notifCreateAccount.showNotification('top', 'center');
-    </script>
-}
-@if (ViewBag.createNotif == "activeFail")
-{
-    ViewBag.createNotif = "not-active";
-
-    <script type="text/javascript">
-        notifCreateAccountFail.showNotification('top', 'center');
-    </script>
-}
 
 
 <html>

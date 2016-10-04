@@ -59,7 +59,13 @@ namespace ICT3104_Group4_SMS.DAL
             return gradeNameList;
         }
 
+        public ICollection<Grade> GetGradesByLecMod(int[] lecModIds)
+        {
+            ICollection<Grade> gradeList = new List<Grade>();
+            gradeList = data.Where(g => lecModIds.Contains(g.lecturermoduleId)).ToList();
 
+            return gradeList;
+        }
 
     }
 }

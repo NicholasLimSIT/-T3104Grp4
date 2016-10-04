@@ -20,8 +20,11 @@ namespace ICT3104_Group4_SMS.Controllers
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<Grade> GradesGateway;
         internal IDataGateway<Recommendation> RecommendationGateway;
-        internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
+        //internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
+        private ModuleGateway ModuleGateway = new ModuleGateway();
         private Lecturer_ModuleDataGateway lmDW = new Lecturer_ModuleDataGateway();
+
+        private SmsMapper smsMapper = new SmsMapper();
 
         public LecturerController()
         {
@@ -29,7 +32,7 @@ namespace ICT3104_Group4_SMS.Controllers
             ProgrammeGateway = new ProgrammeDataGateway();
             ApplicationUserGateway = new ApplicationUserDataGateway();
             GradesGateway = new GradesGateway();
-            RecommendationGateway = new RecommendationDataGateway();
+            RecommendationGateway = new RecommendationGateway();
         }
 
         public ActionResult Index()
@@ -173,9 +176,12 @@ namespace ICT3104_Group4_SMS.Controllers
 
             ViewBag.moduleId = id;
             ViewBag.moduleName = moduleName;
+            if (moduleName == null)
+                ViewBag.moduleName = ModuleGateway.GetModuleName(id);
 
-            IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
-            return View(gradeList);
+            int id2 = id ?? default(int);
+            IEnumerable<GradeRecViewModel> gradeWithRecList = smsMapper.GradeWithRec(id2);
+            return View(gradeWithRecList);
         }
 
         // GET: Programmes
@@ -368,110 +374,62 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: Recommendations/Create
         public ActionResult RecommendationCreate(int? id)
         {
-
-            ViewBag.gradeId = new SelectList(db.Grades, "Id", "Score");
-
             Grade gradeItem = GradesGateway.SelectById(id);
             ViewBag.gradeItem = gradeItem;
-
-
+            ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
             return View();
         }
 
         // POST: Recommendations/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recomendation")] Recommendation rec)
+        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recommendation")] Recommendation rec)
         {
             if (ModelState.IsValid)
             {
                 rec.lecturerId = User.Identity.GetUserId();
                 RecommendationGateway.Insert(rec);
-                TempData["Success"] = true;
-                return RedirectToAction("RecommendationCreate");
+                TempData["Success"] = 1;            // for success message on recommendationedit
+                return RedirectToAction("RecommendationEdit", new { id = rec.Id, gradeId = rec.gradeId });
             }
 
             return View(rec);
         }
 
-
-        // GET: StudentEnrolment
-        public ActionResult StudentEnrolment()
-        {
-            var userID = User.Identity.GetUserId();
-            return View(lmDW.selectModuleByLecturer(userID));
-        }
-
-
-        
-
-        // GET: Grades
-        public ActionResult StudentEnrolView(int? id, String moduleName)
+        // GET: Recommendations/Edit/5
+        public ActionResult RecommendationEdit(int? id, int gradeId)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            Recommendation rec = RecommendationGateway.SelectById(id);
 
-            ViewBag.moduleId = id;
-            ViewBag.moduleName = moduleName;
-
-            IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
-            List<string[]> studentList = ((ApplicationUserDataGateway)ApplicationUserGateway).searchAllStudent();
-            List<string[]> studentNotInModuleList = new List<string[]>();
-
-            foreach (var student in studentList)
+            if (rec == null)
             {
-                bool found = false;
-                foreach (var grade in gradeList)
-                {
-                    if (student.ElementAt(0).Equals(grade.studentId))
-                    {
-                        found = true;
-                    }
-                }
-                if (found == false) {
-                    studentNotInModuleList.Add(student);
-                }
+                return HttpNotFound();
             }
-            ViewBag.ListStudentNotInModule = studentNotInModuleList;
-            ViewBag.selectedEnrolModule = moduleName;
 
-            return View();
+            Grade gradeItem = GradesGateway.SelectById(gradeId);
+            ViewBag.gradeItem = gradeItem;
+            ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
+            return View(rec);
         }
 
-        // GET: Grades
-        public ActionResult StudentEnrol(string studentId, string moduleName)
+        // POST: Recommendations/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RecommendationEdit([Bind(Include = "Id, gradeId, recommendation")] Recommendation rec)
         {
-            if (studentId.Length != 0)
+            if (ModelState.IsValid)
             {
-                Grade newGrade = new Grade();
-                newGrade.studentId = studentId;
-                IEnumerable<Module> modList = ModuleGateway.SelectAll();
-
-                foreach(var i in modList)
-                {
-                    if (i.name.Equals(moduleName))
-                    {
-                        IEnumerable<Lecturer_Module> lecModList = Lecturer_ModuleGateway.SelectAll();
-                        foreach (var j in lecModList)
-                        {
-                            if (j.moduleId == i.Id) {
-                                newGrade.lecturermoduleId = j.Id;
-                            }
-                        }
-                    }
-                }
-         
-                GradesGateway.Insert(newGrade);
+                rec.lecturerId = User.Identity.GetUserId();
+                RecommendationGateway.Update(rec);
+                TempData["Success"] = 2;                    // for success message on recommendationedit
+                return RedirectToAction("RecommendationEdit", new { gradeId = rec.gradeId });
             }
-
-
-
-            return RedirectToAction("StudentEnrolment");
+            return View(rec);
         }
-
-
     }
 
 
