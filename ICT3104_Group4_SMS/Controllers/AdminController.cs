@@ -95,5 +95,11 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             return View();
         }
+
+        // GET: /Admin/BackupAccount
+        public ActionResult AdminBackup()
+        {
+            return View();
+        }
     }
 }

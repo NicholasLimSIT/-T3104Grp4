@@ -353,7 +353,7 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: Modules/Create
         public ActionResult RecommendationCreate()
         {
-            ViewBag.gradeId = new SelectList(db.Grades, "Id", "Name");
+            ViewBag.gradeId = new SelectList(db.Grades, "Id", "Score");
 
             return View();
         }
