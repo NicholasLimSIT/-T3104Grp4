@@ -46,19 +46,13 @@
                                     @Html.DisplayFor(modelItem => item.year)
                                 </td>
                                 <td>
-                                    <button onclick="location.href='@Url.Action("GradeAssign", "Lecturer",new { id = item.Id})';return false;" class="btn btn-primary"><i class="pe-7s-pen"></i>Assign Grade</button>                                
+                                    <button onclick="location.href='@Url.Action("GradesView", "Lecturer",new { id = item.Id, moduleName = item.name})';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> View Students</button>                                
                                 </td>
                             </tr>
                         }
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-

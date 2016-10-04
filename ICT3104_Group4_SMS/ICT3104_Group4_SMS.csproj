@@ -325,6 +325,8 @@
     <Content Include="Views\Lecturer\RecommendationCreate.cshtml" />
     <Content Include="Views\Lecturer\ModuleTeach.cshtml" />
     <Content Include="Views\Admin\AdminBackup.cshtml" />
+    <Content Include="Views\Lecturer\GradesView.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
