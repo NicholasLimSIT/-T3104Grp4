@@ -115,7 +115,7 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
+            lmDW.getModuleStudent(id);
             IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
             if (gradeList.Count() == 0)
             {
