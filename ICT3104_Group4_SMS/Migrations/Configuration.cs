@@ -12,7 +12,7 @@ namespace ICT3104_Group4_SMS.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(ICT3104_Group4_SMS.DAL.SmsContext context)
