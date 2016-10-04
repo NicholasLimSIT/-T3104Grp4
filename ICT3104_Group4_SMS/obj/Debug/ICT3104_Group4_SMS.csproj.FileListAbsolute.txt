@@ -159,6 +159,7 @@ E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.
 E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
 E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
 E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
 E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.dll
@@ -416,7 +417,4 @@ C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3
 C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
 C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
 C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Init.resources
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Third.resources
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
-E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Fourth.resources

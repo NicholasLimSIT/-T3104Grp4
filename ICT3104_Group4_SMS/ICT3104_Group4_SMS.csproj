@@ -209,10 +209,12 @@
     <Compile Include="DAL\GradesGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
     <Compile Include="DAL\Lecturer_ModuleDataGateway.cs" />
-    <Compile Include="DAL\RecommendationDataGateway.cs" />
+    <Compile Include="DAL\ModuleGateway.cs" />
+    <Compile Include="DAL\RecommendationGateway.cs" />
     <Compile Include="DAL\ProgrammeDataGateway.cs" />
     <Compile Include="DAL\SmsContext.cs" />
     <Compile Include="DAL\SmsInitializer.cs" />
+    <Compile Include="DAL\SmsMapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,9 +226,14 @@
     <Compile Include="Migrations\201610030953302_Third.Designer.cs">
       <DependentUpon>201610030953302_Third.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610041339364_Fourth.cs" />
+    <Compile Include="Migrations\201610041339364_Fourth.Designer.cs">
+      <DependentUpon>201610041339364_Fourth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Grade.cs" />
+    <Compile Include="Models\GradeRecViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lecturer_Module.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -324,7 +331,9 @@
     <Content Include="Views\Admin\EditAccount.cshtml" />
     <Content Include="Views\Lecturer\RecommendationCreate.cshtml" />
     <Content Include="Views\Lecturer\ModuleTeach.cshtml" />
+    <Content Include="Views\Admin\AdminBackup.cshtml" />
     <Content Include="Views\Lecturer\GradesView.cshtml" />
+    <Content Include="Views\Lecturer\RecommendationEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -345,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610030953302_Third.resx">
       <DependentUpon>201610030953302_Third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610041339364_Fourth.resx">
+      <DependentUpon>201610041339364_Fourth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

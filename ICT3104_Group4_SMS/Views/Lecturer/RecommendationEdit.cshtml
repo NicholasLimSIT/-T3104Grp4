@@ -1,19 +1,25 @@
 ﻿@model ICT3104_Group4_SMS.Models.Recommendation
 
 @{
-    ViewBag.Title = "Add Recommendation";
+    ViewBag.Title = "Update Recommendation";
 }
 
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="header">
-                <h4 class="title">Add Recommendation</h4>
+                <h4 class="title">Update Recommendation</h4>
             </div>
             <div class="panel-body">
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.gradeId, "gradeId", htmlAttributes: new { @class = "" })
+                            @Html.DropDownList("gradeId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.gradeId, "", new { @class = "text-danger" })
+                        </div>*@
+
                     <div class="form-group">
                         <label for="studentId">Student ID</label>
                         <input type="text" class="form-control" id="studentId" value="@ViewBag.gradeItem.studentId" disabled>
@@ -29,7 +35,20 @@
                         @Html.TextAreaFor(model => model.recommendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
                         @Html.ValidationMessageFor(model => model.recommendation, "", new { @class = "text-danger" })
                     </div>
-                    <button type="submit" class="btn btn-default">Add Recommendation</button>
+                    <button type="submit" class="btn btn-default">Update Recommendation</button>
+                }
+                @*displaying of success messages depending on action done*@
+                @if (TempData["Success"] != null)
+                {
+                    <br />
+                    if (TempData["Success"].Equals(1))
+                    {
+                        <p class="text-success">Recommendation added successfully.</p>
+                    }
+                    else if (TempData["Success"].Equals(2))
+                    {
+                        <p class="text-success">Recommendation updated successfully.</p>
+                    }
                 }
             </div>
         </div>

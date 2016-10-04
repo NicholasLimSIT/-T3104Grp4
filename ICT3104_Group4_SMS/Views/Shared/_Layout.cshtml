@@ -64,13 +64,20 @@
                         </li>
 
                         <!-- Create Account -->
-                        <li class="@(ViewBag.Title=="CreateAccount"? "active" : "")">
+                        <li class="@(ViewBag.Title=="Create Account"? "active" : "")">
                             <a href="@Url.Action("CreateAccount", "Admin")">
                                 <i class="pe-7s-id"></i>
                                 <p>Create Account</p>
                             </a>
                         </li>
 
+                                                <!-- Create Account -->
+                        <li class="@(ViewBag.Title=="Admin Backup"? "active" : "")">
+                            <a href="@Url.Action("AdminBackup", "Admin")">
+                                <i class="pe-7s-copy-file"></i>
+                                <p>Admin Backup</p>
+                            </a>
+                        </li>
                     }
                     
 
