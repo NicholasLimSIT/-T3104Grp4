@@ -25,9 +25,9 @@
 
                     @Html.HiddenFor(model => model.gradeId, new { Value = ViewBag.gradeItem.Id })
                     <div class="form-group">
-                        @Html.LabelFor(model => model.recomendation, htmlAttributes: new { @class = "control-label" })
-                        @Html.TextAreaFor(model => model.recomendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
-                        @Html.ValidationMessageFor(model => model.recomendation, "", new { @class = "text-danger" })
+                        @Html.LabelFor(model => model.recommendation, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextAreaFor(model => model.recommendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
+                        @Html.ValidationMessageFor(model => model.recommendation, "", new { @class = "text-danger" })
                     </div>
                     <button type="submit" class="btn btn-default">Add Recommendation</button>
                 }

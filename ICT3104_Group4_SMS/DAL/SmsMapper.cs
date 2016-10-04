@@ -29,7 +29,7 @@ namespace ICT3104_Group4_SMS.DAL
 
             // a recommendation object to be used when no recommendation is found for that grade
             Recommendation noRec = new Recommendation();
-            noRec.recomendation = "-";
+            noRec.recommendation = "-";
 
             // mapping of grade to recommendation
             // each graderecviewmodel has a grade and a recommendation

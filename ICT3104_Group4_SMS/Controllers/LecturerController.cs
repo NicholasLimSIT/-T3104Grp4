@@ -383,7 +383,7 @@ namespace ICT3104_Group4_SMS.Controllers
         // POST: Recommendations/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recomendation")] Recommendation rec)
+        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recommendation")] Recommendation rec)
         {
             if (ModelState.IsValid)
             {
@@ -419,7 +419,7 @@ namespace ICT3104_Group4_SMS.Controllers
         // POST: Recommendations/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecommendationEdit([Bind(Include = "Id, gradeId, recomendation")] Recommendation rec)
+        public ActionResult RecommendationEdit([Bind(Include = "Id, gradeId, recommendation")] Recommendation rec)
         {
             if (ModelState.IsValid)
             {
