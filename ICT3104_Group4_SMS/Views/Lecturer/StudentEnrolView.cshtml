@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Enrol Student";
 }
-
 
 <div class="row">
     <div class="col-md-12">
+
         <div class="card">
             <div class="header">
-                <h4 class="title">Account</h4>
-                <p class="category">List of created account</p>
+                <h4 class="title">Student List</h4>
+                <p class="category">List of students that is not enroled in this module</p>
             </div>
             <div class="content table-responsive table-full-width">
                 <table class="table table-hover table-striped">
@@ -26,15 +26,13 @@
                                 @Html.DisplayNameFor(model => model.PhoneNumber)
                             </th>
                             <th></th>
-                     
-
                         </tr>
                     </thead>
-                    <tbody>
 
-                        @if (ViewBag.List != null)
+                    <tbody>
+                        @if (ViewBag.ListStudentNotInModule != null)
                         {
-                            foreach (var student in @ViewBag.List)
+                            foreach (var student in @ViewBag.ListStudentNotInModule)
                             {
                                 <tr>
                                     <td>
@@ -47,16 +45,13 @@
                                         @student[3]
                                     </td>
                                     <td>
-                                        @Html.ActionLink("Edit", "EditAccount", new { id = @student[0] })
-                                    </td>
-
+                                        <button onclick="location.href='@Url.Action("StudentEnrol", "Lecturer", new { studentId = student[0], moduleName = ViewBag.selectedEnrolModule})';return false;" class="btn btn-primary"><i class="pe-7s-rocket"></i>Enrol Student</button>              
+                                    </td>                         
                                 </tr>
                             }
                         }
-
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>

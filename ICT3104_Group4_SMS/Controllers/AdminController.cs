@@ -71,11 +71,11 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
-
+                ViewBag.createNotif = "activeFail";
                 if (result.Succeeded)
                 {
-
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    ViewBag.createNotif = "active";
                 }
 
             }
