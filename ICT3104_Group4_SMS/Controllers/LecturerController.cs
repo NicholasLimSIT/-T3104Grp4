@@ -163,6 +163,21 @@ namespace ICT3104_Group4_SMS.Controllers
 
         }
 
+        // GET: Grades
+        public ActionResult GradesView(int? id, String moduleName)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ViewBag.moduleId = id;
+            ViewBag.moduleName = moduleName;
+
+            IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
+            return View(gradeList);
+        }
+
         // GET: Programmes
         public ActionResult ProgrammeIndex()
         {
@@ -350,23 +365,25 @@ namespace ICT3104_Group4_SMS.Controllers
             return RedirectToAction("ModuleIndex");
         }
 
-        // GET: Modules/Create
-        public ActionResult RecommendationCreate()
+        // GET: Recommendations/Create
+        public ActionResult RecommendationCreate(int? id)
         {
-            ViewBag.gradeId = new SelectList(db.Grades, "Id", "Name");
+            Grade gradeItem = GradesGateway.SelectById(id);
+            ViewBag.gradeItem = gradeItem;
 
             return View();
         }
 
-        // POST: Modules/Create
+        // POST: Recommendations/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId")] Recommendation rec)
+        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recomendation")] Recommendation rec)
         {
             if (ModelState.IsValid)
             {
                 rec.lecturerId = User.Identity.GetUserId();
                 RecommendationGateway.Insert(rec);
+                TempData["Success"] = true;
                 return RedirectToAction("RecommendationCreate");
             }
 
