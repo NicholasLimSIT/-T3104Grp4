@@ -20,8 +20,11 @@ namespace ICT3104_Group4_SMS.Controllers
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<Grade> GradesGateway;
         internal IDataGateway<Recommendation> RecommendationGateway;
-        internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
+        //internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
+        private ModuleGateway ModuleGateway = new ModuleGateway();
         private Lecturer_ModuleDataGateway lmDW = new Lecturer_ModuleDataGateway();
+
+        private SmsMapper smsMapper = new SmsMapper();
 
         public LecturerController()
         {
@@ -29,7 +32,7 @@ namespace ICT3104_Group4_SMS.Controllers
             ProgrammeGateway = new ProgrammeDataGateway();
             ApplicationUserGateway = new ApplicationUserDataGateway();
             GradesGateway = new GradesGateway();
-            RecommendationGateway = new RecommendationDataGateway();
+            RecommendationGateway = new RecommendationGateway();
         }
 
         public ActionResult Index()
@@ -161,6 +164,24 @@ namespace ICT3104_Group4_SMS.Controllers
                 //return View(list);
             }
 
+        }
+
+        // GET: Grades
+        public ActionResult GradesView(int? id, String moduleName)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ViewBag.moduleId = id;
+            ViewBag.moduleName = moduleName;
+            if (moduleName == null)
+                ViewBag.moduleName = ModuleGateway.GetModuleName(id);
+
+            int id2 = id ?? default(int);
+            IEnumerable<GradeRecViewModel> gradeWithRecList = smsMapper.GradeWithRec(id2);
+            return View(gradeWithRecList);
         }
 
         // GET: Programmes
@@ -350,26 +371,63 @@ namespace ICT3104_Group4_SMS.Controllers
             return RedirectToAction("ModuleIndex");
         }
 
-        // GET: Modules/Create
-        public ActionResult RecommendationCreate()
+        // GET: Recommendations/Create
+        public ActionResult RecommendationCreate(int? id)
         {
-            ViewBag.gradeId = new SelectList(db.Grades, "Id", "Name");
-
+            Grade gradeItem = GradesGateway.SelectById(id);
+            ViewBag.gradeItem = gradeItem;
+            ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
             return View();
         }
 
-        // POST: Modules/Create
+        // POST: Recommendations/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId")] Recommendation rec)
+        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recommendation")] Recommendation rec)
         {
             if (ModelState.IsValid)
             {
                 rec.lecturerId = User.Identity.GetUserId();
                 RecommendationGateway.Insert(rec);
-                return RedirectToAction("RecommendationCreate");
+                TempData["Success"] = 1;            // for success message on recommendationedit
+                return RedirectToAction("RecommendationEdit", new { id = rec.Id, gradeId = rec.gradeId });
             }
 
+            return View(rec);
+        }
+
+        // GET: Recommendations/Edit/5
+        public ActionResult RecommendationEdit(int? id, int gradeId)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Recommendation rec = RecommendationGateway.SelectById(id);
+
+            if (rec == null)
+            {
+                return HttpNotFound();
+            }
+
+            Grade gradeItem = GradesGateway.SelectById(gradeId);
+            ViewBag.gradeItem = gradeItem;
+            ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
+            return View(rec);
+        }
+
+        // POST: Recommendations/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RecommendationEdit([Bind(Include = "Id, gradeId, recommendation")] Recommendation rec)
+        {
+            if (ModelState.IsValid)
+            {
+                rec.lecturerId = User.Identity.GetUserId();
+                RecommendationGateway.Update(rec);
+                TempData["Success"] = 2;                    // for success message on recommendationedit
+                return RedirectToAction("RecommendationEdit", new { gradeId = rec.gradeId });
+            }
             return View(rec);
         }
     }

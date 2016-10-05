@@ -64,13 +64,20 @@
                         </li>
 
                         <!-- Create Account -->
-                        <li class="@(ViewBag.Title=="CreateAccount"? "active" : "")">
+                        <li class="@(ViewBag.Title=="Create Account"? "active" : "")">
                             <a href="@Url.Action("CreateAccount", "Admin")">
                                 <i class="pe-7s-id"></i>
                                 <p>Create Account</p>
                             </a>
                         </li>
 
+                                                <!-- Create Account -->
+                        <li class="@(ViewBag.Title=="Admin Backup"? "active" : "")">
+                            <a href="@Url.Action("AdminBackup", "Admin")">
+                                <i class="pe-7s-copy-file"></i>
+                                <p>Admin Backup</p>
+                            </a>
+                        </li>
                     }
                     
 
@@ -143,14 +150,14 @@
                                 <!-- Programme Management -->
                                 <li class="@(ViewBag.Title=="Programme"? "active" : "")">
                                     <a href="@Url.Action("ProgrammeIndex", "Lecturer")">
-                                        <i class="pe-7s-paint-bucket"></i>
+                                        <i class="pe-7s-notebook"></i>
                                         <p>Programme</p>
                                     </a>
                                 </li>
                                 <!-- Module Management -->
                                 <li class="@(ViewBag.Title=="Module"? "active" : "")">
                                     <a href="@Url.Action("ModuleIndex", "Lecturer")">
-                                        <i class="pe-7s-keypad"></i>
+                                        <i class="pe-7s-ribbon"></i>
                                         <p>Module</p>
                                     </a>
                                 </li>

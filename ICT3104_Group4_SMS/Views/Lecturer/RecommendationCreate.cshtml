@@ -1,76 +1,40 @@
 ﻿@model ICT3104_Group4_SMS.Models.Recommendation
 
 @{
-    ViewBag.Title = "Add Recommendations";
+    ViewBag.Title = "Add Recommendation";
 }
-
-@*<h2>RecommendationCreate</h2>
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Recommendation</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.recomendation, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.recomendation, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.recomendation, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.lecturerId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.lecturerId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.lecturerId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.gradeId, "gradeId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("gradeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.gradeId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}*@
-
-@*<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>*@
 
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="header">
-                <h4 class="title">BASIC FORM ELEMENTS</h4>
+                <h4 class="title">Add Recommendation</h4>
             </div>
             <div class="panel-body">
-                <form>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
-                        @Html.LabelFor(model => model.gradeId, "gradeId", htmlAttributes: new { @class = "" })
-                        @Html.DropDownList("gradeId", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.gradeId, "", new { @class = "text-danger" })
+                        <label for="studentId">Student ID</label>
+                        <input type="text" class="form-control" id="studentId" value="@ViewBag.gradeItem.studentId" disabled>
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(model => model.recomendation, htmlAttributes: new { @class = "control-label" })
-                        @Html.TextAreaFor(model => model.recomendation, new { rows = 3, columns = 40, @class= "form-control", @style="resize: none;" })
-                        @Html.ValidationMessageFor(model => model.recomendation, "", new { @class = "text-danger" })
+                        <label for="score">Score</label>
+                        <input type="text" class="form-control" id="score" value="@ViewBag.gradeItem.score" disabled>
+                    </div>
+
+                    @Html.HiddenFor(model => model.gradeId, new { Value = ViewBag.gradeItem.Id })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.recommendation, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextAreaFor(model => model.recommendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
+                        @Html.ValidationMessageFor(model => model.recommendation, "", new { @class = "text-danger" })
                     </div>
                     <button type="submit" class="btn btn-default">Add Recommendation</button>
-                </form>
+                }
             </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to students list", "GradesView", "Lecturer", new { id = ViewBag.moduleId }, null)
         </div>
     </div>
 </div>

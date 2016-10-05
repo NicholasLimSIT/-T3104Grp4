@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
+
+@{
+    ViewBag.Title = "View Grades";
+}
+
+<h2>View Grades</h2>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Grades for Module @ViewBag.moduleName</h4>
+            </div>
+            <br />
+            <div class="col-md-12">
+                <button onclick="location.href='@Url.Action("GradeAssign", "Lecturer",new { id = ViewBag.moduleId })';return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Update Grades</button>
+            </div>
+            <br />
+            @if (Model.Count() == 0)
+            {
+                <p class="text-danger">
+                    There are no students taking this module.
+                </p>
+            }
+            else
+            {
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GradeItem.studentId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GradeItem.score)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RecItem.recommendation)
+                                </th>
+                                <th>
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GradeItem.studentId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GradeItem.score)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RecItem.recommendation)
+                                    </td>
+                                    <td>
+                                        @if (item.RecItem.recommendation == "-")
+                                        {
+                                            <button onclick="location.href='@Url.Action("RecommendationCreate", "Lecturer", new { id = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Add Recommendation</button>
+                                        }
+                                        else
+                                        {
+                                            <button onclick="location.href='@Url.Action("RecommendationEdit", "Lecturer", new { id = item.RecItem.Id, gradeId = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Update Recommendation</button>
+                                        }
+                                        
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+        <div>
+            @Html.ActionLink("Back to modules list", "ModuleTeach", "Lecturer", null, null)
+        </div>
+    </div>
+</div>

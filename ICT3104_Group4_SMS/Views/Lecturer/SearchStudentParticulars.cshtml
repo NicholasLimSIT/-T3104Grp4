@@ -2,19 +2,22 @@
 @{
     ViewBag.Title = "Edit Student's Particular";
 }
-
+@using (Html.BeginForm("SearchStudentParticulars", "Lecturer", FormMethod.Get))
+{
 <div class="row">
     <div class="col-md-6">
-        @using (Html.BeginForm("SearchStudentParticulars", "Lecturer", FormMethod.Get))
-        {
-            <input type="text" name="name" id="name" placeholder="Enter Student's Name" class="form-control" />
-        }
+
+
+           <input type="text" name="name" id="name" placeholder="Enter Student's Name" class="form-control" />
+        
     </div>
     <div class="col-md-2">
-        <button type="submit" class="btn btn-primary" value="Search"><i class="pe-7s-search"></i></button>
-    </div>
+       <button type="submit" class="btn btn-primary" value="Search"><i class="pe-7s-search"></i></button>
+       
     </div>
 
+    </div>
+}
     <br />
     <div class="row">
         <div class="col-md-12">
