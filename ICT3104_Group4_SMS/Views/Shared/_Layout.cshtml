@@ -136,7 +136,15 @@
                                         <i class="pe-7s-note2"></i>
                                         <p>Assign Grades</p>
                                     </a>
-                                </li>                                
+                                </li>
+                                
+                                <!-- Student Enrollment -->
+                                <li class="@(ViewBag.Title=="Student Enrolment"? "active" : "")">
+                                    <a href="@Url.Action("StudentEnrolment", "Lecturer")">
+                                        <i class="pe-7s-culture"></i>
+                                        <p>Enrolment</p>
+                                    </a>
+                                </li>                                 
                             </ul>
                         </li>
                         <!-- Course Related -->

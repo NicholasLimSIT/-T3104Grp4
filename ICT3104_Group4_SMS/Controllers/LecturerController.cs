@@ -118,7 +118,7 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            lmDW.getModuleStudent(id);
+           // lmDW.getModuleStudent(id);
             IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
             if (gradeList.Count() == 0)
             {
@@ -430,7 +430,87 @@ namespace ICT3104_Group4_SMS.Controllers
             }
             return View(rec);
         }
+
+
+        // GET: StudentEnrolment
+        public ActionResult StudentEnrolment()
+        {
+            var userID = User.Identity.GetUserId();
+            return View(lmDW.selectModuleByLecturer(userID));
+        }
+
+        // GET: Grades
+        public ActionResult StudentEnrolView(int? id, String moduleName)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ViewBag.moduleId = id;
+            ViewBag.moduleName = moduleName;
+
+            IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
+            List<string[]> studentList = ((ApplicationUserDataGateway)ApplicationUserGateway).searchAllStudent();
+            List<string[]> studentNotInModuleList = new List<string[]>();
+
+            foreach (var student in studentList)
+            {
+                bool found = false;
+                foreach (var grade in gradeList)
+                {
+                    if (student.ElementAt(0).Equals(grade.studentId))
+                    {
+                        found = true;
+                    }
+                }
+                if (found == false)
+                {
+                    studentNotInModuleList.Add(student);
+                }
+            }
+            ViewBag.ListStudentNotInModule = studentNotInModuleList;
+            ViewBag.selectedEnrolModule = moduleName;
+
+            return View();
+        }
+
+        // GET: Grades
+        public ActionResult StudentEnrol(string studentId, string moduleName)
+        {
+            if (studentId.Length != 0)
+            {
+                Grade newGrade = new Grade();
+                newGrade.studentId = studentId;
+                IEnumerable<Module> modList = ModuleGateway.SelectAll();
+
+                foreach (var i in modList)
+                {
+                    if (i.name.Equals(moduleName))
+                    {
+                        IEnumerable<Lecturer_Module> lecModList = Lecturer_ModuleGateway.SelectAll();
+                        foreach (var j in lecModList)
+                        {
+                            if (j.moduleId == i.Id)
+                            {
+                                newGrade.lecturermoduleId = j.Id;
+                            }
+                        }
+                    }
+                }
+
+                GradesGateway.Insert(newGrade);
+            }
+
+
+
+            return RedirectToAction("StudentEnrolment");
+        }
+
+
     }
-
-
 }
+
+
+
+
