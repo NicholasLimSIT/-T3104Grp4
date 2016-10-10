@@ -40,6 +40,9 @@
                                     @Html.DisplayNameFor(model => model.RecItem.recommendation)
                                 </th>
                                 <th>
+                                    @Html.DisplayNameFor(model => model.RecItem.status)
+                                </th>
+                                <th>
                                 </th>
                                 <th></th>
                             </tr>
@@ -58,6 +61,9 @@
                                         @Html.DisplayFor(modelItem => item.RecItem.recommendation)
                                     </td>
                                     <td>
+                                        @Html.DisplayFor(modelItem => item.RecItem.status)
+                                    </td>
+                                    <td>
                                         @if (item.RecItem.recommendation == "-")
                                         {
                                             <button onclick="location.href='@Url.Action("RecommendationCreate", "Lecturer", new { id = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Add Recommendation</button>
@@ -66,7 +72,6 @@
                                         {
                                             <button onclick="location.href='@Url.Action("RecommendationEdit", "Lecturer", new { id = item.RecItem.Id, gradeId = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Update Recommendation</button>
                                         }
-                                        
                                     </td>
                                 </tr>
                             }

@@ -11,13 +11,17 @@ namespace ICT3104_Group4_SMS.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Recommendation
     {
         public int Id { get; set; }
         public string recommendation { get; set; }   
         public string lecturerId { get; set; }
         public int gradeId { get; set; }
+        [DefaultValue("Pending")]
+        [DisplayName("Rec Status")]
+        public string status { get; set; }
         public virtual Grade Grade { get; set; }
     }
 }
