@@ -232,6 +232,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ArchivedRecord.cs" />
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\GradeRecViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />

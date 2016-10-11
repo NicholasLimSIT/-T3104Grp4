@@ -23,7 +23,8 @@ namespace ICT3104_Group4_SMS.Models
         public int Id { get; set; }
         public string studentId { get; set; }
         public int lecturermoduleId { get; set; }
-        public double score { get; set; }
+        public double score { get; set; } /*score out of 100*/
+        public string grade { get; set; } /*e.g A, B,C*/
 
         public virtual ICollection<Recommendation> Recommendations { get; set; }
     }
