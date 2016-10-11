@@ -339,6 +339,8 @@
     <Content Include="Views\Lecturer\StudentEnrolView.cshtml" />
     <Content Include="Views\HOD\ModerateMarkView.cshtml" />
     <Content Include="Views\HOD\ModerateMark.cshtml" />
+    <Content Include="Views\HOD\GraduateStudentsView.cshtml" />
+    <Content Include="Views\Admin\ArchivedStudentsView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

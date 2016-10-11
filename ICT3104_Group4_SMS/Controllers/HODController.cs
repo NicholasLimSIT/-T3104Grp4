@@ -45,7 +45,17 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(db.Modules.ToList());
 
         }
+        [HttpGet]
+        public ActionResult GraduateStudentsView()
+        {
+            return View(db.Users.ToList());
 
+        }
+        public ActionResult GraduateStudentsView(int id)
+        {
+            return View(db.Users.ToList());
+
+        }
         // GET: Grades
         public ActionResult ModerateMarkView(int? id, String moduleName)
         {

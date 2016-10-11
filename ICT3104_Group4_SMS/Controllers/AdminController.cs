@@ -54,7 +54,10 @@ namespace ICT3104_Group4_SMS.Controllers
             return View();
   
         }
-
+        public ActionResult ArchivedStudentsView()
+        {
+            return View();
+        }
         // GET: /Admin/CreateAccount
         public ActionResult CreateAccount()
         {
