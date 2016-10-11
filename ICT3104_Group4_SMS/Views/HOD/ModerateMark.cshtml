@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.Module>
+
+@{
+    ViewBag.Title = "Moderate Mark";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Module List</h4>
+                <p class="category">Choose which module for mark moderation</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.name)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.status)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.year)
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    Locked
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.year)
+                                </td>
+
+                                <td>
+                                    <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD",new { id = item.Id, moduleName = item.name})';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> Moderate Mark</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

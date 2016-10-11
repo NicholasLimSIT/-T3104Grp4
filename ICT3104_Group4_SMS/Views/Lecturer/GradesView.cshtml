@@ -1,10 +1,8 @@
 ﻿@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
 
 @{
-    ViewBag.Title = "View Grades";
+    ViewBag.Title = "Module details";
 }
-
-<h2>View Grades</h2>
 
 <div class="row">
     <div class="col-md-12">
@@ -80,6 +78,17 @@
                 </div>
             }
         </div>
+
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Grade Lock</h4>
+                <p class="category">Finalize grading and Lock the grade</p>
+            </div>
+            <div class="content">
+                <button class="btn btn-primary"><i class="pe-7s-pen"></i> Lock Grade</button>
+            </div>
+        </div>
+
         <div>
             @Html.ActionLink("Back to modules list", "ModuleTeach", "Lecturer", null, null)
         </div>

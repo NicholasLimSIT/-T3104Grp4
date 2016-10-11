@@ -336,6 +336,8 @@
     <Content Include="Views\Lecturer\RecommendationEdit.cshtml" />
     <Content Include="Views\Lecturer\StudentEnrolment.cshtml" />
     <Content Include="Views\Lecturer\StudentEnrolView.cshtml" />
+    <Content Include="Views\HOD\ModerateMarkView.cshtml" />
+    <Content Include="Views\HOD\ModerateMark.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -375,11 +377,12 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-         
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50453</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-       
+          <IISUrl>
+          </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

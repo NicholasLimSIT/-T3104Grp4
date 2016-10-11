@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
+
+@{
+    ViewBag.Title = "Moderate Mark View";
+}
+
+<h2>View Grades</h2>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Moderation for Module @ViewBag.moduleName</h4>
+                <p class="category">List of student's grade</p>
+            </div>
+            @if (Model.Count() == 0)
+            {
+                <p class="text-danger">
+                    There are no students taking this module.
+                </p>
+            }
+            else
+            {
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GradeItem.studentId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GradeItem.score)
+                                </th>                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GradeItem.studentId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GradeItem.score)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Setting</h4>
+            </div>     
+            <div class="content">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Moderation Percentage</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Moderation %">
+                </div>
+                <button class="btn btn-primary"><i class="pe-7s-pen"></i> Moderate Mark</button>
+                <hr>
+                <div class="header">
+                    <h4 class="title">Freeze</h4>
+                    <p class="category">Finalize moderation and freeze the mark</p>
+                </div>
+                <div class="content">
+                    <button class="btn btn-primary"><i class="pe-7s-pen"></i> Freeze Mark</button>
+                </div>
+            </div>
+        </div>
+
+            <div>
+                @Html.ActionLink("Back to modules list", "ModerateMark", "HOD", null, null)
+            </div>
+
+        </div>
+</div>
