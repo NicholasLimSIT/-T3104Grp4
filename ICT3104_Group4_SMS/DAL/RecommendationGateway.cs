@@ -14,5 +14,17 @@ namespace ICT3104_Group4_SMS.DAL
             model = data.Where(r => gradeIds.Contains(r.gradeId)).ToList();
             return model;
         }
+
+        public ICollection<Recommendation> GetPendingRecs()
+        {
+            return data.Where(r => r.status.Equals("Pending")).ToList();
+        }
+
+        public void ApproveRec(int? id)
+        {
+            Recommendation recItem = SelectById(id);
+            recItem.status = "Approved";
+            Update(recItem);
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace ICT3104_Group4_SMS.Models
     {
         public Grade GradeItem { get; set; }
         public Recommendation RecItem { get; set; }
+        public String ModuleName { get; set; }
     }
 }

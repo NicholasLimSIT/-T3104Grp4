@@ -11,6 +11,7 @@ namespace ICT3104_Group4_SMS.DAL
         private Lecturer_ModuleDataGateway lmGateway = new Lecturer_ModuleDataGateway();
         private GradesGateway gradeGateway = new GradesGateway();
         private RecommendationGateway recGateway = new RecommendationGateway();
+        private ModuleGateway modGateway = new ModuleGateway();
 
         // get grades mapped to recommendation for one module
         public ICollection<GradeRecViewModel> GradeWithRec(int moduleId)
@@ -18,7 +19,7 @@ namespace ICT3104_Group4_SMS.DAL
             ICollection<GradeRecViewModel> gradeRecList = new List<GradeRecViewModel>();
 
             // get all lecturermoduleid with the same module id
-            int[] lecModIds = lmGateway.GetLecModIdsByLecMod(moduleId);
+            int[] lecModIds = lmGateway.GetLecModIdsByModule(moduleId);
 
             // get all grades that are under this lecturermoduleid
             IEnumerable<Grade> gradeList = gradeGateway.GetGradesByLecMod(lecModIds);
@@ -49,6 +50,41 @@ namespace ICT3104_Group4_SMS.DAL
 
             // list of mapped grades and recommendation  
             return gradeRecList;
+        }
+
+        public ICollection<GradeRecViewModel> ModuleWithGradeAndRec()
+        {
+            ICollection<GradeRecViewModel> modGradeRecList = new List<GradeRecViewModel>();
+
+            IEnumerable<Recommendation> recList = recGateway.GetPendingRecs();
+            int[] gradeIds = recList.Select(rec => rec.gradeId).Distinct().ToArray();
+
+            IEnumerable<Grade> gradeList = gradeGateway.GetGradesByRec(gradeIds);
+            int[] lecModIds = gradeList.Select(grade => grade.lecturermoduleId).Distinct().ToArray();
+
+            IEnumerable<Lecturer_Module> lecmodList = lmGateway.GetLecModsFromLecModIds(lecModIds);
+            int[] moduleIds = lecmodList.Select(lm => lm.moduleId).Distinct().ToArray();
+
+            IEnumerable<Module> modList = modGateway.getModulesByIds(moduleIds);
+            
+            // mapping of grade to recommendation
+            // each graderecviewmodel has a grade and a recommendation
+            foreach (var rec in recList)
+            {
+                GradeRecViewModel tempModel = new GradeRecViewModel();
+                // select the recommendation that is for current grade 
+                Grade tempGradeItem = gradeList.Where(grade => grade.Id == rec.gradeId).Take(1).First();
+                Lecturer_Module tempLecMod = lecmodList.Where(lm => lm.Id == tempGradeItem.lecturermoduleId).Take(1).First();
+                String moduleName = modList.Where(m => m.Id == tempLecMod.moduleId).Select(m => m.name).Take(1).First();
+
+                tempModel.RecItem = rec;
+                tempModel.GradeItem = tempGradeItem;
+                tempModel.ModuleName = moduleName;
+                modGradeRecList.Add(tempModel);
+            }
+
+            // list of mapped grades and recommendation  
+            return modGradeRecList;
         }
     }
 }

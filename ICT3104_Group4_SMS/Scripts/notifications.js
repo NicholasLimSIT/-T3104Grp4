@@ -18,3 +18,18 @@ notif = {
         });
     }
 }
+
+notifSuccess = {
+    showNotification: function (from, align, message) {
+        $.notify({
+            message: message
+        }, {
+            type: type[2],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    }
+}

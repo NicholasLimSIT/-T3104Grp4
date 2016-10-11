@@ -1,0 +1,89 @@
+﻿@Scripts.Render("~/bundles/notifications")
+
+@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
+
+@{
+    ViewBag.Title = "View Recommendations";
+}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="header">
+                <h4 class="title">View recommendations by lecturers</h4>
+                <p class="category">Pending recommendations for reviewing</p>
+            </div>
+            @if (Model.Count() == 0)
+            {
+                <p class="text-danger">
+                    There are no recommendations to review.
+                </p>
+            }
+            else
+            {
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GradeItem.studentId)
+                                </th>
+                                <th>
+                                    Module Name
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GradeItem.score)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RecItem.recommendation)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RecItem.status)
+                                </th>
+                                <th>
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GradeItem.studentId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ModuleName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GradeItem.score)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RecItem.recommendation)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RecItem.status)
+                                    </td>
+                                    <td>
+                                        <button onclick="location.href='@Url.Action("RecommendationApprove", "HOD", new { id = item.RecItem.Id })';return false;" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Approve</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    if (TempData["Success"].Equals(1))
+    {
+        <script>
+            notifSuccess.showNotification("top", "center", "Recommendation Approved!");
+        </script>
+    }
+}

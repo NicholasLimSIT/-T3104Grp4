@@ -108,15 +108,21 @@ namespace ICT3104_Group4_SMS.DAL
         }
 
         // returns all lecturermoduleid with moduleId of passed in parameter
-        public int[] GetLecModIdsByLecMod(int moduleId)
+        public int[] GetLecModIdsByModule(int moduleId)
         {
             return data.Where(lm => lm.moduleId == moduleId).Select(lm => lm.Id).ToArray();
         }
-
+        
         // returns moduleid from lecturermoduleid
         public int GetModuleIdFromLecModId(int lecModId)
         {
             return data.Where(lm => lm.Id == lecModId).Select(lm => lm.moduleId).Take(1).First();
+        }
+
+        // returns moduleid from lecturermoduleid
+        public ICollection<Lecturer_Module> GetLecModsFromLecModIds(int[] lecModIds)
+        {
+            return data.Where(lm => lecModIds.Contains(lm.Id)).ToList();
         }
     }
 }

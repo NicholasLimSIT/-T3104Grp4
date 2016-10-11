@@ -67,5 +67,9 @@ namespace ICT3104_Group4_SMS.DAL
             return gradeList;
         }
 
+        internal IEnumerable<Grade> GetGradesByRec(int[] gradeIds)
+        {
+            return data.Where(g => gradeIds.Contains(g.Id)).ToList();
+        }
     }
 }

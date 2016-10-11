@@ -20,7 +20,7 @@ namespace ICT3104_Group4_SMS.Controllers
         //internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
         private ModuleGateway ModuleGateway = new ModuleGateway();
         private Lecturer_ModuleDataGateway lmDW = new Lecturer_ModuleDataGateway();
-
+        private RecommendationGateway recGateway = new RecommendationGateway();
         private SmsMapper smsMapper = new SmsMapper();
 
         public HODController()
@@ -74,5 +74,18 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(gradeWithRecList);
         }
 
+        // GET: Recommendations
+        public ActionResult RecommendationsView()
+        {
+            IEnumerable<GradeRecViewModel> moduleGradRecList = smsMapper.ModuleWithGradeAndRec();
+            return View(moduleGradRecList);
+        }
+
+        public ActionResult RecommendationApprove(int? id)
+        {
+            recGateway.ApproveRec(id);
+            TempData["Success"] = 1;
+            return RedirectToAction("RecommendationsView");
+        }
     }
 }
