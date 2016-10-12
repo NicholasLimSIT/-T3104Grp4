@@ -13,49 +13,82 @@ namespace ICT3104_Group4_SMS.DAL
         private DataGateway<Module> ModuleGateway = new DataGateway<Module>();
         public IEnumerable<String> SelectGrades(String id)
         {
+          
+            // Get publish modules id.
+            List<int> publishList = new List<int>();
+
+            IEnumerable<Module> moduleList = ModuleGateway.SelectAll();
+            foreach (var m in moduleList) {
+                if (m.status == "Published") {
+
+                    publishList.Add(m.Id);
+                }
+
+            }
+
+            // Select lm id for published module id
+            List<int> lmList = new List<int>();
+            IEnumerable<Lecturer_Module> lmEm = LMGateway.SelectAll();
+            foreach (var lm in lmEm) {
+                if (publishList.Contains(lm.moduleId)) {
+                    lmList.Add(lm.Id);
+                }
+            }
+
+            // Get student grade
+            List<Grade> gradeList = new List<Grade>();
+            
             var model = from grade in db.Grades
                         where grade.studentId == id
                         select grade;
-            List<Grade> gradeList = model.ToList();
+            gradeList = model.ToList();
 
-            //get the module id in lecturer_module table
-            List<Lecturer_Module> LMList = new List<Lecturer_Module>();
-            foreach (var grade in gradeList)
-            {
+            // Get student published grade
+            List<Grade> pgradeList = new List<Grade>();
+            foreach (var g in gradeList) {
 
-                LMList.Add(LMGateway.SelectById(grade.lecturermoduleId));
+                if (lmList.Contains(g.lecturermoduleId)) {
+                    pgradeList.Add(g);
+                }
             }
 
-            // get the module detail id in module table
-            List<Module> moduleList = new List<Module>();
-            foreach (var lm in LMList)
-            {
-                moduleList.Add(ModuleGateway.SelectById(lm.moduleId));
+            // Get publish module name
+            List<String> pModuleNameList = new List<string>(); 
+            foreach (var pm in publishList) {
 
+                pModuleNameList.Add(ModuleGateway.SelectById(pm).name);
             }
 
-            // get list of module name
-            List<String> moduleNameList = new List<String>();
-            foreach (var ml in moduleList)
-            {
-                moduleNameList.Add(ml.name);
-            }
-            
-
+            //Convert publish grade to String (A+ , A- etc)
             List<String> scoreList = new List<string>();
-            foreach (var gl in gradeList) {
-                string score = Convert.ToString(gl.score);
+            foreach (var gl in pgradeList)
+            {
+                string score = "-";
+                if (gl.score > 100.0)
+                { score = "Error"; }
+                else if (gl.score > 85.0)
+                { score = "A+"; }
+                else if (gl.score > 80.0)
+                { score = "A"; }
+                else if(gl.score > 75.0)
+                { score = "B+"; }
+                else if (gl.score > 70.0)
+                { score = "B"; }
+                else if (gl.score > 50.0)
+                { score = "C+"; }
+                else if (gl.score > 30.0)
+                { score = "C"; }
+                else
+                { score = "F"; }
+            
                 scoreList.Add(score);
             }
-
-
             //put the grade and module name together.
             List<String> gradeNameList = new List<String>();
             for (int i = 0; i < scoreList.Count(); i++)
             {
-                gradeNameList.Add(moduleNameList[i] + "," +scoreList[i]);
+                gradeNameList.Add(pModuleNameList[i] + "," + scoreList[i]);
             }
-
             return gradeNameList;
         }
 
