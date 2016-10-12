@@ -72,13 +72,17 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             if (ModelState.IsValid)
             {
+                ViewBag.createNotif = "not-active";
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
-
+                    ViewBag.createNotif = "activeSuccess";
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                }
+                else {
+                    ViewBag.createNotif = "activeFail";
                 }
 
             }
