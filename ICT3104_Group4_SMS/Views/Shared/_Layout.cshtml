@@ -70,8 +70,14 @@
                                 <p>Create Account</p>
                             </a>
                         </li>
-
-                                                <!-- Create Account -->
+                        <!-- achived -->
+                        <li class="@(ViewBag.Title=="Archived Students"? "active" : "")">
+                            <a href="@Url.Action("ArchivedStudentsView", "Admin")">
+                                <i class="pe-7s-copy-file"></i>
+                                <p>Archived Students</p>
+                            </a>
+                        </li>
+                                                <!-- Back-up -->
                         <li class="@(ViewBag.Title=="Admin Backup"? "active" : "")">
                             <a href="@Url.Action("AdminBackup", "Admin")">
                                 <i class="pe-7s-copy-file"></i>
@@ -195,6 +201,12 @@
                             <a href="@Url.Action("RecommendationsView", "HOD")">
                                 <i class="pe-7s-note"></i>
                                 <p>View Recommendations</p>
+                            </a>
+                        </li>
+                        <li class="@(ViewBag.Title=="Authorize Graduation"? "active" : "")">
+                            <a href="@Url.Action("GraduateStudentsView", "HOD")">
+                                <i class="pe-7s-note"></i>
+                                <p>Authorize Graduation</p>
                             </a>
                         </li>
 
