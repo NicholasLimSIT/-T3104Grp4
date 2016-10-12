@@ -67,7 +67,11 @@
                     <p class="category">Finalize moderation and freeze the mark</p>
                 </div>
                 <div class="content">
-                    <button class="btn btn-primary"><i class="pe-7s-pen"></i> Freeze Mark</button>
+                @using (Html.BeginForm("FreezeGrade", "HOD", FormMethod.Post))
+                {
+                    @Html.Hidden("moduleId", (string)(ViewBag.moduleId.ToString()))
+                    <button class="btn btn-primary" type="submit"><i class="pe-7s-pen"></i> Freeze Mark</button>
+                }
                 </div>
             </div>
         </div>

@@ -87,5 +87,37 @@ namespace ICT3104_Group4_SMS.Controllers
             TempData["Success"] = 1;
             return RedirectToAction("RecommendationsView");
         }
+
+        [HttpPost]
+        public ActionResult FreezeGrade(String moduleId) {
+            
+            int? modId = Convert.ToInt32(moduleId);
+            Module module = ModuleGateway.SelectById(modId);
+            module.status = "Freeze";
+            module.frozenDateTime = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                ModuleGateway.Update(module);
+                return RedirectToAction("ModerateMark");
+            }
+            return RedirectToAction("Index");
+
+        }
+
+        // GET: Grades
+        public ActionResult PublishGrade(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Module module = ModuleGateway.SelectById(id);
+            module.status = "Published";
+            module.publishDateTime = DateTime.Now;
+            ModuleGateway.Update(module);
+            return RedirectToAction("ModerateMark");
+        }
+
     }
 }

@@ -39,16 +39,35 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.name)
                                 </td>
-                                <td>
-                                    Locked
-                                </td>
+                             
+                                    @if (item.status != null)
+                                    {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.status) </td>
+                                        }
+                                        else
+                                        {
+                                        <td>Locked</td>
+       
+                                        }
+  
                                 <td>
                                     @Html.DisplayFor(modelItem => item.year)
                                 </td>
+                                @if (item.status == "Freeze")
+                                {
 
+                                    <td>
+                                        <button onclick="location.href='@Url.Action("PublishGrade", "HOD", new { id = item.Id })';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> Publish</button>
+                                    </td>
+                                }
+                                else if (item.status == "Published") { <td></td>}
+                                else
+                                {
                                 <td>
-                                    <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD",new { id = item.Id, moduleName = item.name})';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> Moderate Mark</button>
+                                    <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD", new { id = item.Id, moduleName = item.name })';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> Moderate Mark</button>
                                 </td>
+                                }
                             </tr>
                         }
                     </tbody>
