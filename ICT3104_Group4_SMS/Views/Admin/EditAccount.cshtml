@@ -1,80 +1,65 @@
-﻿@model ICT3104_Group4_SMS.Models.RegisterViewModel
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
 @{
     ViewBag.Title = "EditAccount";
 }
 
+@using (Html.BeginForm("SearchAccountParticulars", "Admin", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col-md-5">
+            <input type="text" name="name" placeholder="Enter Account's Name" class="form-control" />
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary" value="Search"><i class="pe-7s-search"></i></button>
+        </div>
+    </div>
 
+    <br />
 
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Student Management System</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
 
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    <div style="margin-top: 7em">
-        <h2 style="text-align: center;">Create an Account</h2>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="card">
-
-                    <div class="panel-body">
-                        @using (Html.BeginForm("CreateAccount", "Admin", FormMethod.Post, new { @class = "", role = "form" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            @Html.ValidationSummary("", new { @class = "text-danger" })
-
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group">
-                                <label>Select Role</label>
-                                    @Html.DropDownListFor(m => m.UserRole, new SelectList(new List<Object>{
-                       new { value = "Admin" , text = "Admin"  },
-                       new { value = "Lecturer" , text = "Lecturer" },
-                       new { value = "HOD" , text = "Head of Department"},
-                       new { value = "Student" , text = "Student"}
-                       },
-                       "value","text",3),
-                       new { @class = "form-control" })
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-offset-5 col-md-2">
-                                    <input type="submit" class="btn btn-default" value="Create" />
-                                </div>
-                            </div>
-                        }
-                    </div>
+                <div class="header">
+                    <h4 class="title">Search Results</h4>
+                    <p class="category">List of Accounts</p>
                 </div>
 
+                
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                            
+                            <th>@Html.DisplayNameFor(model => model.Email)</th>
+                            
+                            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                            
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody>
+                        @if (ViewBag.List != null)
+                        {
+                            foreach (var users in @ViewBag.List)
+                            {
+                                <tr>
+                                    <td>@users[1]</td>
+                                    
+                                    <td>@users[2]</td>
+                                    
+                                    <td>@users[3]</td>
+                                </tr>
+  
+                            }
+                        }
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-
-
         </div>
-
     </div>
-</body>
-</html>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

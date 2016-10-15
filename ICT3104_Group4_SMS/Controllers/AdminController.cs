@@ -91,6 +91,16 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public ActionResult SearchAccountParticulars(string name)
+        {
+            if (name != null)
+            {
+                ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchUsers();
+            }
+            return View();
+        }
+
         // GET: /Admin/EditAccount
         public ActionResult EditAccount()
         {

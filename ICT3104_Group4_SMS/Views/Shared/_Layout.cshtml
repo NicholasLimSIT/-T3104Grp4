@@ -63,13 +63,36 @@
                             </a>
                         </li>
 
-                        <!-- Create Account -->
-                        <li class="@(ViewBag.Title=="Create Account"? "active" : "")">
-                            <a href="@Url.Action("CreateAccount", "Admin")">
-                                <i class="pe-7s-id"></i>
-                                <p>Create Account</p>
+                        <li>
+                            <a href="#collapsed-menu1" data-toggle="collapse" class="" aria-expanded="true">
+                                <i class="pe-7s-users"></i>
+                                <p>Account Related</p>
                             </a>
+
+                            <ul class="nav collapsed-menu collapse" id="collapsed-menu1" aria-expanded="true">
+                                
+                                <!-- Create Account -->
+                                <li class="@(ViewBag.Title=="Create Account"? "active" : "")">
+                                    <a href="@Url.Action("CreateAccount", "Admin")">
+                                        <i class="pe-7s-id"></i>
+                                        <p>Create Account</p>
+                                    </a>
+                                </li>
+                                
+                                <!-- Edit Account -->
+                                <li class="@(ViewBag.Title=="Create Account"? "active" : "")">
+                                    <a href="@Url.Action("SearchAccountParticulars", "Admin")">
+                                        <i class="pe-7s-id"></i>
+                                        <p>Edit Account</p>
+                                    </a>
+                                </li>
+
+
+                                
+                            </ul>
                         </li>
+
+
                         <!-- achived -->
                         <li class="@(ViewBag.Title=="Archived Students"? "active" : "")">
                             <a href="@Url.Action("ArchivedStudentsView", "Admin")">
@@ -85,7 +108,7 @@
                             </a>
                         </li>
                     }
-                    
+
 
                     <!---------- Student ---------->
                     @if (User.IsInRole("Student"))
@@ -143,14 +166,14 @@
                                         <p>Assign Grades</p>
                                     </a>
                                 </li>
-                                
+
                                 <!-- Student Enrollment -->
                                 <li class="@(ViewBag.Title=="Student Enrolment"? "active" : "")">
                                     <a href="@Url.Action("StudentEnrolment", "Lecturer")">
                                         <i class="pe-7s-culture"></i>
                                         <p>Enrolment</p>
                                     </a>
-                                </li>                                 
+                                </li>
                             </ul>
                         </li>
                         <!-- Course Related -->
@@ -179,7 +202,7 @@
                         </li>
                     }
 
-                    
+
 
                     <!---------- H  O  D ---------->
                     @if (User.IsInRole("HOD"))
@@ -212,74 +235,73 @@
 
                     }
 
-                    
-                    
-                    
-                    <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
 
+
+
+                    <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
                     <!---------- ===== ===== ===== ===== ===== ===== ===== Nobody ===== ===== ===== ===== ===== ===== ===== ---------->
 
                     @if (!User.IsInRole("Admin") && !(User.IsInRole("HOD")) && !User.IsInRole("Student") && !User.IsInRole("Lecturer"))
                     {
-                    <li>
-                        <hr />
-                        <a href="#collapsed-menu" data-toggle="collapse" class="" aria-expanded="true">
-                            <i class="pe-7s-paint"></i>
-                            <p>UI Related</p>
-                        </a>
-                        <ul class="nav collapsed-menu collapse" id="collapsed-menu" aria-expanded="true">
-                            <li class="@(ViewBag.Title=="UI Elements"? "active" : "")">
-                                <a href="@Url.Action("UiElements", "Ui")">
-                                    <i class="pe-7s-paint-bucket"></i>
-                                    <p>UI Elements</p>
-                                </a>
-                            </li>
-                            <li class="@(ViewBag.Title=="Grids"? "active" : "")">
-                                <a href="@Url.Action("Grids", "Ui")">
-                                    <i class="pe-7s-keypad"></i>
-                                    <p>Grids</p>
-                                </a>
-                            </li>
-                            <li class="@(ViewBag.Title=="Forms"? "active" : "")">
-                                <a href="@Url.Action("Forms", "Ui")">
-                                    <i class="pe-7s-copy-file"></i>
-                                    <p>Forms</p>
-                                </a>
-                            </li>
-                            <li class="@(ViewBag.Title=="Typography"? "active" : "")">
-                                <a href="@Url.Action("Typography", "Ui")">
-                                    <i class="pe-7s-pen"></i>
-                                    <p>Typography</p>
-                                </a>
-                            </li>
-                            <li class="@(ViewBag.Title=="Icons"? "active" : "")">
-                                <a href="@Url.Action("Icons", "Ui")">
-                                    <i class="pe-7s-magic-wand"></i>
-                                    <p>Icons</p>
-                                </a>
-                            </li>
-                            <li class="@(ViewBag.Title=="Tables"? "active" : "")">
-                                <a href="@Url.Action("Tables", "Ui")">
-                                    <i class="pe-7s-menu"></i>
-                                    <p>Tables</p>
-                                </a>
-                            </li>
-                            <li class="@(ViewBag.Title=="Notifications"? "active" : "")">
-                                <a href="@Url.Action("Notifications", "Ui")">
-                                    <i class="pe-7s-bell"></i>
-                                    <p>Notifications</p>
-                                </a>
-                            </li>
-                            <li class="@(ViewBag.Title=="Sample Dashboard"? "active" : "")">
-                                <a href="@Url.Action("Dashboard", "Ui")">
-                                    <i class="pe-7s-display2"></i>
-                                    <p>Sample Dashboard</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li>
+                            <hr />
+                            <a href="#collapsed-menu" data-toggle="collapse" class="" aria-expanded="true">
+                                <i class="pe-7s-paint"></i>
+                                <p>UI Related</p>
+                            </a>
+                            <ul class="nav collapsed-menu collapse" id="collapsed-menu" aria-expanded="true">
+                                <li class="@(ViewBag.Title=="UI Elements"? "active" : "")">
+                                    <a href="@Url.Action("UiElements", "Ui")">
+                                        <i class="pe-7s-paint-bucket"></i>
+                                        <p>UI Elements</p>
+                                    </a>
+                                </li>
+                                <li class="@(ViewBag.Title=="Grids"? "active" : "")">
+                                    <a href="@Url.Action("Grids", "Ui")">
+                                        <i class="pe-7s-keypad"></i>
+                                        <p>Grids</p>
+                                    </a>
+                                </li>
+                                <li class="@(ViewBag.Title=="Forms"? "active" : "")">
+                                    <a href="@Url.Action("Forms", "Ui")">
+                                        <i class="pe-7s-copy-file"></i>
+                                        <p>Forms</p>
+                                    </a>
+                                </li>
+                                <li class="@(ViewBag.Title=="Typography"? "active" : "")">
+                                    <a href="@Url.Action("Typography", "Ui")">
+                                        <i class="pe-7s-pen"></i>
+                                        <p>Typography</p>
+                                    </a>
+                                </li>
+                                <li class="@(ViewBag.Title=="Icons"? "active" : "")">
+                                    <a href="@Url.Action("Icons", "Ui")">
+                                        <i class="pe-7s-magic-wand"></i>
+                                        <p>Icons</p>
+                                    </a>
+                                </li>
+                                <li class="@(ViewBag.Title=="Tables"? "active" : "")">
+                                    <a href="@Url.Action("Tables", "Ui")">
+                                        <i class="pe-7s-menu"></i>
+                                        <p>Tables</p>
+                                    </a>
+                                </li>
+                                <li class="@(ViewBag.Title=="Notifications"? "active" : "")">
+                                    <a href="@Url.Action("Notifications", "Ui")">
+                                        <i class="pe-7s-bell"></i>
+                                        <p>Notifications</p>
+                                    </a>
+                                </li>
+                                <li class="@(ViewBag.Title=="Sample Dashboard"? "active" : "")">
+                                    <a href="@Url.Action("Dashboard", "Ui")">
+                                        <i class="pe-7s-display2"></i>
+                                        <p>Sample Dashboard</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     }
-                   
+
                     <!---------- ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ---------->
 
                 </ul>
