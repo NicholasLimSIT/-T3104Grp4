@@ -10,6 +10,9 @@ namespace ICT3104_Group4_SMS.DAL
     public class ApplicationUserDataGateway : DataGateway<ApplicationUser>
     {
         IEnumerable<ApplicationUser> users;
+
+        string[] rolesArray = { "Admin", "Student", "Lecturer", "HOD" };
+        
        
        
 
@@ -18,18 +21,50 @@ namespace ICT3104_Group4_SMS.DAL
             this.data = db.Set<ApplicationUser>();
         }
 
+
+        //Function to Single Search and specific Role?
+        public List<string[]> searchSpecficUser(string name)
+        {
+            if (name.Length > 5)
+            {
+                name = name.Substring(0, 3);
+            }
+
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            List<string[]> UserList;
+            UserList = new List<string[]>();
+
+            var context = new SmsContext();
+            users = data.SqlQuery("SELECT * FROM dbo.AspNetUsers WHERE userName LIKE '%" + name + "%'").ToList();
+
+            foreach( var item in users)
+            {
+                for(int i = 0; i <= rolesArray.Length-1; i++)
+                {
+                    bool role = UserManager.IsInRole(item.Id, rolesArray[i]);
+                    if (role)
+                    {
+                        string[] listString = new string[5];
+                        listString[0] = item.Id.ToString();
+                        listString[1] = item.UserName;
+                        listString[2] = item.Email;
+                        listString[3] = item.PhoneNumber;
+                        listString[4] = rolesArray[i];
+                        UserList.Add(listString);
+                    }
+                }
+            }
+            return UserList;
+
+
+        }
+
         //Function to return all users
         public List<string[]> searchUsers()
         {
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             List<string[]> UserList;
-            UserList = new List<string[]>();
-            string[] rolesArray = new string[4];
-            rolesArray[0] = "Admin";
-            rolesArray[1] = "Student";
-            rolesArray[2] = "Lecturer";
-            rolesArray[3] = "HOD";
-            
+            UserList = new List<string[]>();            
             
             var context = new SmsContext();
             users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();

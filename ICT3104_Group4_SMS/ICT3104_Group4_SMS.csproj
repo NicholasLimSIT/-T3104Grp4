@@ -343,6 +343,7 @@
     <Content Include="Views\Admin\ArchivedStudentsView.cshtml" />
     <Content Include="Views\HOD\RecommendationsView.cshtml" />
     <Content Include="Views\Admin\SearchAccountParticulars.cshtml" />
+    <Content Include="Views\Admin\DeleteAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

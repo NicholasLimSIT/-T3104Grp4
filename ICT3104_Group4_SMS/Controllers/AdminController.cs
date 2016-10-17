@@ -2,6 +2,7 @@
 using ICT3104_Group4_SMS.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -96,27 +98,134 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             if (name != null)
             {
+                ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchSpecficUser(name);
+            }
+            else
+            {
                 ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchUsers();
             }
             return View();
         }
 
+
+
         // GET: /Admin/EditAccount
-        public ActionResult EditAccount()
+        public ActionResult EditAccount(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            if (Applicationuser == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Applicationuser);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditAccount([Bind(Include = "Id,UserName,Email,PhoneNumber")] Models.ApplicationUser Applicationuser)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(Applicationuser).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("SearchAccountParticulars");
+            }
+            return View(Applicationuser);
         }
 
         // GET: /Admin/DeleteAccount
-        public ActionResult DeleteAccount()
+        public ActionResult DeleteAccount(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            if (Applicationuser == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Applicationuser);
         }
+
+        [HttpPost, ActionName("DeleteAccount")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(string id)
+        {
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            db.Users.Remove(Applicationuser);
+            db.SaveChanges();
+            return RedirectToAction("SearchAccountParticulars");
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         // GET: /Admin/BackupAccount
         public ActionResult AdminBackup()
         {
             return View();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public ActionResult DeleteStudent(string id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Models.ApplicationUser Applicationuser = db.Users.Find(id);
+        //    if (Applicationuser == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(Applicationuser);
+        //}
+
+        //[HttpPost, ActionName("DeleteStudent")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(string id)
+        //{
+        //    Models.ApplicationUser Applicationuser = db.Users.Find(id);
+        //    db.Users.Remove(Applicationuser);
+        //    db.SaveChanges();
+        //    return RedirectToAction("SearchStudentParticulars");
+        //}
     }
 }
