@@ -26,5 +26,12 @@ namespace ICT3104_Group4_SMS.DAL
             recItem.status = "Approved";
             Update(recItem);
         }
+
+        public void RejectRec(int? id)
+        {
+            Recommendation recItem = SelectById(id);
+            recItem.status = "Rejected";
+            Update(recItem);
+        }
     }
 }

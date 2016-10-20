@@ -84,7 +84,14 @@ namespace ICT3104_Group4_SMS.Controllers
         public ActionResult RecommendationApprove(int? id)
         {
             recGateway.ApproveRec(id);
-            TempData["Success"] = 1;
+            TempData["Reviewed"] = 1;
+            return RedirectToAction("RecommendationsView");
+        }
+
+        public ActionResult RecommendationReject(int? id)
+        {
+            recGateway.RejectRec(id);
+            TempData["Reviewed"] = 2;
             return RedirectToAction("RecommendationsView");
         }
 

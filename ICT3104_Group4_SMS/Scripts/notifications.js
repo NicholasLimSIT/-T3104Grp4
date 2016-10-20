@@ -39,15 +39,30 @@ notifCreateAccountFail = {
 }
 
 notifSuccess = {
-    showNotification: function (from, align, message) {
+    showNotification: function (message) {
         $.notify({
             message: message
         }, {
             type: type[2],
             timer: 4000,
             placement: {
-                from: from,
-                align: align
+                from: "top",
+                align: "center"
+            }
+        });
+    }
+}
+
+notifInfo = {
+    showNotification: function (message) {
+        $.notify({
+            message: message
+        }, {
+            type: type[1],
+            timer: 4000,
+            placement: {
+                from: "top",
+                align: "center"
             }
         });
     }
