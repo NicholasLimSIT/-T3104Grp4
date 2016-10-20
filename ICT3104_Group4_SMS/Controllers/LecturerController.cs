@@ -147,22 +147,6 @@ namespace ICT3104_Group4_SMS.Controllers
                     {
                         c.lecturermoduleId = i.lecturermoduleId;
                         c.score = i.score;
-                        if (c.score > 100.0)
-                        { c.grade = "Error"; }
-                        else if (c.score >= 85.0)
-                        { c.grade = "A+"; }
-                        else if (c.score >= 80.0)
-                        { c.grade = "A"; }
-                        else if (c.score >= 75.0)
-                        { c.grade = "B+"; }
-                        else if (c.score >= 70.0)
-                        { c.grade = "B"; }
-                        else if (c.score >= 50.0)
-                        { c.grade = "C+"; }
-                        else if (c.score >= 30.0)
-                        { c.grade = "C"; }
-                        else
-                        { c.grade = "F"; }
                         c.studentId = i.studentId;
                     }
 

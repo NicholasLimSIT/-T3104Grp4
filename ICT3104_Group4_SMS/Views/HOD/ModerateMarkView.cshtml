@@ -31,7 +31,14 @@
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.GradeItem.score)
-                                </th>                            
+                                </th>
+                                
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GradeItem.grade)
+                                </th>
+                                
+
+
                             </tr>
                         </thead>
                         <tbody>
@@ -44,6 +51,26 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.GradeItem.score)
                                     </td>
+                                    <td>
+                                        @if (item.GradeItem.score > 100.0)
+                                        { @Html.Raw("Error") }
+                                        else if (item.GradeItem.score >= 85.0)
+                                        { @Html.Raw("A+") }
+                                        else if (item.GradeItem.score >= 80.0)
+                                        { @Html.Raw("A")  }
+                                        else if (item.GradeItem.score >= 75.0)
+                                        { @Html.Raw("B+") }
+                                        else if (item.GradeItem.score >= 70.0)
+                                        { @Html.Raw("B")  }
+                                        else if (item.GradeItem.score >= 50.0)
+                                        { @Html.Raw("C+") }
+                                        else if (item.GradeItem.score >= 30.0)
+                                        { @Html.Raw("C")  }
+                                        else
+                                        { @Html.Raw("F")  }
+                                        
+                                    </td>
+
                                 </tr>
                             }
                         </tbody>
