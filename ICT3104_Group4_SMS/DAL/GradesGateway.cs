@@ -11,6 +11,8 @@ namespace ICT3104_Group4_SMS.DAL
     {
         private DataGateway<Lecturer_Module> LMGateway = new DataGateway<Lecturer_Module>();
         private DataGateway<Module> ModuleGateway = new DataGateway<Module>();
+
+
         public IEnumerable<String> SelectGrades(String id)
         {
           
@@ -20,7 +22,6 @@ namespace ICT3104_Group4_SMS.DAL
             IEnumerable<Module> moduleList = ModuleGateway.SelectAll();
             foreach (var m in moduleList) {
                 if (m.status == "Published") {
-
                     publishList.Add(m.Id);
                 }
 
@@ -104,5 +105,7 @@ namespace ICT3104_Group4_SMS.DAL
         {
             return data.Where(g => gradeIds.Contains(g.Id)).ToList();
         }
+
+
     }
 }

@@ -22,12 +22,13 @@
 
                     <tbody>
 
-                        @foreach (var item in @ViewBag.ModuleGrades)
+                        @foreach (var item in @ViewBag.ModulesGrades)
                         {
+                            string[] tokens = @item.Split(',');
                             <tr>
-                                <td>@item.ModuleName</td>
-
-                                <td>@item.GradeItem.grade</td>
+                                <td>@item[0]</td>
+                                
+                                <td>@item[1]</td>
 
                                 
                             </tr>

@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ICT3104_Group4_SMS.DAL;
+using ICT3104_Group4_SMS.Models;
 using Microsoft.AspNet.Identity;
 
 namespace ICT3104_Group4_SMS.Controllers
@@ -22,8 +24,9 @@ namespace ICT3104_Group4_SMS.Controllers
         public ActionResult ViewGrade()
         {
             var userID = User.Identity.GetUserId();
-            ViewBag.ModuleGrades = ggw.SelectGrades(userID);
-          
+            ViewBag.ModulesGrades = ggw.SelectGrades(userID);
+
+
             return View();
         }
     }
