@@ -180,6 +180,8 @@ namespace ICT3104_Group4_SMS.Controllers
             if (moduleName == null)
                 ViewBag.moduleName = ModuleGateway.GetModuleName(id);
 
+            ViewBag.moduleStatus = ModuleGateway.GetModuleStatus(id);
+
             int id2 = id ?? default(int);
             IEnumerable<GradeRecViewModel> gradeWithRecList = smsMapper.GradeWithRec(id2);
             return View(gradeWithRecList);

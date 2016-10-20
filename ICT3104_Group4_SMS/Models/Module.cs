@@ -24,7 +24,7 @@ namespace ICT3104_Group4_SMS.Models
         public int Id { get; set; }
         [Display(Name = "Module Name")]
         public string name { get; set; }
-        [DefaultValue(0)]
+        [DefaultValue("Created")]
         public string status { get; set; }
         public Nullable<System.DateTime> frozenDateTime { get; set; }
         public Nullable<System.DateTime> publishDateTime { get; set; }
