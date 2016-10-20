@@ -344,10 +344,11 @@
     <Content Include="Views\HOD\RecommendationsView.cshtml" />
     <Content Include="Views\Admin\SearchAccountParticulars.cshtml" />
     <Content Include="Views\Admin\DeleteAccount.cshtml" />
+    <Content Include="Views\Shared\GradePage.cshtml" />
+    <Content Include="Views\Student\ViewGrade.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Student\" />
     <Folder Include="Views\Ui\" />
   </ItemGroup>
   <ItemGroup>

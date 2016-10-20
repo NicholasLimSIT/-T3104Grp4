@@ -37,9 +37,9 @@ namespace ICT3104_Group4_SMS.Controllers
 
         public ActionResult Index()
         {
-           
             return View();
         }
+
         [HttpGet]
         public ActionResult SearchStudentParticulars(string name)
         {
@@ -81,6 +81,7 @@ namespace ICT3104_Group4_SMS.Controllers
             }
             return View(Applicationuser);
         }
+
         public ActionResult DeleteStudent(string id)
         {
             if (id == null)
@@ -107,7 +108,6 @@ namespace ICT3104_Group4_SMS.Controllers
 
         public ActionResult ModuleTeach()
         {
-
             var userID = User.Identity.GetUserId();
             return View(lmDW.selectModuleByLecturer(userID));
         }
@@ -132,6 +132,7 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(gradeList);
 
         }
+
         [HttpPost]
         public ActionResult GradeAssign(List<Grade> list, string moduleId)
         {
@@ -146,6 +147,22 @@ namespace ICT3104_Group4_SMS.Controllers
                     {
                         c.lecturermoduleId = i.lecturermoduleId;
                         c.score = i.score;
+                        if (c.score > 100.0)
+                        { c.grade = "Error"; }
+                        else if (c.score >= 85.0)
+                        { c.grade = "A+"; }
+                        else if (c.score >= 80.0)
+                        { c.grade = "A"; }
+                        else if (c.score >= 75.0)
+                        { c.grade = "B+"; }
+                        else if (c.score >= 70.0)
+                        { c.grade = "B"; }
+                        else if (c.score >= 50.0)
+                        { c.grade = "C+"; }
+                        else if (c.score >= 30.0)
+                        { c.grade = "C"; }
+                        else
+                        { c.grade = "F"; }
                         c.studentId = i.studentId;
                     }
 

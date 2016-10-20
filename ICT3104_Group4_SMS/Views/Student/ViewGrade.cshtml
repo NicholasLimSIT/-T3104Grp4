@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
 @{
     ViewBag.Title = "ViewGrade";
 }
@@ -6,35 +6,43 @@
 <h2>ViewGrade</h2>
 
 <div class="row">
-<div class="col-md-12">
-    <div class="card">
-
-        <div class="content table-responsive table-full-width">
-            <table class="table table-hover">
-                <thead>
+    <div class="col-md-12">
+        
+        <div class="card">
+            
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
                     <tr>
-                        <th>Module</th>
-                        <th>Grade</th>
-
+                        <th>@Html.DisplayNameFor(model => model.ModuleName)</th>
+                        
+                        <th>@Html.DisplayNameFor(model => model.GradeItem.grade)</th>
                     </tr>
-                </thead>
-                <tbody>
-                    
-                    @foreach (var mg in ViewBag.ModuleGrades) {
-                    string[] tokens = @mg.Split(',');
-                    <tr>
-                        <td>
-                            @tokens[0]
-                        </td>
-                        <td>
-                            @tokens[1]
-                        </td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
 
+                    <tbody>
+
+                        @foreach (var item in @ViewBag.ModuleGrades)
+                        {
+                            <tr>
+                                <td>@item.ModuleName</td>
+
+                                <td>@item.GradeItem.grade</td>
+
+                                
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
         </div>
+        
+        
+        
+
     </div>
-</div>
+    
+
 </div>

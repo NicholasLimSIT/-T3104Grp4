@@ -32,8 +32,10 @@
                                     @Html.DisplayNameFor(model => model.GradeItem.studentId)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.GradeItem.score)
+                                    @Html.DisplayNameFor(model => model.GradeItem.score) 
                                 </th>
+                                
+                                <th>@Html.DisplayNameFor(model => model.GradeItem.grade)</th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.RecItem.recommendation)
                                 </th>
@@ -55,6 +57,8 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.GradeItem.score)
                                     </td>
+                                    
+                                    <td>@Html.DisplayFor(modelItem => item.GradeItem.grade)</td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RecItem.recommendation)
                                     </td>
