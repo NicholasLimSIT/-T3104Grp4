@@ -44,18 +44,28 @@ namespace ICT3104_Group4_SMS.DAL
                         select grade;
             gradeList = model.ToList();
 
-            // Get student published grade
             List<Grade> pgradeList = new List<Grade>();
-            foreach (var g in gradeList) {
+            List<int> lmIDList = new List<int>();
+            foreach (var g in gradeList)
+            {
 
-                if (lmList.Contains(g.lecturermoduleId)) {
+                if (lmList.Contains(g.lecturermoduleId))
+                {
                     pgradeList.Add(g);
+                    lmIDList.Add(g.lecturermoduleId);
                 }
+            }
+            //Get the module from the lecturer_module id
+            List<int> studModList = new List<int>();
+            foreach (var l in lmIDList)
+            {
+                studModList.Add(LMGateway.SelectById(l).moduleId);
             }
 
             // Get publish module name
-            List<String> pModuleNameList = new List<string>(); 
-            foreach (var pm in publishList) {
+            List<String> pModuleNameList = new List<string>();
+            foreach (var pm in studModList)
+            {
 
                 pModuleNameList.Add(ModuleGateway.SelectById(pm).name);
             }
