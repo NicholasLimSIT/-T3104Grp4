@@ -75,13 +75,16 @@ namespace ICT3104_Group4_SMS.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.createNotif = "not-active";
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                // get the index of @ of the email to remove
+                int index = model.Email.IndexOf("@");              
+                var user = new ApplicationUser { UserName = model.Email.Substring(0, index), Email = model.Email,year = DateTime.Now.Year.ToString() };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
                     ViewBag.createNotif = "activeSuccess";
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    
                 }
                 else {
                     ViewBag.createNotif = "activeFail";
