@@ -22,6 +22,7 @@ namespace ICT3104_Group4_SMS.Controllers
         private Lecturer_ModuleDataGateway lmDW = new Lecturer_ModuleDataGateway();
         private RecommendationGateway recGateway = new RecommendationGateway();
         private SmsMapper smsMapper = new SmsMapper();
+       
 
         public HODController()
         {
@@ -48,13 +49,13 @@ namespace ICT3104_Group4_SMS.Controllers
         [HttpGet]
         public ActionResult GraduateStudentsView()
         {
-            return View(db.Users.ToList());
+            return View(((ApplicationUserDataGateway)ApplicationUserGateway).GetGraduates());
 
         }
-        public ActionResult GraduateStudentsView(int id)
+        
+        public ActionResult g(string id)
         {
-            return View(db.Users.ToList());
-
+            return RedirectToAction("GraduateStudentsView", db.Users.ToList()); 
         }
         // GET: Grades
         public ActionResult ModerateMarkView(int? id, String moduleName)

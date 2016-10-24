@@ -1,6 +1,7 @@
 ﻿using ICT3104_Group4_SMS.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Security;
@@ -12,9 +13,16 @@ namespace ICT3104_Group4_SMS.DAL
         IEnumerable<ApplicationUser> users;
 
         string[] rolesArray = { "Admin", "Student", "Lecturer", "HOD" };
-        
-       
-       
+
+        public IEnumerable<ApplicationUser> GetGraduates()
+        {
+             int year = Int32.Parse(DateTime.Now.Year.ToString());
+             year = year - 3;
+            IEnumerable<ApplicationUser> studentList = data.Where(g => g.year == year.ToString()).ToList();
+            return (studentList);
+        }
+
+
 
         public ApplicationUserDataGateway()
         {
