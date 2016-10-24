@@ -302,6 +302,7 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 
                 module.year = Int32.Parse(DateTime.Now.Year.ToString());
+                module.status = "Created";
                 db.Modules.Add(module);
                 db.SaveChanges();
                 //get the id of the inserted module
