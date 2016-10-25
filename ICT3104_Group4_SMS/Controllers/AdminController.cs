@@ -22,10 +22,13 @@ namespace ICT3104_Group4_SMS.Controllers
         private ApplicationUserManager _userManager;
 
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
+        internal IDataGateway<ArchivedRecord> ArchiveGateway;
+
 
         public AdminController()
         {
             ApplicationUserGateway = new ApplicationUserDataGateway();
+            ArchiveGateway = new ArchiveDataGateway();
         }
 
         public AdminController(ApplicationUserManager userManager)
@@ -58,7 +61,13 @@ namespace ICT3104_Group4_SMS.Controllers
         }
         public ActionResult ArchivedStudentsView()
         {
+          
             return View();
+        }
+        public ActionResult Archive()
+        {
+            ((ArchiveDataGateway)ArchiveGateway).ArchivedRecord();
+            return RedirectToAction("ArchivedStudentsView"); 
         }
         // GET: /Admin/CreateAccount
         public ActionResult CreateAccount()

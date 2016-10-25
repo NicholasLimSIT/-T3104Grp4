@@ -14,15 +14,6 @@ namespace ICT3104_Group4_SMS.DAL
 
         string[] rolesArray = { "Admin", "Student", "Lecturer", "HOD" };
 
-        public IEnumerable<ApplicationUser> GetGraduates()
-        {
-             int year = Int32.Parse(DateTime.Now.Year.ToString());
-             year = year - 3;
-            IEnumerable<ApplicationUser> studentList = data.Where(g => g.year == year.ToString()).ToList();
-            return (studentList);
-        }
-
-
 
         public ApplicationUserDataGateway()
         {

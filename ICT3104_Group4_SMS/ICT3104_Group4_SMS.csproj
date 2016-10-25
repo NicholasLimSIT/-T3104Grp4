@@ -205,6 +205,7 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\UiController.cs" />
     <Compile Include="DAL\ApplicationUserDataGateway.cs" />
+    <Compile Include="DAL\ArchiveDataGateway.cs" />
     <Compile Include="DAL\DataGateway.cs" />
     <Compile Include="DAL\GradesGateway.cs" />
     <Compile Include="DAL\IDataGateway.cs" />
@@ -340,7 +341,6 @@
     <Content Include="Views\Lecturer\StudentEnrolView.cshtml" />
     <Content Include="Views\HOD\ModerateMarkView.cshtml" />
     <Content Include="Views\HOD\ModerateMark.cshtml" />
-    <Content Include="Views\HOD\GraduateStudentsView.cshtml" />
     <Content Include="Views\Admin\ArchivedStudentsView.cshtml" />
     <Content Include="Views\HOD\RecommendationsView.cshtml" />
     <Content Include="Views\Admin\SearchAccountParticulars.cshtml" />
