@@ -83,11 +83,16 @@
                 <h4 class="title">Setting</h4>
             </div>     
             <div class="content">
+                @using (Html.BeginForm("ModerateAction", "HOD", FormMethod.Post))
+                {
+                @Html.Hidden("moduleId", (string)(ViewBag.moduleId.ToString()))
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Moderation Percentage</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Moderation %">
+                    <label for="moderationPercentage">Moderation Percentage</label>
+                    <input class="form-control" id="moderationPercentage" placeholder="Moderation %" name="moderationPercentage">
                 </div>
                 <button class="btn btn-primary"><i class="pe-7s-pen"></i> Moderate Mark</button>
+                }
+
                 <hr>
                 <div class="header">
                     <h4 class="title">Freeze</h4>

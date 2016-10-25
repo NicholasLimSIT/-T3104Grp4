@@ -36,15 +36,19 @@
                                 </th>
                                 
                                 <th>@Html.DisplayNameFor(model => model.GradeItem.grade)</th>
+
                                 <th>
                                     @Html.DisplayNameFor(model => model.RecItem.recommendation)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.RecItem.status)
                                 </th>
+                                @if (ViewBag.moduleStatus == "Created")
+                                {
                                 <th>
                                 </th>
-                                <th></th>
+                                }
+                              
                             </tr>
                         </thead>
                         <tbody>
@@ -102,13 +106,26 @@
         </div>
 
         <div class="card">
-            <div class="header">
-                <h4 class="title">Grade Lock</h4>
-                <p class="category">Finalize grading and Lock the grade</p>
-            </div>
-            <div class="content">
-                <button class="btn btn-primary"><i class="pe-7s-pen"></i> Lock Grade</button>
-            </div>
+                @if (ViewBag.moduleStatus == "Created")
+                {
+                    <div class="header">
+                        <h4 class="title">Grade Lock</h4>
+                        <p class="category">Finalize grading and Lock the grade</p>
+                    </div>
+                    <div class="content">
+                        <button onclick="location.href = '@Url.Action("LockGrade", "Lecturer", new { id = ViewBag.moduleId })';return false;'; return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Lock Grade</button>
+                    </div>       
+                }
+                else
+                {
+                    <div class="header">
+                        <h4 class="title">Grade is @ViewBag.moduleStatus</h4>
+                    </div>
+                    <div class="content">
+                        
+                    </div>
+                }
+          
         </div>
 
         <div>

@@ -111,6 +111,13 @@ namespace ICT3104_Group4_SMS.DAL
             return gradeList;
         }
 
+        public void updateGrade(int id, double score)
+        {
+            Grade gradeItem = SelectById(id);
+            gradeItem.score = score;
+            Update(gradeItem);
+        }
+
         internal IEnumerable<Grade> GetGradesByRec(int[] gradeIds)
         {
             return data.Where(g => gradeIds.Contains(g.Id)).ToList();

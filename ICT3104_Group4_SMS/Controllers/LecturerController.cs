@@ -49,7 +49,7 @@ namespace ICT3104_Group4_SMS.Controllers
             }
             return View();
         }
-       
+
         public ActionResult EditStudentParticulars(string id)
         {
             if (id == null)
@@ -118,7 +118,7 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-           // lmDW.getModuleStudent(id);
+            // lmDW.getModuleStudent(id);
             IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
             if (gradeList.Count() == 0)
             {
@@ -174,7 +174,7 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
+         
             ViewBag.moduleId = id;
             ViewBag.moduleName = moduleName;
             if (moduleName == null)
@@ -241,7 +241,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+
                 db.Entry(programme).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("ProgrammeIndex");
@@ -282,11 +282,11 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(db.Modules.ToList());
         }
 
-       
+
         // GET: Modules/Create
         public ActionResult ModuleCreate()
         {
-            ViewBag.List= ((ProgrammeDataGateway)ProgrammeGateway).GetAllProgrammes();
+            ViewBag.List = ((ProgrammeDataGateway)ProgrammeGateway).GetAllProgrammes();
 
             return View();
         }
@@ -300,7 +300,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+
                 module.year = Int32.Parse(DateTime.Now.Year.ToString());
                 module.status = "Created";
                 db.Modules.Add(module);
@@ -509,6 +509,23 @@ namespace ICT3104_Group4_SMS.Controllers
 
 
             return RedirectToAction("StudentEnrolment");
+        }
+
+        // GET: Grades
+        public ActionResult LockGrade(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Module module = ModuleGateway.SelectById(id);
+            module.status = "Locked";
+            ModuleGateway.Update(module);
+            ViewBag.moduleStatus = "Locked";
+
+            return View();
         }
 
 
