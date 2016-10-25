@@ -117,5 +117,26 @@ namespace ICT3104_Group4_SMS.Controllers
             return RedirectToAction("ModerateMark");
         }
 
+        // GET: Grades
+        public ActionResult ModerateAction(String moduleId, String moderationPercentage)
+        {
+            int? id = Convert.ToInt32(moduleId);
+
+
+
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+           
+            ViewBag.moduleId = moduleId;
+            ViewBag.moduleName = ModuleGateway.GetModuleName(id);
+
+            int id2 = id ?? default(int);
+
+            ViewBag.moderationAction = smsMapper.moderateGrade(id2, moderationPercentage);
+            return RedirectToAction("ModerateMarkView", new { id = id });
+        }
+
     }
 }
