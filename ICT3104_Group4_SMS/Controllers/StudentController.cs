@@ -14,11 +14,7 @@ namespace ICT3104_Group4_SMS.Controllers
     public class StudentController : Controller
     {
         private GradesGateway ggw = new GradesGateway();
-        // GET: Student
-        public ActionResult Index()
-        {
-            return View();
-        }
+      
 
         //View Grade
         public ActionResult ViewGrade()

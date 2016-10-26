@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +6,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ICT3104_Group4_SMS.Models;
+using System.Web.Security;
+
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -70,6 +69,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             if (!ModelState.IsValid)
             {
+               
                 return RedirectToAction("Index", "Home");   // logged in
             }
 
@@ -78,6 +78,7 @@ namespace ICT3104_Group4_SMS.Controllers
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
+                
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:

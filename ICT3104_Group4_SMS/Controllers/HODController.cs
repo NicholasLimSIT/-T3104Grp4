@@ -33,12 +33,7 @@ namespace ICT3104_Group4_SMS.Controllers
             RecommendationGateway = new RecommendationGateway();
         }
 
-        // GET: HOD
-        public ActionResult Index()
-        {
-            return View();
-         
-        }
+        
 
         // GET: HOD/ModerateGrade
         public ActionResult ModerateMark()

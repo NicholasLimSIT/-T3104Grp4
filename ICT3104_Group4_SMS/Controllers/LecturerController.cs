@@ -35,10 +35,7 @@ namespace ICT3104_Group4_SMS.Controllers
             RecommendationGateway = new RecommendationGateway();
         }
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+     
 
         [HttpGet]
         public ActionResult SearchStudentParticulars(string name)
