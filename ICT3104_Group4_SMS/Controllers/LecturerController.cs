@@ -20,6 +20,7 @@ namespace ICT3104_Group4_SMS.Controllers
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<Grade> GradesGateway;
         internal IDataGateway<Recommendation> RecommendationGateway;
+        
         //internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
         private ModuleGateway ModuleGateway = new ModuleGateway();
         private Lecturer_ModuleDataGateway lmDW = new Lecturer_ModuleDataGateway();
@@ -123,9 +124,18 @@ namespace ICT3104_Group4_SMS.Controllers
                 ViewBag.selectedModule = module1;
                 return View(gradeList);
             }
+            List<String> studNameList = new List<string>();
+            foreach (var g in gradeList) {
+                var role = (from u in db.Users
+                            where u.Id == (g.studentId)
+                            select u).FirstOrDefault();
+                studNameList.Add(role.UserName);
+
+            }
 
             var module = ModuleGateway.SelectById(id);
             ViewBag.selectedModule = module;
+            ViewBag.nameList = studNameList;
             return View(gradeList);
 
         }

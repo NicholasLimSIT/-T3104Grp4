@@ -23,6 +23,7 @@
                             <tr>
                                 <th></th>
                                 <th></th>
+                                <th></th>
                                 <th>
                                     Student ID
                                 </th>
@@ -33,15 +34,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for (int i = 0; i < Model.Count(); i++)
-                            {
+                                @for (int i = 0; i < Model.Count(); i++)
+                                    {
+                            <tr>
 
-                                <tr>
                                     <td>@Html.HiddenFor(model => model[i].Id)</td>
-
+                                   
                                     <td>@Html.HiddenFor(model => model[i].lecturermoduleId)</td>
-                                    <td>@Html.TextBoxFor(model => model[i].studentId, new { @readonly = "readonly", style = "border-style:none" })</td>
-
+                                    <td>@Html.HiddenFor(model => model[i].studentId)</td>
+                                    <td>@ViewBag.nameList[i]</td>
                                     <td>@Html.EditorFor(model => model[i].score)</td>
                                 </tr>
                             }
