@@ -118,25 +118,36 @@ namespace ICT3104_Group4_SMS.Controllers
             }
             // lmDW.getModuleStudent(id);
             IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(id);
+
             if (gradeList.Count() == 0)
             {
                 var module1 = ModuleGateway.SelectById(id);
                 ViewBag.selectedModule = module1;
                 return View(gradeList);
             }
+            List<Grade> gList = new List<Grade>(); ;
             List<String> studNameList = new List<string>();
-            foreach (var g in gradeList) {
-                var role = (from u in db.Users
-                            where u.Id == (g.studentId)
-                            select u).FirstOrDefault();
-                studNameList.Add(role.UserName);
+            if (gradeList.Count() != 0)
+            {
 
+                foreach (var g in gradeList)
+                {
+                    var user = (from u in db.Users
+                                where u.Id == (g.studentId)
+                                select u).FirstOrDefault();
+                    if (user != null)
+                    {
+                        studNameList.Add(user.UserName);
+                        gList.Add(g);
+                    }
+
+                }
             }
 
             var module = ModuleGateway.SelectById(id);
             ViewBag.selectedModule = module;
             ViewBag.nameList = studNameList;
-            return View(gradeList);
+            return View(gList);
 
         }
 
@@ -394,7 +405,7 @@ namespace ICT3104_Group4_SMS.Controllers
         // POST: Recommendations/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recommendation")] Recommendation rec)
+        public ActionResult RecommendationCreate([Bind(Include = "Id,gradeId, recommendation, status")] Recommendation rec)
         {
             if (ModelState.IsValid)
             {
@@ -430,7 +441,7 @@ namespace ICT3104_Group4_SMS.Controllers
         // POST: Recommendations/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecommendationEdit([Bind(Include = "Id, gradeId, recommendation")] Recommendation rec)
+        public ActionResult RecommendationEdit([Bind(Include = "Id, gradeId, recommendation, status")] Recommendation rec)
         {
             if (ModelState.IsValid)
             {
