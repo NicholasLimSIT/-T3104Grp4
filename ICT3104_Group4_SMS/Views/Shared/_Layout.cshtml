@@ -91,7 +91,30 @@
                                 
                             </ul>
                         </li>
+                         <!-- Course Related -->
 
+                        <li>
+                            <a href="#collapsed-menu2" data-toggle="collapse" class="" aria-expanded="true">
+                                <i class="pe-7s-study"></i>
+                                <p>Course Related</p>
+                            </a>
+                            <ul class="nav collapsed-menu collapse" id="collapsed-menu2" aria-expanded="true">
+                                <!-- Programme Management -->
+                                <li class="@(ViewBag.Title=="Programme"? "active" : "")">
+                                    <a href="@Url.Action("ProgrammeIndex", "Lecturer")">
+                                        <i class="pe-7s-notebook"></i>
+                                        <p>Programme</p>
+                                    </a>
+                                </li>
+                                <!-- Module Management -->
+                                <li class="@(ViewBag.Title=="Module"? "active" : "")">
+                                    <a href="@Url.Action("ModuleIndex", "Lecturer")">
+                                        <i class="pe-7s-ribbon"></i>
+                                        <p>Module</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                         <!-- achived -->
                         <li class="@(ViewBag.Title=="Archived Students"? "active" : "")">

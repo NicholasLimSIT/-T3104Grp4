@@ -1,12 +1,6 @@
-﻿using Microsoft.AspNet.Identity;
-using System.Linq;
-using System.Security.Claims;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity.EntityFramework;
-using ICT3104_Group4_SMS.Models;
 
 namespace ICT3104_Group4_SMS.Controllers
 {

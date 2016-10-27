@@ -36,9 +36,12 @@ namespace ICT3104_Group4_SMS.DAL
                     foreach (var g in gradeList)
                     {
                         Lecturer_Module ltm = db.Lecturer_Module.Find(g.lecturermoduleId);
-                        var module = ltm.Module;
-                        record.studentName = i.UserName;
-                        record.moduleName = module.name;
+                        if (ltm != null)
+                        {
+                            var module = ltm.Module;
+                            record.studentName = i.UserName;
+                            record.moduleName = module.name;
+                        }
                         record.score = g.score;
                         record.grade = g.grade;
                         db.ArchivedRecords.Add(record);

@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
-    [Authorize(Roles = "Lecturer")]
+    [Authorize(Roles = "Lecturer,Admin")]
     public class LecturerController : Controller
     {
         private SmsContext db = new SmsContext();
