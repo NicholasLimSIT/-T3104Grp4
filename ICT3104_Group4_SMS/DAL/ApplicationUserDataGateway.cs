@@ -76,12 +76,13 @@ namespace ICT3104_Group4_SMS.DAL
                     bool role = UserManager.IsInRole(item.Id, rolesArray[i]);
                     if (role)
                     {
-                        string[] listString = new string[5];
+                        string[] listString = new string[6];
                         listString[0] = item.Id.ToString();
                         listString[1] = item.UserName;
                         listString[2] = item.Email;
                         listString[3] = item.PhoneNumber;
-                        listString[4] = rolesArray[i];
+                        listString[4] = item.year;
+                        listString[5] = rolesArray[i];
                         UserList.Add(listString);
 
                     }

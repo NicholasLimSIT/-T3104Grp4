@@ -15,7 +15,7 @@ using System.Net;
 namespace ICT3104_Group4_SMS.Controllers
 {
 
-   //[Authorize(Roles = "Admin")]
+   [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private SmsContext db = new SmsContext();

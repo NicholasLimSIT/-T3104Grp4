@@ -26,6 +26,9 @@
                                 @Html.DisplayNameFor(model => model.PhoneNumber)
                             </th>
                             <th>
+                                @Html.DisplayNameFor(model => model.year)
+                            </th>
+                            <th>
                                 Role
                             </th>
                             <th></th>
@@ -51,6 +54,9 @@
                                     </td>
                                     <td>
                                         @user[4]
+                                    </td>
+                                    <td>
+                                        @user[5]
                                     </td>
                                     <td>
                                         @Html.ActionLink("Edit", "EditAccount", new { id = @user[0] })
