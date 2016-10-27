@@ -43,7 +43,7 @@ namespace ICT3104_Group4_SMS.Controllers
         }
        
         // GET: Grades
-        public ActionResult ModerateMarkView(int? id, String moduleName)
+        public ActionResult ModerateMarkView(int? id, String moduleName, String moduleStatus)
         {
             if (id == null)
             {
@@ -52,9 +52,11 @@ namespace ICT3104_Group4_SMS.Controllers
 
             ViewBag.moduleId = id;
             ViewBag.moduleName = moduleName;
+            ViewBag.moduleStatus = moduleStatus;
             if (moduleName == null)
                 ViewBag.moduleName = ModuleGateway.GetModuleName(id);
 
+            
             int id2 = id ?? default(int);
             IEnumerable<GradeRecViewModel> gradeWithRecList = smsMapper.GradeWithRec(id2);
             return View(gradeWithRecList);
