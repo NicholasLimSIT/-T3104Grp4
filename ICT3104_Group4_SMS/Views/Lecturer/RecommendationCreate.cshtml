@@ -29,8 +29,9 @@
                         @Html.TextAreaFor(model => model.recommendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
                         @Html.ValidationMessageFor(model => model.recommendation, "", new { @class = "text-danger" })
                     </div>
+                    @Html.HiddenFor(model => model.status, new { Value = "Pending" })
                     <button type="submit" class="btn btn-default">Add Recommendation</button>
-                }
+                }   
             </div>
         </div>
         <div>

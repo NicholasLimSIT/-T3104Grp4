@@ -1,4 +1,6 @@
-﻿@model ICT3104_Group4_SMS.Models.Recommendation
+﻿@Scripts.Render("~/bundles/notifications")
+
+@model ICT3104_Group4_SMS.Models.Recommendation
 
 @{
     ViewBag.Title = "Update Recommendation";
@@ -35,6 +37,7 @@
                         @Html.TextAreaFor(model => model.recommendation, new { rows = 3, columns = 40, @class = "form-control", @style = "resize: none;" })
                         @Html.ValidationMessageFor(model => model.recommendation, "", new { @class = "text-danger" })
                     </div>
+                    @Html.HiddenFor(model => model.status)
                     <button type="submit" class="btn btn-default">Update Recommendation</button>
                 }
                 @*displaying of success messages depending on action done*@
@@ -43,11 +46,15 @@
                     <br />
                     if (TempData["Success"].Equals(1))
                     {
-                        <p class="text-success">Recommendation added successfully.</p>
+                        <script>
+                            notifSuccess.showNotification("Recommendation added successfully.");
+                        </script>
                     }
                     else if (TempData["Success"].Equals(2))
                     {
-                        <p class="text-success">Recommendation updated successfully.</p>
+                        <script>
+                            notifSuccess.showNotification("Recommendation updated successfully.");
+                        </script>
                     }
                 }
             </div>
