@@ -61,8 +61,8 @@ namespace ICT3104_Group4_SMS.Controllers
         }
         public ActionResult ArchivedStudentsView()
         {
-          
-            return View();
+
+            return View(db.ArchivedRecords.ToList());
         }
         public ActionResult Archive()
         {
