@@ -84,7 +84,7 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=ArchivedRecords.xls");
+            Response.AddHeader("Content-Disposition", "attachment; filename=ArchivedRecords.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
@@ -103,7 +103,7 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=Users.xls");
+            Response.AddHeader("Content-Disposition", "attachment; filename=Users.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
@@ -121,7 +121,7 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=Module.xls");
+            Response.AddHeader("Content-Disposition", "attachment; filename=Module.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
@@ -139,7 +139,7 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=Lecturer_Module.xls");
+            Response.AddHeader("Content-Disposition", "attachment; filename=Lecturer_Module.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
@@ -157,7 +157,7 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=Grades.xls");
+            Response.AddHeader("Content-Disposition", "attachment; filename=Grades.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
@@ -175,7 +175,7 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=Recommendations.xls");
+            Response.AddHeader("Content-Disposition", "attachment; filename=Recommendations.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
