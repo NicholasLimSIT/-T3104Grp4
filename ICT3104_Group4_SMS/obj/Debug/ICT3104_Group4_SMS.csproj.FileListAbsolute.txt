@@ -682,3 +682,5 @@ C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT
 C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
 C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
 C:\Users\WenJieChew\Documents\Visual Studio 2015\Projects\ICT3104\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
+E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\DotNetZip.dll
+E:\Source\Repos\-T3104Grp4\ICT3104_Group4_SMS\bin\DotNetZip.xml
