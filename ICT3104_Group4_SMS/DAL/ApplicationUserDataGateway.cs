@@ -11,6 +11,7 @@ namespace ICT3104_Group4_SMS.DAL
     public class ApplicationUserDataGateway : DataGateway<ApplicationUser>
     {
         IEnumerable<ApplicationUser> users;
+        private DataGateway<ApplicationUser> UserGateway = new DataGateway<ApplicationUser>();
 
         string[] rolesArray = { "Admin", "Student", "Lecturer", "HOD" };
 
@@ -57,6 +58,23 @@ namespace ICT3104_Group4_SMS.DAL
 
 
         }
+
+        //Function to Move Users to "RemovedUser Table"
+        public void MovedUser (string id)
+        {
+            string sql = "Insert into RemovedUsers(Email,Id,PhoneNumber,UserName,year) SELECT Email,Id,PhoneNumber,UserName,year FROM AspNetUsers WHERE id = '" +
+                id + "'";
+            //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            //IEnumerable<ApplicationUser> user = UserGateway.data.Where
+            db.Database.ExecuteSqlCommand(sql);
+            db.SaveChanges();
+        }
+
+
+
+
+
+
 
         //Function to return all users
         public List<string[]> searchUsers()
@@ -129,6 +147,10 @@ namespace ICT3104_Group4_SMS.DAL
             return UserList;
 
         }
+
+
+
+
 
 
         //Function to search and return a student

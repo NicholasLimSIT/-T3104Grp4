@@ -168,9 +168,15 @@ namespace ICT3104_Group4_SMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
+
             Models.ApplicationUser Applicationuser = db.Users.Find(id);
-            db.Users.Remove(Applicationuser);
-            db.SaveChanges();
+            
+
+            ((ApplicationUserDataGateway)ApplicationUserGateway).MovedUser(id);
+
+
+            //db.Users.Remove(Applicationuser);
+            //db.SaveChanges();
             return RedirectToAction("SearchAccountParticulars");
         }
 
