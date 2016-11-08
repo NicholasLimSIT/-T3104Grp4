@@ -1,5 +1,20 @@
 ﻿@{
     ViewBag.Title = "Admin Backup";
+    DateTime d = DateTime.Today;
+    int delta = DayOfWeek.Monday - d.DayOfWeek;
+    DateTime monday = d.AddDays(delta);
+    String mondayStr = monday.ToString("ddd,dd-MMM-yyyy");
+    DateTime nxtMonday = monday.AddDays(7);
+    String nextMondayStr = nxtMonday.ToString("ddd,dd-MMM-yyyy");
+
+
+    DateTime firstDayOfMonth = new DateTime(d.Year, d.Month, 1);
+    DateTime firstDayOfNextMonth = new DateTime(d.AddMonths(1).Year, d.AddMonths(1).Month, 1);
+
+    String firstDayOfMonthStr = firstDayOfMonth.ToString("ddd,dd-MMM-yyyy");
+    String firstDayOfNextMonthStr = firstDayOfNextMonth.ToString("ddd,dd-MMM-yyyy");
+
+
 }
 
 <!DOCTYPE html>
@@ -11,46 +26,17 @@
 </head>
 <body>
     <div class="row">
-   
-        <div class="card">
-            <div class="header">
-                <h4 class="title">Backup Routines</h4>
-            </div>
-            <div class="content">
-                <p class="category">Application Backup</p>
-                <div class="form-group">
-                    <select class="form-control">
-                        <option>Monthly</option>
-                        <option>Yearly</option>
-                        <option>Weekly</option>
-                        <option>Daily</option>
-                    </select>
-                </div>
-                <br />
-                <p class="category">Database Backup</p>
-                <div class="form-group">
-                    <select class="form-control">
-                        <option>Weekly</option>
-                        <option>Daily</option>
-                        <option>Monthly</option>
-                        <option>Yearly</option>
-                    </select>
-                </div>
-                <br />
-                <button class="btn btn-primary"><i class="pe-7s-browser"></i>Update Routines</button>
-            </div>
-        </div>
-
+  
             <div class="card">
                 <div class="header">
                     <h4 class="title">Application Backup Schedule</h4>
                 </div>
                 <div class="content">          
-                    <p class="category">Last Application Backup</p>
-                    <h6>Friday,7 October 2016</h6>
+                    <p class="category">Last Scheduled Application Backup</p>
+                    <h6>@mondayStr</h6>
                     <br />
-                    <p class="category">Next Application Backup</p>
-                    <h6>Monday,7 November 2016</h6>
+                    <p class="category">Next Scheduled Application Backup</p>
+                    <h6>@nextMondayStr</h6>
                     <br />
                     <button class="btn btn-primary" onclick="location.href='https://github.com/NicholasLimSIT/-T3104Grp4/archive/master.zip';return false;"><i class="pe-7s-browser"></i> Backup Up Application Now</button>  
                 </div>         
@@ -61,36 +47,42 @@
                 <h4 class="title">Database Backup Schedule</h4>
                 <br />
             </div>
-          
-                <table class="table table-hover">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <button onclick="location.href='@Url.Action("BackupArchived", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-server"></i>Backup Archived Table</button>
+            <div class="content">
+                <p class="category">Last Scheduled Database Backup</p>
+                <h6>@firstDayOfMonthStr</h6>
+            <br />
+            <p class="category">Next Scheduled Database Backup</p>
+            <h6>@firstDayOfNextMonthStr</h6>
+            <br />
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td>
+                            <button onclick="location.href='@Url.Action("BackupArchived", "Admin")';return false;" class="btn btn-primary col-md-4"><i class="pe-7s-server"></i>Backup Archived Table</button>
 
-                            </td>
-                            <td>
-                                <button onclick="location.href='@Url.Action("BackupUser", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-server"></i>Backup User Table</button>
-                            </td>
-                            <td>
-                                <button onclick="location.href='@Url.Action("BackupRecommendations", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-server"></i>Backup Recommendations Table</button>
-                            </td>
-                        </tr>
+                        </td>
+                        <td>
+                            <button onclick="location.href='@Url.Action("BackupUser", "Admin")';return false;" class="btn btn-primary col-md-4"><i class="pe-7s-server"></i>Backup User Table</button>
+                        </td>
+                        <td>
+                            <button onclick="location.href='@Url.Action("BackupRecommendations", "Admin")';return false;" class="btn btn-primary col-md-4"><i class="pe-7s-server"></i>Backup Recommendations Table</button>
+                        </td>
+                    </tr>
 
-                        <tr>
-                            <td>
-                                <button onclick="location.href='@Url.Action("BackupGrades", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-server"></i>Backup Grades Table</button>
-                            </td>
-                            <td>
-                                <button onclick="location.href='@Url.Action("BackupModule", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-server"></i>Backup Module Table</button>
-                            </td>
-                            <td>
-                                <button onclick="location.href='@Url.Action("BackupLecturerModule", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-server"></i>Backup LecturerModule Table</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            
+                    <tr>
+                        <td>
+                            <button onclick="location.href='@Url.Action("BackupGrades", "Admin")';return false;" class="btn btn-primary col-md-4"><i class="pe-7s-server"></i>Backup Grades Table</button>
+                        </td>
+                        <td>
+                            <button onclick="location.href='@Url.Action("BackupModule", "Admin")';return false;" class="btn btn-primary col-md-4"><i class="pe-7s-server"></i>Backup Module Table</button>
+                        </td>
+                        <td>
+                            <button onclick="location.href='@Url.Action("BackupLecturerModule", "Admin")';return false;" class="btn btn-primary col-md-4"><i class="pe-7s-server"></i>Backup LecturerModule Table</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+</div>
         </div>
       </div>
 </body>
