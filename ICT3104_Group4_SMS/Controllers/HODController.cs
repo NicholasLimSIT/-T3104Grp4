@@ -202,7 +202,45 @@ namespace ICT3104_Group4_SMS.Controllers
             Debug.WriteLine(result);
             return result;
         }
+        public ActionResult StudentGPA()
+        {
+           
+            List<Module> moduleList = db.Modules.ToList();
+            List<Module> publish = new List<Module>();
+            foreach (var ml in moduleList)
+            {
 
+                if (ml.status.Equals("Published"))
+                {
+                    publish.Add(ml);
+                    
+                }
+            }
+            List<ApplicationUser> userList = new List<ApplicationUser>();
+
+            foreach (var p in publish)
+            {
+                IEnumerable<Grade> gradeList = lmDW.selectStudentByModule(p.Id);
+                foreach (var gl in gradeList)
+                {
+                    Models.ApplicationUser Auser = db.Users.Find(gl.studentId);
+                    if (Auser != null && Auser.GPA != null)
+                    {
+                        if (!userList.Contains(Auser))
+                        {
+                            String gpa = Auser.GPA;
+                            String decrypt = Decrypt(gpa, Auser.encryptionKey);
+                            Auser.GPA = decrypt;
+
+                            userList.Add(Auser);
+                        }
+                    }
+                }
+            }
+
+            return View(userList);
+
+        }
 
 
         private static string GenerateKey(int length, Random random)
@@ -214,6 +252,21 @@ namespace ICT3104_Group4_SMS.Controllers
                 result.Append(characters[random.Next(characters.Length)]);
             }
             return result.ToString();
+        }
+        internal static string Decrypt(string input, string key)
+        {
+
+            byte[] inputArray = Convert.FromBase64String(input);
+            TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
+            tripleDES.Key = UTF8Encoding.UTF8.GetBytes(key);
+            tripleDES.Mode = CipherMode.ECB;
+            tripleDES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tripleDES.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(inputArray, 0, inputArray.Length);
+            tripleDES.Clear();
+
+            return UTF8Encoding.UTF8.GetString(resultArray);
+
         }
     }
 }
