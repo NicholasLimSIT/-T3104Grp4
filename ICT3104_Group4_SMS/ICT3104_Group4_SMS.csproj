@@ -353,6 +353,7 @@
     <Content Include="Views\Ui\Tables.cshtml" />
     <Content Include="Views\Ui\Typography.cshtml" />
     <Content Include="Views\Ui\UiElements.cshtml" />
+    <Content Include="Views\Lecturer\StudentGPA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

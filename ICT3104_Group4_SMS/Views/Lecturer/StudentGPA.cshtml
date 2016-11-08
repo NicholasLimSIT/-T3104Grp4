@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "StudentGPA";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Student Overall GPA</h4>
+                <p class="category">List of students GPA</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GPA)
+                        </th>
+
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GPA)
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
