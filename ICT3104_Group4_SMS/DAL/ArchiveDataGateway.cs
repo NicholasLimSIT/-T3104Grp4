@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ICT3104_Group4_SMS.DAL
 {
@@ -14,7 +15,7 @@ namespace ICT3104_Group4_SMS.DAL
         private DataGateway<ApplicationUser> UserGateway = new DataGateway<ApplicationUser>();
 
 
-        public void ArchivedRecord()
+        public int ArchivedRecord()
         {
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             int year = Int32.Parse(DateTime.Now.Year.ToString());
@@ -45,18 +46,18 @@ namespace ICT3104_Group4_SMS.DAL
                         record.score = g.score;
                         record.grade = g.grade;
                         db.ArchivedRecords.Add(record);
-                        db.SaveChanges();
+                        db.SaveChanges();                     
                         ApplicationUser user =db.Users.Find(i.Id);
                         if (user != null)
-                        {
+                        {      
                             db.Users.Remove(user);
-                            db.SaveChanges();
+                            db.SaveChanges(); 
                         }
                     }
-
-
+                    return 1;
                 }
-                }
+            }
+            return 0;
         }
     }
 }

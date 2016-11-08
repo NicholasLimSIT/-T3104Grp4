@@ -72,7 +72,18 @@ namespace ICT3104_Group4_SMS.Controllers
         }
         public ActionResult Archive()
         {
-            ((ArchiveDataGateway)ArchiveGateway).ArchivedRecord();
+            int result;
+          
+            result = ((ArchiveDataGateway)ArchiveGateway).ArchivedRecord();
+            
+            if (result == 0)
+            {
+                TempData["Message"] = "activeFail";
+            }
+            else
+            {
+                TempData["Message"] = "activeSuccess";
+            }
             return RedirectToAction("ArchivedStudentsView"); 
         }
 
@@ -187,26 +198,7 @@ namespace ICT3104_Group4_SMS.Controllers
             return RedirectToAction("AdminBackup");
         }
 
-        public void ExportData(IEnumerable<dynamic> list ,string tablename) 
-        {
-            //GridView gv = new GridView();
-            //gv.DataSource = list;
-            //gv.DataBind();
-            //Response.ClearContent();
-            //Response.Buffer = true;
-            //Response.AddHeader("content-disposition", "attachment; filename=" + tablename + "");
-            //Response.AddHeader("content-disposition", "attachment; filename=hello.xls");
-            //Response.ContentType = "application/ms-excel";
-            //Response.Charset = "";
-            //StringWriter sw = new StringWriter();
-            //HtmlTextWriter htw = new HtmlTextWriter(sw);
-            //gv.RenderControl(htw);
-            //Response.Flush();
-            //Response.End();
-            //Response.Output.Write(sw.ToString());
-
-          
-        }
+       
 
         // GET: /Admin/CreateAccount
         public ActionResult CreateAccount()

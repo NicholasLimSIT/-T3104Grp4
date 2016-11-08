@@ -2,15 +2,29 @@
 @{
     ViewBag.Title = "ArchivedStudentsView";
 }
-
+@Scripts.Render("~/bundles/notifications")
 <h2>ArchivedStudentsView</h2>
 <div>
     <button onclick="location.href='@Url.Action("Archive", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-study"></i>Archive</button>
+    </br>
 </div>
 
 @model IEnumerable<ICT3104_Group4_SMS.Models.ArchivedRecord>
 
 
+@if (TempData["Message"] == "activeSuccess")
+{
+    <script type="text/javascript">
+        notifArchive.showNotification('top', 'center');
+    </script>
+}
+@if (TempData["Message"] == "activeFail")
+{
+    <script type="text/javascript">
+        notifFailArchive.showNotification('top', 'center');
+    </script>
+    
+}
 
 <div class="row">
     <div class="col-md-12">

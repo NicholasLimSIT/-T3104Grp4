@@ -19,6 +19,43 @@ notifCreateAccount = {
     }
 }
 
+notifArchive = {
+    showNotification: function (from, align) {
+        color = Math.floor((Math.random() * 4) + 1);
+
+        $.notify({
+            icon: "pe-7s-bell",
+            message: "Archived Records <b>Succesful</b>."
+
+        }, {
+            type: 'info',
+            timer: 1000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    }
+}
+notifFailArchive = {
+    showNotification: function (from, align) {
+        color = Math.floor((Math.random() * 4) + 1);
+
+        $.notify({
+            icon: "pe-7s-bell",
+            message: "Archived Records <b>Unsuccesful</b>."
+
+        }, {
+            type: 'info',
+            timer: 1000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    }
+}
+
 notifCreateAccountFail = {
     showNotification: function (from, align) {
         color = Math.floor((Math.random() * 4) + 1);
