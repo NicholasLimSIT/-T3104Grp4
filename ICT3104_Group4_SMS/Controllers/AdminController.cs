@@ -90,20 +90,22 @@ namespace ICT3104_Group4_SMS.Controllers
 
         public ActionResult BackupArchived()
         {
+
             GridView gv = new GridView();
             gv.DataSource = db.ArchivedRecords.ToList();
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("Content-Disposition", "attachment; filename=ArchivedRecords.xls");
+            Response.AddHeader("content-disposition", "attachment; filename=ArchivedRecords.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             gv.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
             Response.Flush();
             Response.End();
-            Response.Output.Write(sw.ToString());
+
             return RedirectToAction("AdminBackup");
 
         }
@@ -114,15 +116,15 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("Content-Disposition", "attachment; filename=Users.xls");
+            Response.AddHeader("content-disposition", "attachment; filename=Users.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             gv.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
             Response.Flush();
             Response.End();
-            Response.Output.Write(sw.ToString());
             return RedirectToAction("AdminBackup");
         }
         public ActionResult BackupModule()
@@ -132,15 +134,15 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("Content-Disposition", "attachment; filename=Module.xls");
+            Response.AddHeader("content-disposition", "attachment; filename=Module.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             gv.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
             Response.Flush();
             Response.End();
-            Response.Output.Write(sw.ToString());
             return RedirectToAction("AdminBackup");
         }
         public ActionResult BackupLecturerModule()
@@ -150,15 +152,15 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("Content-Disposition", "attachment; filename=Lecturer_Module.xls");
+            Response.AddHeader("content-disposition", "attachment; filename=Lecturer_Module.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             gv.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
             Response.Flush();
             Response.End();
-            Response.Output.Write(sw.ToString());
             return RedirectToAction("AdminBackup");
         }
         public ActionResult BackupGrades()
@@ -168,15 +170,15 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("Content-Disposition", "attachment; filename=Grades.xls");
+            Response.AddHeader("content-disposition", "attachment; filename=Grades.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             gv.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
             Response.Flush();
             Response.End();
-            Response.Output.Write(sw.ToString());
             return RedirectToAction("AdminBackup");
         }
         public ActionResult BackupRecommendations()
@@ -186,15 +188,15 @@ namespace ICT3104_Group4_SMS.Controllers
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("Content-Disposition", "attachment; filename=Recommendations.xls");
+            Response.AddHeader("content-disposition", "attachment; filename=Recommendations.xls");
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             gv.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
             Response.Flush();
             Response.End();
-            Response.Output.Write(sw.ToString());
             return RedirectToAction("AdminBackup");
         }
 
