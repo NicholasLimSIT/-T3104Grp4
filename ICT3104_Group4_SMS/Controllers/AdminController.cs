@@ -252,6 +252,38 @@ namespace ICT3104_Group4_SMS.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult SearchLockAccount(string name)
+        {
+            if (name != null)
+            {
+                ViewBag.LockUserList = ((ApplicationUserDataGateway)ApplicationUserGateway).searchLockUser(name);
+            }
+            else
+            {
+                ViewBag.LockUserList = ((ApplicationUserDataGateway)ApplicationUserGateway).ListLockUsers();
+            }
+            return View();
+        }
+        public ActionResult UnlockAccount(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            if (Applicationuser == null)
+            {
+                return HttpNotFound();
+            }
+            if (Applicationuser != null)
+            {
+                ((ApplicationUserDataGateway)ApplicationUserGateway).unlockAccount(Applicationuser);
+            }
+           
+            return RedirectToAction("SearchLockAccount");
+        }
+
 
 
         // GET: /Admin/EditAccount

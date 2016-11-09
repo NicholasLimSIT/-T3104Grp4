@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Security;
 
@@ -14,7 +15,7 @@ namespace ICT3104_Group4_SMS.DAL
         private DataGateway<ApplicationUser> UserGateway = new DataGateway<ApplicationUser>();
 
         string[] rolesArray = { "Admin", "Student", "Lecturer", "HOD" };
-
+        string[] lockrolesArray = {"Student", "Lecturer", "HOD" };
 
         public ApplicationUserDataGateway()
         {
@@ -55,6 +56,41 @@ namespace ICT3104_Group4_SMS.DAL
                 }
             }
             return UserList;
+        }
+
+        //Function to search locked users 
+        public List<string[]> searchLockUser(string name)
+        {
+            if (name.Length > 5)
+            {
+                name = name.Substring(0, 3);
+            }
+
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            List<string[]> UserList;
+            UserList = new List<string[]>();
+
+            var context = new SmsContext();
+            users = data.SqlQuery("SELECT * FROM dbo.AspNetUsers WHERE userName LIKE '%" + name + "%'").ToList();
+
+            foreach (var item in users)
+            {
+                for (int i = 0; i <= lockrolesArray.Length - 1; i++)
+                {
+                    bool role = UserManager.IsInRole(item.Id, lockrolesArray[i]);
+                    if (role)
+                    {
+                        string[] listString = new string[5];
+                        listString[0] = item.Id.ToString();
+                        listString[1] = item.UserName;
+                        listString[2] = item.Email;
+                        listString[3] = item.PhoneNumber;
+                        listString[4] = lockrolesArray[i];
+                        UserList.Add(listString);
+                    }
+                }
+            }
+            return UserList;
 
 
         }
@@ -81,14 +117,11 @@ namespace ICT3104_Group4_SMS.DAL
         {
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             List<string[]> UserList;
-            UserList = new List<string[]>();            
-            
+            UserList = new List<string[]>();                     
             var context = new SmsContext();
-            users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();
-            
+            users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();           
             foreach (var item in users)
             {
-
                 for (int i = 0; i <= rolesArray.Length-1; i++)
                 {
                     bool role = UserManager.IsInRole(item.Id, rolesArray[i]);
@@ -102,12 +135,45 @@ namespace ICT3104_Group4_SMS.DAL
                         listString[4] = item.year;
                         listString[5] = rolesArray[i];
                         UserList.Add(listString);
+                    }                   
+                }  
+            }
+            return UserList;
+        }
+
+
+        //Function to return all users
+        public List<string[]> ListLockUsers()
+        {
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            List<string[]> UserList;
+            UserList = new List<string[]>();
+
+            var context = new SmsContext();
+            users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();
+
+            foreach (var item in users)
+            {
+
+                for (int i = 0; i <= lockrolesArray.Length - 1; i++)
+                {
+                    bool role = UserManager.IsInRole(item.Id, lockrolesArray[i]);
+                    if (role)
+                    {
+                        string[] listString = new string[6];
+                        listString[0] = item.Id.ToString();
+                        listString[1] = item.UserName;
+                        listString[2] = item.Email;
+                        listString[3] = item.PhoneNumber;
+                        listString[4] = item.year;
+                        listString[5] = lockrolesArray[i];
+                        UserList.Add(listString);
 
                     }
-                    
+
                 }
 
-                
+
 
             }
 
@@ -183,6 +249,15 @@ namespace ICT3104_Group4_SMS.DAL
 
         }
 
+        //update the status of the account from lock to unlock 
+        public void unlockAccount(ApplicationUser user)
+        {
+            user.lockStatus = "Unlock";
+            db.Entry(user).State = EntityState.Modified;
+            db.SaveChanges();
+
+
+        }
 
 
     }

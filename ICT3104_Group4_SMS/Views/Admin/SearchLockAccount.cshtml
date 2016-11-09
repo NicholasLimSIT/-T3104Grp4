@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Unlock Account";
+}
+@using (Html.BeginForm("SearchLockAccount", "Admin", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col-md-6">
+
+
+            <input type="text" name="name" id="name" placeholder="Enter Student's Name" class="form-control" />
+
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary" value="Search"><i class="pe-7s-search"></i></button>
+
+        </div>
+
+    </div>
+}
+<br />
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Search Result</h4>
+                <p class="category">List of student</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.UserName)</th>
+
+                            <th>@Html.DisplayNameFor(model => model.year)</th>
+
+                            <th>@Html.DisplayNameFor(model => model.Email)</th>
+
+                            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+
+                            <th></th>
+                          
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (ViewBag.List != null)
+            {
+                foreach (var user in @ViewBag.LockUserList)
+                {
+                                <tr>
+                                    <td>
+                                        @user[1]
+                                    </td>
+
+                                    <td>@user[4]</td>
+
+                                    <td>
+                                        @user[2]
+                                    </td>
+                                    <td>
+                                        @user[3]
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Unlock", "UnlockAccount", new { id = @user[0] })
+                                    </td>
+                                   
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
