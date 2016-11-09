@@ -61,7 +61,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchUsers();
 
-
+            ((ApplicationUserDataGateway)ApplicationUserGateway).lockExpireUsers();
             return View();
   
         }
@@ -278,7 +278,9 @@ namespace ICT3104_Group4_SMS.Controllers
             }
             if (Applicationuser != null)
             {
-                ((ApplicationUserDataGateway)ApplicationUserGateway).unlockAccount(Applicationuser);
+                Applicationuser.lockStatus = "Unlock";
+                db.Entry(Applicationuser).State = EntityState.Modified;
+                db.SaveChanges();
             }
            
             return RedirectToAction("SearchLockAccount");

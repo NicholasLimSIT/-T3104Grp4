@@ -71,7 +71,7 @@ namespace ICT3104_Group4_SMS.DAL
             UserList = new List<string[]>();
 
             var context = new SmsContext();
-            users = data.SqlQuery("SELECT * FROM dbo.AspNetUsers WHERE userName LIKE '%" + name + "%'").ToList();
+            users = data.SqlQuery("SELECT * FROM dbo.AspNetUsers WHERE lockStatus = 'Lock' AND userName LIKE '%" + name + "%'").ToList();
 
             foreach (var item in users)
             {
@@ -150,7 +150,7 @@ namespace ICT3104_Group4_SMS.DAL
             UserList = new List<string[]>();
 
             var context = new SmsContext();
-            users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();
+            users = data.SqlQuery("SELECT * From dbo.AspNetUsers WHERE lockStatus = 'Lock'").ToList();
 
             foreach (var item in users)
             {
@@ -249,16 +249,32 @@ namespace ICT3104_Group4_SMS.DAL
 
         }
 
-        //update the status of the account from lock to unlock 
-        public void unlockAccount(ApplicationUser user)
+
+        //Function to update the  expire user's status to Lock
+        public void lockExpireUsers()
         {
-            user.lockStatus = "Unlock";
-            db.Entry(user).State = EntityState.Modified;
-            db.SaveChanges();
-
-
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var context = new SmsContext();
+            users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();
+            foreach (var item in users)
+            {
+                for (int i = 0; i <= lockrolesArray.Length - 1; i++)
+                {
+                    bool role = UserManager.IsInRole(item.Id, lockrolesArray[i]);
+                    if (role)
+                    {
+                        double totaldays = (DateTime.Now - item.lastChangedPWd ).TotalDays;
+                        if (totaldays >= 100)
+                        {
+                            item.lockStatus = "Lock";
+                            db.Entry(item).State = EntityState.Modified;
+                            db.SaveChanges();
+                        }
+                    }
+                   
+                }
+            }
+            
         }
-
-
     }
 }
