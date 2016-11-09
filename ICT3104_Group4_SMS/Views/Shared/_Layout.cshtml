@@ -190,6 +190,14 @@
                                         <p>Enrolment</p>
                                     </a>
                                 </li>
+
+                                <!-- Student GPA -->
+                                <li class="@(ViewBag.Title=="Student GPA"? "active" : "")">
+                                    <a href="@Url.Action("StudentGPA", "Lecturer")">
+                                        <i class="pe-7s-graph"></i>
+                                        <p>Student GPA</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <!-- Course Related -->
@@ -235,7 +243,14 @@
                                 <p><span style="font-size: 11px;">Review Recommendations</span></p>
                             </a>
                         </li>
-                        
+                        <!-- Student GPA -->
+                        <li class="@(ViewBag.Title=="Student GPA"? "active" : "")">
+                            <a href="@Url.Action("StudentGPA", "HOD")">
+                                <i class="pe-7s-graph"></i>
+                                <p>Student GPA</p>
+                            </a>
+                        </li>
+
 
                     }
 
