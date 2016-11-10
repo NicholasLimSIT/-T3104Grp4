@@ -1,0 +1,98 @@
+﻿@using ICT3104_Group4_SMS.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Student Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div style="margin-top: 7em">
+        <h2 style="text-align: center;">Student Management System</h2>
+        <h5 style="text-align: center;">Login for non-students</h5>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                @*<div class="panel panel-default">
+                    <div class="panel-body">*@
+                        <div class="card">
+                            <div class="panel-body">
+                                @using (Html.BeginForm("LoginAuthenticate", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", Value=ViewBag.Email, @readonly = true })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="">
+                                        <label class="col-md-12 control-label">QR Code</label>
+                                        <img src=@ViewBag.QrCode alt="Google Authenticator QR Code" class="img-responsive center-block"/>
+                                    </div>
+                                    <div class="">
+                                        <label class="col-md-12 control-label">Manual Entry Code</label>
+                                        <p>@ViewBag.ManualEntryCode</p>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="GaPin">Google Authenticator PIN</label>
+                                        <input class="form-control" data-val="true" data-val-required="The Authenticator PIN field is required." id="enteredPin" name="enteredPin">
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="GaPin" data-valmsg-replace="true"></span>
+                                        @if (TempData["SignInFail"] != null)
+                                        {
+                                            if (TempData["SignInFail"].Equals("1"))
+                                            {
+                                                <span class="field-validation-error text-danger">
+                                                    The Google Authenticator PIN field is required.
+                                                </span>
+                                            }
+                                        }
+                                    </div>
+                                    if (TempData["SignInFail"] != null)
+                                    {
+                                        if (TempData["SignInFail"].Equals("2"))
+                                        {
+                                            <span class="field-validation-error text-danger">
+                                                Invalid Password / Authenticator Pin.
+                                            </span>
+                                        }
+                                    }
+                                    <div class="form-group">
+                                        <div class="col-md-offset-5 col-md-2">
+                                            <input type="submit" value="Log in" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                    
+                                }
+                            </div>
+                        @*</div>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

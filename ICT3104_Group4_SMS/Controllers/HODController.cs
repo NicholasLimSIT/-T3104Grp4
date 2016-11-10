@@ -29,6 +29,16 @@ namespace ICT3104_Group4_SMS.Controllers
         private SmsMapper smsMapper = new SmsMapper();
         private GradesGateway ggw = new GradesGateway();
 
+        // check if user has passed 2FA authentication. true = did not pass. false = passed.
+        public bool IfUserSkipTwoFA()
+        {
+            if (Session == null)
+                return true;
+            else if (Session["Verified"] == null)
+                return true;
+
+            return false;
+        }
 
         public HODController()
         {
@@ -44,6 +54,10 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: HOD/ModerateGrade
         public ActionResult ModerateMark()
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             return View(db.Modules.ToList());
 
         }
@@ -51,6 +65,10 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: Grades
         public ActionResult ModerateMarkView(int? id, String moduleName, String moduleStatus)
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -68,9 +86,13 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(gradeWithRecList);
         }
 
-        // GET: Recommendations
+        // GET: /HOD/RecommendationsView
         public ActionResult RecommendationsView()
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             IEnumerable<GradeRecViewModel> moduleGradRecList = smsMapper.ModuleWithGradeAndRec();
             return View(moduleGradRecList);
         }
@@ -202,9 +224,14 @@ namespace ICT3104_Group4_SMS.Controllers
             Debug.WriteLine(result);
             return result;
         }
+
+        // GET: /HOD/StudentGPA
         public ActionResult StudentGPA()
         {
-           
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             List<Module> moduleList = db.Modules.ToList();
             List<Module> publish = new List<Module>();
             foreach (var ml in moduleList)

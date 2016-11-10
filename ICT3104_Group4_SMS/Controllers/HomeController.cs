@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
+using System;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -9,27 +10,30 @@ namespace ICT3104_Group4_SMS.Controllers
         private ApplicationUserManager _userManager;
         public ActionResult Index()
         {
-
-            if (User.IsInRole("Admin"))
-            {
-                return RedirectToAction("Index", "Admin");
-            }
             if (User.IsInRole("Student"))
             {
                 return RedirectToAction("ViewGrade", "Student");
             }
-            if (User.IsInRole("HOD"))
+            else
             {
-                return RedirectToAction("RecommendationsView", "HOD");
-            }
-            if (User.IsInRole("Lecturer"))
-            {
-                return RedirectToAction("ModuleIndex", "Lecturer");
+                if (Session["Verified"] == null)
+                    return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.AbsolutePath });
+
+                if (User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else if (User.IsInRole("HOD"))
+                {
+                    return RedirectToAction("RecommendationsView", "HOD");
+                }
+                else if (User.IsInRole("Lecturer"))
+                {
+                    return RedirectToAction("ModuleIndex", "Lecturer");
+                }
             }
 
-            else { 
             return View();
-        }
         }
         public ApplicationUserManager UserManager
         {

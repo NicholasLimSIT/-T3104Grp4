@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ICT3104_Group4_SMS.Models;
 using System.Web.Security;
-
+using Google.Authenticator;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -69,8 +69,8 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             if (!ModelState.IsValid)
             {
-               
-                return RedirectToAction("Index", "Home");   // logged in
+                return View(model);
+                //return RedirectToAction("Index", "Home");   // logged in
             }
 
             // This doesn't count login failures towards account lockout
@@ -78,18 +78,106 @@ namespace ICT3104_Group4_SMS.Controllers
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
-                
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return RedirectToAction("LoginAuthenticate", new { ReturnUrl = returnUrl });
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }
+        }
+
+        //
+        // GET: /Account/Login
+        [AllowAnonymous]
+        public ActionResult LoginNonStudent(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        //
+        // POST: /Account/Login
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult LoginNonStudent(LoginViewModel model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            return RedirectToAction("LoginAuthenticate", "Account", new { Email = model.Email, ReturnUrl = returnUrl });
+        }
+
+        // GET: /Account/LoginAuthenticate
+        [AllowAnonymous]
+        public ActionResult LoginAuthenticate(string email, string returnUrl)
+        {
+            if (email == null || email.Trim().Equals(""))
+                return RedirectToAction("LoginNonStudent", new { returnUrl });
+            ViewBag.ReturnUrl = returnUrl;
+
+            //var user = UserManager.FindById(User.Identity.GetUserId());
+            ViewBag.Email = email;
+            TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
+            var setupInfo = tfa.GenerateSetupCode("ICT3104_Group4_SMS", email, "asecretkeyfor3104groupproj", 300, 300);
+
+            string qrCodeImageUrl = setupInfo.QrCodeSetupImageUrl;
+            string manualEntrySetupCode = setupInfo.ManualEntryKey;
+
+            ViewBag.QrCode = qrCodeImageUrl;
+            ViewBag.ManualEntryCode = manualEntrySetupCode;
+
+            return View();
+        }
+
+        //
+        // POST: /Account/VerifyCode
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> LoginAuthenticate(LoginViewModel model, string returnUrl, string enteredPin)
+        {
+            TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
+            if (enteredPin == null || enteredPin.Trim().Equals(""))
+                TempData["SignInFail"] = "1";
+
+            if (!ModelState.IsValid)
+            {
+                var setupInfo = tfa.GenerateSetupCode("ICT3104_Group4_SMS", model.Email, "asecretkeyfor3104groupproj", 300, 300);
+
+                string qrCodeImageUrl = setupInfo.QrCodeSetupImageUrl;
+                string manualEntrySetupCode = setupInfo.ManualEntryKey;
+
+                ViewBag.Email = model.Email;
+                ViewBag.QrCode = qrCodeImageUrl;
+                ViewBag.ManualEntryCode = manualEntrySetupCode;
+                
+                return View(model);
+            }
+            else if (enteredPin == null || enteredPin.Trim().Equals(""))
+            {
+                return RedirectToAction("LoginAuthenticate", new { Email = model.Email, ReturnUrl = returnUrl });
+            }
+
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            bool isCorrectPIN = tfa.ValidateTwoFactorPIN("asecretkeyfor3104groupproj", enteredPin);
+            if (result.Equals(SignInStatus.Success) && isCorrectPIN)
+            {
+                Session["Verified"] = true;
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                TempData["SignInFail"] = "2";
+                return RedirectToAction("LoginAuthenticate", new { Email = model.Email, ReturnUrl = returnUrl });
+            }     
         }
 
         //
@@ -393,6 +481,7 @@ namespace ICT3104_Group4_SMS.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.Clear();
             return RedirectToAction("Login", "Account");
         }
 

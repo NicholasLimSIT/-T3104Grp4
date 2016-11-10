@@ -28,6 +28,16 @@ namespace ICT3104_Group4_SMS.Controllers
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<ArchivedRecord> ArchiveGateway;
 
+        // check if user has passed 2FA authentication. true = did not pass. false = passed.
+        public bool IfUserSkipTwoFA()
+        {
+            if (Session == null)
+                return true;
+            else if (Session["Verified"] == null)
+                return true;
+
+            return false;
+        }
 
         public AdminController()
         {
@@ -59,17 +69,27 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchUsers();
 
             ((ApplicationUserDataGateway)ApplicationUserGateway).lockExpireUsers();
             return View();
   
         }
+
+        // GET: /Admin/ArchivedStudentsView
         public ActionResult ArchivedStudentsView()
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
 
             return View(db.ArchivedRecords.ToList());
         }
+
         public ActionResult Archive()
         {
             int result;
@@ -205,6 +225,10 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: /Admin/CreateAccount
         public ActionResult CreateAccount()
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             return View();
         }
 
@@ -219,7 +243,7 @@ namespace ICT3104_Group4_SMS.Controllers
                 ViewBag.createNotif = "not-active";
                 // get the index of @ of the email to remove
                 int index = model.Email.IndexOf("@");              
-                var user = new ApplicationUser { UserName = model.Email.Substring(0, index), Email = model.Email,year = DateTime.Now.Year.ToString() };
+                var user = new ApplicationUser { UserName = model.Email.Substring(0, index), Email = model.Email,year = DateTime.Now.Year.ToString(), lastChangedPWd = DateTime.Now };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -238,9 +262,14 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(model);
         }
 
+        // GET: /Admin/SearchAccountParticulars
         [HttpGet]
         public ActionResult SearchAccountParticulars(string name)
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             if (name != null)
             {
                 ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchSpecficUser(name);
@@ -252,9 +281,14 @@ namespace ICT3104_Group4_SMS.Controllers
             return View();
         }
 
+        // GET: /Admin/SearchLockAccount
         [HttpGet]
         public ActionResult SearchLockAccount(string name)
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             if (name != null)
             {
                 ViewBag.LockUserList = ((ApplicationUserDataGateway)ApplicationUserGateway).searchLockUser(name);
@@ -291,6 +325,10 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: /Admin/EditAccount
         public ActionResult EditAccount(string id)
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -319,6 +357,10 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: /Admin/DeleteAccount
         public ActionResult DeleteAccount(string id)
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -350,6 +392,10 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: /Admin/BackupAccount
         public ActionResult AdminBackup()
         {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
             return View();
         }
 
