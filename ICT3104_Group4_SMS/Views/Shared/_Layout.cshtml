@@ -86,7 +86,13 @@
                                         <p>Edit Account</p>
                                     </a>
                                 </li>
-
+                                <!-- unlock Account -->
+                                <li class="@(ViewBag.Title=="Unlock Account"? "active" : "")">
+                                    <a href="@Url.Action("SearchLockAccount", "Admin")">
+                                        <i class="pe-7s-id"></i>
+                                        <p>Unlock Account</p>
+                                    </a>
+                                </li>
 
                                 
                             </ul>

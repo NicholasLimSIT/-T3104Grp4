@@ -74,7 +74,7 @@ namespace ICT3104_Group4_SMS.Controllers
                 return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
 
             ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchUsers();
-
+            //lock those accounts that are over 100 days
             ((ApplicationUserDataGateway)ApplicationUserGateway).lockExpireUsers();
             return View();
   
@@ -243,7 +243,7 @@ namespace ICT3104_Group4_SMS.Controllers
                 ViewBag.createNotif = "not-active";
                 // get the index of @ of the email to remove
                 int index = model.Email.IndexOf("@");              
-                var user = new ApplicationUser { UserName = model.Email.Substring(0, index), Email = model.Email,year = DateTime.Now.Year.ToString(), lastChangedPWd = DateTime.Now };
+                var user = new ApplicationUser { UserName = model.Email.Substring(0, index), Email = model.Email,year = DateTime.Now.Year.ToString(), lastChangedPWd = DateTime.Now, lockStatus = "clear" };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -313,6 +313,7 @@ namespace ICT3104_Group4_SMS.Controllers
             if (Applicationuser != null)
             {
                 Applicationuser.lockStatus = "Unlock";
+                Applicationuser.lastChangedPWd = DateTime.Now;
                 db.Entry(Applicationuser).State = EntityState.Modified;
                 db.SaveChanges();
             }

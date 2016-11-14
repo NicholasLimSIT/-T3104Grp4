@@ -2,14 +2,26 @@
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using System;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
+using ICT3104_Group4_SMS.DAL;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
     public class HomeController : Controller
     {
         private ApplicationUserManager _userManager;
+        private SmsContext db = new SmsContext();
         public ActionResult Index()
         {
+            var currentUserId = User.Identity.GetUserId();
+            Models.ApplicationUser Applicationuser = db.Users.Find(currentUserId);
+            //check if status is lock
+             if (Applicationuser.lockStatus.Equals("Lock"))
+            {
+                return RedirectToAction("Login", "Account");
+            }
             if (User.IsInRole("Student"))
             {
                 return RedirectToAction("ViewGrade", "Student");

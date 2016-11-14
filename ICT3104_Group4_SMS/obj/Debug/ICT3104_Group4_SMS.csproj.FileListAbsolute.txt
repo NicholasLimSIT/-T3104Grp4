@@ -343,3 +343,4 @@ C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
+E:\Source\Repos\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Google.Authenticator.dll
