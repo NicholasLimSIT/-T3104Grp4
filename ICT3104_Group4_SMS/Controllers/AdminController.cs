@@ -14,7 +14,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Collections.Generic;
 using System.Collections;
-
+using System.Net.Mail;
+using SendGrid;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -400,7 +401,51 @@ namespace ICT3104_Group4_SMS.Controllers
             return View();
         }
 
+        public ActionResult SendEmailReminders()
+        {
+            ICollection<ApplicationUser> expiringAccounts = ((ApplicationUserDataGateway)ApplicationUserGateway).getExpiringAccounts();
+            int numOfDays;
+            foreach (var act in expiringAccounts)
+            {
+                numOfDays = Convert.ToInt32((DateTime.Now - act.lastChangedPWd).TotalDays);
+                using (MailMessage mail = new MailMessage())
+                {
+                    mail.From = new MailAddress("azure_666521c32094e0a664354efe513747e6@azure.com", "Student Management System");
+                    mail.To.Add("lim.m3ixi@gmail.com");
+                    mail.Body = "Dear User (" + act.Email + "), <br><br>";
+                    if (numOfDays >= 80 && numOfDays < 90)
+                    {
+                        mail.Subject = "SMS Password Expiring";
+                        mail.Body += "<b>Your password is expiring in " + (90 - numOfDays) + " days.</b><br>";
+                        mail.Body += "Please change your password soon to prevent your account from getting locked.<br>";
+                    }
+                    else if (numOfDays == 90)
+                    {
+                        mail.Subject = "SMS Password Expiring";
+                        mail.Body += "<b>Your password is expiring today.</b><br>";
+                        mail.Body += "Please change your password <b>immediately</b> to prevent it from getting locked.<br>";
+                    }
+                    else
+                    {
+                        mail.Subject = "SMS Password Expired";
+                        mail.Body += "<b>Your password has already expired.</b><br>";
+                        mail.Body += "Please change your password <b>immediately</b> or else it will be locked in " + (100 - numOfDays) + " days<br>";
+                    }
 
+                    mail.Body += "<br>Regards, <br>SMS Admin";
+                    mail.IsBodyHtml = true;
+
+                    using (SmtpClient smtp = new SmtpClient("smtp.sendgrid.net", 587))
+                    {
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = new NetworkCredential("azure_666521c32094e0a664354efe513747e6@azure.com", "Password1!");
+                        smtp.EnableSsl = true;
+                        smtp.Send(mail);
+                    }
+                }
+            }
+            return RedirectToAction("SearchLockAccount");
+        }
 
 
 

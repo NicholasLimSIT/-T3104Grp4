@@ -24,6 +24,20 @@
 
         <div class="card">
             <div class="header">
+                <h4 class="title">Send Email Reminders</h4>
+                <p class="category">Remind students with passwords expiring in less than 10 days to update their passwords</p>
+            </div>
+            <div class="content">
+                <button onclick="location.href='@Url.Action("SendEmailReminders", "Admin")';return false;" class="btn btn-primary"><i class="pe-7s-mail"></i>Send Email</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card">
+            <div class="header">
                 <h4 class="title">Search Result</h4>
                 <p class="category">List of student</p>
             </div>

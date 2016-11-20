@@ -274,7 +274,30 @@ namespace ICT3104_Group4_SMS.DAL
                    
                 }
             }
-            
+        }
+
+        public ICollection<ApplicationUser> getExpiringAccounts()
+        {
+            ICollection<ApplicationUser> expiringAccounts = new List<ApplicationUser>();
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var context = new SmsContext();
+            users = data.SqlQuery("SELECT * From dbo.AspNetUsers").ToList();
+            foreach (var item in users)
+            {
+                for (int i = 0; i <= lockrolesArray.Length - 1; i++)
+                {
+                    bool role = UserManager.IsInRole(item.Id, lockrolesArray[i]);
+                    if (role)
+                    {
+                        double totaldays = (DateTime.Now - item.lastChangedPWd).TotalDays;
+                        if (totaldays >= 80 && totaldays <= 100)
+                        {
+                            expiringAccounts.Add(item);
+                        }
+                    }
+                }
+            }
+            return expiringAccounts;
         }
     }
 }

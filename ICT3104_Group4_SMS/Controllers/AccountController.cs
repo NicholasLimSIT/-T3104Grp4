@@ -171,7 +171,10 @@ namespace ICT3104_Group4_SMS.Controllers
             if (result.Equals(SignInStatus.Success) && isCorrectPIN)
             {
                 Session["Verified"] = true;
-                return RedirectToAction("Index", "Home");
+                if(returnUrl == null || returnUrl.Trim().Equals(""))
+                    return RedirectToAction("Index", "Home");
+                else
+                    return RedirectToLocal(returnUrl);
             }
             else
             {
