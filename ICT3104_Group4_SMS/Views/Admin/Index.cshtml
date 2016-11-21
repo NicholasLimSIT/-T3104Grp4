@@ -33,6 +33,7 @@
                             </th>
                             <th></th>
                             <th></th>
+                            <th></th>
 
                         </tr>
                     </thead>
@@ -63,6 +64,9 @@
                                     </td>
                                     <td>
                                         @Html.ActionLink("Delete", "DeleteAccount", new { id = @user[0] })
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Reset", "ResetPassword", new { id = @user[0] })
                                     </td>
                                 </tr>
                             }

@@ -447,10 +447,74 @@ namespace ICT3104_Group4_SMS.Controllers
             return RedirectToAction("SearchLockAccount");
         }
 
+        //Reset Password
+        public ActionResult ResetPassword(string id)
+        {
+
+            String newPassword = GenerateRandomPassword(10);
+            String hashedNewPassword = UserManager.PasswordHasher.HashPassword(newPassword);
+            Models.ApplicationUser Applicationuser = db.Users.Find(id);
+            if (ModelState.IsValid)
+            {
+                Applicationuser.PasswordHash = hashedNewPassword;
+                Applicationuser.lastChangedPWd = DateTime.Now;
+                db.Entry(Applicationuser).State = EntityState.Modified;
+                db.SaveChanges();
+                string emailid = Applicationuser.Email;
+                string subject = "EduTech - Password Reset";
+                string body = "Your password has been reset. The new password is " + newPassword;
+                try
+                {
+                    SendEMail(emailid, subject, body);
+                    TempData["Message"] = "Mail Sent.";
+                }
+                catch (Exception ex)
+                {
+                    TempData["Message"] = "Error occured while sending email." + ex.Message;
+                }
+                return RedirectToAction("SearchAccountParticulars");
+            }
+
+            return RedirectToAction("Index");
+        }
+        //Generate Password
+        private string GenerateRandomPassword(int length)
+        {
+            string allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789!@$?_-*&#+";
+            char[] chars = new char[length];
+            Random rd = new Random();
+            for (int i = 0; i < length; i++)
+            {
+                chars[i] = allowedChars[rd.Next(0, allowedChars.Length)];
+            }
+            return new string(chars);
+        }
+        //send email
+        private void SendEMail(string emailid, string subject, string body)
+        {
+            String sender = "edutech3104@gmail.com";
+            String password = "4013hceTudE";
+            System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
+            client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+            client.EnableSsl = true;
+            client.Host = "smtp.gmail.com";
+            client.Port = 587;
 
 
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential(sender, password);
+            client.UseDefaultCredentials = false;
+            client.Credentials = credentials;
 
+            System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
+            msg.From = new MailAddress(sender);
+            msg.To.Add(new MailAddress(emailid));
 
+            msg.Subject = subject;
+            msg.IsBodyHtml = true;
+            msg.Body = body;
+
+            client.Send(msg);
+        }
 
 
 
