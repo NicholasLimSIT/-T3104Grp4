@@ -73,23 +73,23 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 30px;
 }
 
 h5, .h5 {
-  font-size: 16px;
+  font-size: 22px;
   margin-bottom: 15px;
 }
 
 h6, .h6 {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -257,7 +257,7 @@ input:focus {
   text-transform: uppercase;
   padding: 5px 0px;
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   color: #FFFFFF;
   text-align: center;
   font-weight: 400;
@@ -297,7 +297,7 @@ input:focus {
 .sidebar .nav p {
   margin: 0;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -740,7 +740,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .btn-simple {
   border: 0;
-  font-size: 16px;
+  font-size: 18px;
   padding: 8px 16px;
 }
 .btn-simple.btn-icon {
@@ -748,7 +748,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 
 .btn-lg {
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 6px;
   padding: 14px 30px;
   font-weight: 400;
@@ -761,7 +761,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 
 .btn-sm {
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 3px;
   padding: 5px 10px;
 }
@@ -773,7 +773,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 
 .btn-xs {
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 3px;
   padding: 1px 5px;
 }
@@ -864,7 +864,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 .form-control + .form-control-feedback {
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: -7px;
   position: absolute;
   right: 10px;
@@ -953,7 +953,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   border-radius: 0;
   color: #FFFFFF;
   padding: 10px 15px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .container .alert {
   border-radius: 4px;
@@ -1052,11 +1052,14 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 .table > thead > tr > th {
   border-bottom-width: 1px;
-  font-size: 12px;
+  font-size: 15px;
   text-transform: uppercase;
   color: #9A9A9A;
   font-weight: 400;
   padding-bottom: 5px;
+}
+.table > tbody > tr > td {
+  font-size: 15px;
 }
 .table .td-actions .btn {
   opacity: 0.36;
@@ -1085,7 +1088,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   position: relative;
   -webkit-transition: color 0.25s linear;
   transition: color 0.25s linear;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
   color: #333333;
@@ -1366,14 +1369,14 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .navbar {
   border: 0;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 0;
 }
 .navbar .navbar-brand {
   font-weight: 400;
   margin: 5px 0px;
   padding: 15px 15px;
-  font-size: 20px;
+  font-size: 22px;
 }
 .navbar .navbar-nav > li > a {
   padding: 10px 15px;
@@ -1401,7 +1404,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   min-width: 18px;
   padding: 0 5px;
   height: 18px;
-  font-size: 12px;
+  font-size: 14px;
   color: #FFFFFF;
   font-weight: bold;
   line-height: 18px;
@@ -1410,10 +1413,10 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 .navbar .btn {
   margin: 15px 3px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .navbar .btn-simple {
-  font-size: 16px;
+  font-size: 18px;
 }
 .navbar.fixed {
   width: calc(100% - $sidebar-width);
@@ -1580,7 +1583,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   padding: 0;
   background-color: transparent;
   height: 22px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: #E3E3E3;
 }
@@ -1661,7 +1664,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   display: inline-block;
   vertical-align: top;
   padding: 10px 5px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: normal;
   line-height: 20px;
   text-align: center;
@@ -1674,7 +1677,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   padding: 10px 15px;
   margin: 10px 3px;
   line-height: 20px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .footer hr {
   border-color: #DDDDDD;
@@ -1688,7 +1691,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 
 .footer:not(.footer-big) nav > ul {
-  font-size: 14px;
+  font-size: 16px;
 }
 .footer:not(.footer-big) nav > ul li {
   margin-left: 20px;
@@ -1803,7 +1806,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   width: 46px;
 }
 .dropdown-with-icons i[class^="fa"] {
-  font-size: 14px;
+  font-size: 16px;
   width: 38px;
 }
 
@@ -1873,17 +1876,17 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 .card .category,
 .card label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #9A9A9A;
   margin-bottom: 0px;
 }
 .card .category i,
 .card label i {
-  font-size: 16px;
+  font-size: 18px;
 }
 .card label {
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 5px;
   text-transform: uppercase;
 }
@@ -1900,7 +1903,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   margin-right: 5px;
 }
 .card .description {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 .card .footer {
@@ -1922,15 +1925,15 @@ body > .navbar-collapse[data-color="purple"]:after {
   display: inline-block;
 }
 .card .author {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
 }
 .card .author i {
-  font-size: 14px;
+  font-size: 16px;
 }
 .card h6 {
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
 }
 .card.card-separator:after {
@@ -3362,12 +3365,12 @@ body > .navbar-collapse[data-color="purple"]:after {
   }
 
   .navbar-collapse .nav p {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
   }
   .navbar-collapse [class^="pe-7s-"] {
     float: left;
-    font-size: 20px;
+    font-size: 22px;
     margin-right: 10px;
   }
 }

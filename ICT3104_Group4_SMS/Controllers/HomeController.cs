@@ -45,7 +45,7 @@ namespace ICT3104_Group4_SMS.Controllers
                 }
             }
 
-            return View();
+            return RedirectToAction("Login","Account");
         }
         public ApplicationUserManager UserManager
         {
