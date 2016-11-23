@@ -277,6 +277,10 @@ namespace ICT3104_Group4_SMS.Controllers
 
             int id2 = id ?? default(int);
             IEnumerable<GradeRecViewModel> gradeWithRecList = smsMapper.GradeWithRec(id2);
+            if (gradeWithRecList.Select(m => m.RecItem).Where(m => m.status == "Pending").Count() == 0)
+                ViewBag.pendingRec = false;
+            else
+                ViewBag.pendingRec = true;
             return View(gradeWithRecList);
         }
 
@@ -459,7 +463,7 @@ namespace ICT3104_Group4_SMS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ModuleEdit([Bind(Include = "Id,name, frozenDateTime, publishDateTime, year")] Module module)
+        public ActionResult ModuleEdit([Bind(Include = "Id,name, status, frozenDateTime, publishDateTime, year")] Module module)
         {
             if (ModelState.IsValid)
             {

@@ -116,7 +116,7 @@ namespace ICT3104_Group4_SMS.Controllers
             
             int? modId = Convert.ToInt32(moduleId);
             Module module = ModuleGateway.SelectById(modId);
-            module.status = "Freeze";
+            module.status = "Frozen";
             module.frozenDateTime = DateTime.Now;
             if (ModelState.IsValid)
             {

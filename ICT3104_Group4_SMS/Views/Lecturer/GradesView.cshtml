@@ -121,7 +121,14 @@
                         <p class="category">Finalize grading and Lock the grade</p>
                     </div>
                     <div class="content">
-                        <button onclick="location.href = '@Url.Action("LockGrade", "Lecturer", new { id = ViewBag.moduleId })';return false;'; return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Lock Grade</button>
+                        @if (ViewBag.pendingRec)
+                        {
+                            <p class="text-warning">All recommendations have to be reviewed first before the grades can be locked.</p>
+                        }
+                        else
+                        {
+                            <button onclick="location.href = '@Url.Action("LockGrade", "Lecturer", new { id = ViewBag.moduleId })';return false;'; return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Lock Grade</button>
+                        }
                     </div>       
                 }
                 else
