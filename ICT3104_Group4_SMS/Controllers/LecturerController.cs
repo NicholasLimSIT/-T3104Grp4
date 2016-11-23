@@ -1,6 +1,7 @@
 ﻿using ICT3104_Group4_SMS.DAL;
 using ICT3104_Group4_SMS.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,7 +23,8 @@ namespace ICT3104_Group4_SMS.Controllers
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<Grade> GradesGateway;
         internal IDataGateway<Recommendation> RecommendationGateway;
-        
+        private ApplicationUserManager _userManager;
+
         //internal IDataGateway<Module> ModuleGateway = new DataGateway<Module>();
         private ModuleGateway ModuleGateway = new ModuleGateway();
         private Lecturer_ModuleDataGateway lmDW = new Lecturer_ModuleDataGateway();
@@ -49,7 +51,28 @@ namespace ICT3104_Group4_SMS.Controllers
             RecommendationGateway = new RecommendationGateway();
         }
 
-     
+        public LecturerController(ApplicationUserManager userManager)
+        {
+            Lecturer_ModuleGateway = new Lecturer_ModuleDataGateway();
+            ProgrammeGateway = new ProgrammeDataGateway();
+            ApplicationUserGateway = new ApplicationUserDataGateway();
+            GradesGateway = new GradesGateway();
+            RecommendationGateway = new RecommendationGateway();
+
+            UserManager = userManager;
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
 
         [HttpGet]
         public ActionResult SearchStudentParticulars(string name)
@@ -61,6 +84,10 @@ namespace ICT3104_Group4_SMS.Controllers
             if (name != null)
             {
                 ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchStudent(name);
+            }
+            else
+            {
+                ViewBag.List = ((ApplicationUserDataGateway)ApplicationUserGateway).searchStudent("");
             }
             return View();
         }
@@ -90,13 +117,19 @@ namespace ICT3104_Group4_SMS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditStudentParticulars([Bind(Include = "Id,UserName,Email,PhoneNumber")] Models.ApplicationUser Applicationuser)
+        public ActionResult EditStudentParticulars([Bind(Include = "Id,FullName,UserName,Email,PhoneNumber")] Models.ApplicationUser Applicationuser)
         {
             if (ModelState.IsValid)
             {
+                var user = UserManager.FindById(Applicationuser.Id);
+                user.FullName = Applicationuser.FullName;
+                user.Email = Applicationuser.Email;
+                user.PhoneNumber = Applicationuser.PhoneNumber;
+                user.UserName = Applicationuser.UserName;
+                UserManager.Update(user);
 
-                db.Entry(Applicationuser).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(Applicationuser).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("SearchStudentParticulars");
             }
             return View(Applicationuser);
@@ -175,7 +208,7 @@ namespace ICT3104_Group4_SMS.Controllers
                                 select u).FirstOrDefault();
                     if (user != null)
                     {
-                        studNameList.Add(user.UserName);
+                        studNameList.Add(user.FullName);
                         gList.Add(g);
                     }
 
@@ -426,7 +459,7 @@ namespace ICT3104_Group4_SMS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ModuleEdit([Bind(Include = "Id,name")] Module module)
+        public ActionResult ModuleEdit([Bind(Include = "Id,name, frozenDateTime, publishDateTime, year")] Module module)
         {
             if (ModelState.IsValid)
             {
@@ -468,7 +501,7 @@ namespace ICT3104_Group4_SMS.Controllers
         }
 
         // GET: Recommendations/Create
-        public ActionResult RecommendationCreate(int? id)
+        public ActionResult RecommendationCreate(int? id, string name)
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
@@ -477,6 +510,8 @@ namespace ICT3104_Group4_SMS.Controllers
             Grade gradeItem = GradesGateway.SelectById(id);
             ViewBag.gradeItem = gradeItem;
             ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
+            ViewBag.name = name;
+
             return View();
         }
 
@@ -513,10 +548,13 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 return HttpNotFound();
             }
-
+            
             Grade gradeItem = GradesGateway.SelectById(gradeId);
+            var student = UserManager.FindById(gradeItem.studentId);
+
             ViewBag.gradeItem = gradeItem;
             ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
+            ViewBag.name = student.FullName;
             return View(rec);
         }
 

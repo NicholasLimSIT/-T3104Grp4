@@ -269,6 +269,10 @@
     <Compile Include="Migrations\201610041339364_Fourth.Designer.cs">
       <DependentUpon>201610041339364_Fourth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611230251486_Fifth.cs" />
+    <Compile Include="Migrations\201611230251486_Fifth.Designer.cs">
+      <DependentUpon>201611230251486_Fifth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArchivedRecord.cs" />
@@ -417,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610041339364_Fourth.resx">
       <DependentUpon>201610041339364_Fourth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611230251486_Fifth.resx">
+      <DependentUpon>201611230251486_Fifth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,26 +10,32 @@
         <div class="card">
             <div class="header">
                 <h4 class="title">Grades for Module @ViewBag.moduleName</h4>
+                @if (Model.Count() == 0)
+                {
+                    <p class="text-danger">
+                        There are no students taking this module.
+                    </p>
+                }
             </div>
             <br />
-            <div class="col-md-12">
-                <button onclick="location.href='@Url.Action("GradeAssign", "Lecturer",new { id = ViewBag.moduleId })';return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Update Grades</button>
-            </div>
-            <br />
-            @if (Model.Count() == 0)
+            
+
+            @if(Model.Count() > 0)
             {
-                <p class="text-danger">
-                    There are no students taking this module.
-                </p>
-            }
-            else
-            {
+                if (@ViewBag.moduleStatus.Equals("Created"))
+                {
+                    <div class="col-md-12">
+                        <button onclick="location.href='@Url.Action("GradeAssign", "Lecturer", new { id = ViewBag.moduleId })';return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Update Grades</button>
+                    </div>
+                    <br />
+                }
+
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.GradeItem.studentId)
+                                    @Html.DisplayNameFor(model => model.StudentName)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.GradeItem.score) 
@@ -56,7 +62,7 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.GradeItem.studentId)
+                                        @Html.DisplayFor(modelItem => item.StudentName)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.GradeItem.score)
@@ -89,9 +95,9 @@
                                         {
                                             if (item.RecItem.recommendation == "-")
                                             {
-                                                <button onclick="location.href='@Url.Action("RecommendationCreate", "Lecturer", new { id = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Add Recommendation</button>
+                                                <button onclick="location.href='@Url.Action("RecommendationCreate", "Lecturer", new { id = item.GradeItem.Id, name = item.StudentName })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Add Recommendation</button>
                                             }
-                                            else if(item.RecItem.status == "Pending")
+                                            else if (item.RecItem.status == "Pending")
                                             {
                                                 <button onclick="location.href='@Url.Action("RecommendationEdit", "Lecturer", new { id = item.RecItem.Id, gradeId = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Update Recommendation</button>
                                             }
@@ -105,6 +111,8 @@
             }
         </div>
 
+        @if (Model.Count() > 0)
+        {
         <div class="card">
                 @if (ViewBag.moduleStatus == "Created")
                 {
@@ -127,7 +135,7 @@
                 }
           
         </div>
-
+        }
         <div>
             @Html.ActionLink("Back to modules list", "ModuleTeach", "Lecturer", null, null)
         </div>

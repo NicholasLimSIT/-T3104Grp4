@@ -4,12 +4,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ICT3104_Group4_SMS.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        [Display(Name="Full Name")]
+        public String FullName { get; set; }
         public string encryptionKey { get; set; }
         public string GPA { get; set; }
         public string year { get; set; }

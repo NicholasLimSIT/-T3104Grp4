@@ -25,7 +25,10 @@
             </div>
         </div>
 
-       
+        @Html.HiddenFor(model => model.frozenDateTime)
+        @Html.HiddenFor(model => model.publishDateTime)
+        @Html.HiddenFor(model => model.year)
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -36,7 +39,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", " ModuleIndex")
+    @Html.ActionLink("Back to module list", "ModuleIndex")
 </div>
 
 @section Scripts {

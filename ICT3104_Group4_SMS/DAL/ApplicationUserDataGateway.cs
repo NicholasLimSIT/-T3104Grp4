@@ -36,7 +36,7 @@ namespace ICT3104_Group4_SMS.DAL
             UserList = new List<string[]>();
 
             var context = new SmsContext();
-            users = data.SqlQuery("SELECT * FROM dbo.AspNetUsers WHERE userName LIKE '%" + name + "%'").ToList();
+            users = data.SqlQuery("SELECT * FROM dbo.AspNetUsers WHERE FullName LIKE '%" + name + "%'").ToList();
 
             foreach( var item in users)
             {
@@ -45,12 +45,13 @@ namespace ICT3104_Group4_SMS.DAL
                     bool role = UserManager.IsInRole(item.Id, rolesArray[i]);
                     if (role)
                     {
-                        string[] listString = new string[5];
+                        string[] listString = new string[7];
                         listString[0] = item.Id.ToString();
                         listString[1] = item.UserName;
                         listString[2] = item.Email;
                         listString[3] = item.PhoneNumber;
                         listString[4] = rolesArray[i];
+                        listString[6] = item.FullName;
                         UserList.Add(listString);
                     }
                 }
@@ -80,12 +81,13 @@ namespace ICT3104_Group4_SMS.DAL
                     bool role = UserManager.IsInRole(item.Id, lockrolesArray[i]);
                     if (role)
                     {
-                        string[] listString = new string[5];
+                        string[] listString = new string[7];
                         listString[0] = item.Id.ToString();
                         listString[1] = item.UserName;
                         listString[2] = item.Email;
                         listString[3] = item.PhoneNumber;
                         listString[4] = lockrolesArray[i];
+                        listString[6] = item.FullName;
                         UserList.Add(listString);
                     }
                 }
@@ -127,13 +129,14 @@ namespace ICT3104_Group4_SMS.DAL
                     bool role = UserManager.IsInRole(item.Id, rolesArray[i]);
                     if (role)
                     {
-                        string[] listString = new string[6];
+                        string[] listString = new string[7];
                         listString[0] = item.Id.ToString();
                         listString[1] = item.UserName;
                         listString[2] = item.Email;
                         listString[3] = item.PhoneNumber;
                         listString[4] = item.year;
                         listString[5] = rolesArray[i];
+                        listString[6] = item.FullName;
                         UserList.Add(listString);
                     }                   
                 }  
@@ -160,13 +163,14 @@ namespace ICT3104_Group4_SMS.DAL
                     bool role = UserManager.IsInRole(item.Id, lockrolesArray[i]);
                     if (role)
                     {
-                        string[] listString = new string[6];
+                        string[] listString = new string[7];
                         listString[0] = item.Id.ToString();
                         listString[1] = item.UserName;
                         listString[2] = item.Email;
                         listString[3] = item.PhoneNumber;
                         listString[4] = item.year;
                         listString[5] = lockrolesArray[i];
+                        listString[6] = item.FullName;
                         UserList.Add(listString);
 
                     }
@@ -201,11 +205,12 @@ namespace ICT3104_Group4_SMS.DAL
                 if (user.Find(x => x.Id == item.Id) != null)
                 {
                     // User is in the Student Role
-                    string[] listString = new string[4];
+                    string[] listString = new string[5];
                     listString[0] = item.Id.ToString();
                     listString[1] = item.UserName;
                     listString[2] = item.Email;
                     listString[3] = item.PhoneNumber;
+                    listString[4] = item.FullName;
                     UserList.Add(listString);
                 }
             }
@@ -236,11 +241,12 @@ namespace ICT3104_Group4_SMS.DAL
                 if (user.Find(x => x.Id == item.Id) != null)
                 {
                     // User is in the Admin Role
-                    string[] listString = new string[4];
+                    string[] listString = new string[5];
                     listString[0] = item.Id.ToString();
                     listString[1] = item.UserName;
                     listString[2] = item.Email;
                     listString[3] = item.PhoneNumber;
+                    listString[4] = item.FullName;
                     UserList.Add(listString);
                 }
             }
@@ -290,7 +296,7 @@ namespace ICT3104_Group4_SMS.DAL
                     if (role)
                     {
                         double totaldays = (DateTime.Now - item.lastChangedPWd).TotalDays;
-                        if (totaldays >= 80 && totaldays <= 100)
+                        if (totaldays >= 80)
                         {
                             expiringAccounts.Add(item);
                         }
@@ -298,6 +304,12 @@ namespace ICT3104_Group4_SMS.DAL
                 }
             }
             return expiringAccounts;
+        }
+
+        public ICollection<ApplicationUser> getNamesById(string[] studentIds)
+        {
+            var allUsers = data.Select(u => u.Id);
+            return data.Where(u => studentIds.Contains(u.Id)).ToList();
         }
     }
 }

@@ -17,6 +17,9 @@
                     <thead>
                         <tr>
                             <th>
+                                @Html.DisplayNameFor(model => model.FullName)
+                            </th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.UserName)
                             </th>
                             <th>
@@ -44,6 +47,9 @@
                             foreach (var user in @ViewBag.List)
                             {
                                 <tr>
+                                    <td>
+                                        @user[6]
+                                    </td>
                                     <td>
                                         @user[1]
                                     </td>

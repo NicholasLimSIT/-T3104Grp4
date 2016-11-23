@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Net.Mail;
 using SendGrid;
+using Microsoft.AspNet.Identity;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -244,7 +245,7 @@ namespace ICT3104_Group4_SMS.Controllers
                 ViewBag.createNotif = "not-active";
                 // get the index of @ of the email to remove
                 int index = model.Email.IndexOf("@");              
-                var user = new ApplicationUser { UserName = model.Email.Substring(0, index), Email = model.Email,year = DateTime.Now.Year.ToString(), lastChangedPWd = DateTime.Now, lockStatus = "clear" };
+                var user = new ApplicationUser { FullName = model.FullName, UserName = model.Email.Substring(0, index), Email = model.Email, PhoneNumber = model.PhoneNumber, year = DateTime.Now.Year.ToString(), lastChangedPWd = DateTime.Now, lockStatus = "clear" };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -336,21 +337,40 @@ namespace ICT3104_Group4_SMS.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Models.ApplicationUser Applicationuser = db.Users.Find(id);
+
             if (Applicationuser == null)
             {
                 return HttpNotFound();
             }
-            return View(Applicationuser);
+
+            EditAccountViewModel eavModel = new EditAccountViewModel();
+            eavModel.Id = Applicationuser.Id;
+            eavModel.FullName = Applicationuser.FullName;
+            eavModel.Email = Applicationuser.Email;
+            eavModel.PhoneNumber = Applicationuser.PhoneNumber;
+            eavModel.UserName = Applicationuser.UserName;
+
+            
+            return View(eavModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditAccount([Bind(Include = "Id,UserName,Email,PhoneNumber")] Models.ApplicationUser Applicationuser)
+        public ActionResult EditAccount([Bind(Include = "Id,FullName,UserName,Email,PhoneNumber")] Models.ApplicationUser Applicationuser)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(Applicationuser).State = EntityState.Modified;
-                db.SaveChanges();
+                var user = UserManager.FindById(Applicationuser.Id);
+                user.FullName = Applicationuser.FullName;
+                user.Email = Applicationuser.Email;
+                user.PhoneNumber = Applicationuser.PhoneNumber;
+                user.UserName = Applicationuser.UserName;
+
+                //Applicationuser = user;
+
+                UserManager.Update(user);
+                //db.Entry(user).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("SearchAccountParticulars");
             }
             return View(Applicationuser);

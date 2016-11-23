@@ -32,6 +32,9 @@
                         <thead>
                             <tr>
                                 <th>
+                                    @Html.DisplayNameFor(model => model.FullName)
+                                </th>
+                                <th>
                                     @Html.DisplayNameFor(model => model.UserName)
                                 </th>
                                 <th>
@@ -51,6 +54,9 @@
                 foreach (var student in @ViewBag.List)
                 {
                                     <tr>
+                                        <td>
+                                            @student[4]
+                                        </td>
                                         <td>
                                             @student[1]
                                         </td>

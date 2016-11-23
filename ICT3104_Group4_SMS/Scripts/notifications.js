@@ -2,14 +2,29 @@
 
 notifCreateAccount = {
     showNotification: function (from, align) {
-        color = Math.floor((Math.random() * 4) + 1);
-
         $.notify({
             icon: "pe-7s-bell",
-            message: "Account has <b>Succesfully</b> created."
+            message: "Account is <b>succesfully</b> created."
 
         }, {
-            type: 'info',
+            type: 'success',
+            timer: 1000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    }
+}
+
+notifCreateAccountFail = {
+    showNotification: function (from, align) {
+        $.notify({
+            icon: "pe-7s-bell",
+            message: "Account creation is <b>unsuccessful</b>."
+
+        }, {
+            type: 'danger',
             timer: 1000,
             placement: {
                 from: from,
@@ -47,25 +62,6 @@ notifFailArchive = {
 
         }, {
             type: 'info',
-            timer: 1000,
-            placement: {
-                from: from,
-                align: align
-            }
-        });
-    }
-}
-
-notifCreateAccountFail = {
-    showNotification: function (from, align) {
-        color = Math.floor((Math.random() * 4) + 1);
-
-        $.notify({
-            icon: "pe-7s-bell",
-            message: "Account creation is <b>Unsuccessful</b>."
-
-        }, {
-            type: 'alert',
             timer: 1000,
             placement: {
                 from: from,

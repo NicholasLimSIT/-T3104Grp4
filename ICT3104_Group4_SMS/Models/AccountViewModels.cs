@@ -64,12 +64,22 @@ namespace ICT3104_Group4_SMS.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name="Full Name")]
+        public string FullName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Phone Number")]
+        [RegularExpression(@"^\d{8}$", ErrorMessage = @"Please format the phone number in such a way e.g. 91234567")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 7)]
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{7,}$", ErrorMessage = @"Error. Password must have one capital, one special character, one numerical character and at least 7 characters long.")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -110,5 +120,28 @@ namespace ICT3104_Group4_SMS.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+    }
+
+    public class EditAccountViewModel
+    {
+        public string Id { get; set; }
+
+        [Required]
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Phone Number")]
+        [RegularExpression(@"^\d{8}$", ErrorMessage = @"Please format the phone number in such a way e.g. 91234567")]
+        public string PhoneNumber { get; set; }
     }
 }

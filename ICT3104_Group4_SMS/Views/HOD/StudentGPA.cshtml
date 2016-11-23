@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
 
 @{
-    ViewBag.Title = "StudentGPA";
+    ViewBag.Title = "Students GPA";
 }
 
 
@@ -12,7 +12,7 @@
 
         <div class="card">
             <div class="header">
-                <h4 class="title">Student Overall GPA</h4>
+                <h4 class="title">Students Overall GPA</h4>
                 <p class="category">List of students GPA</p>
             </div>
             <div class="content table-responsive table-full-width">
@@ -20,7 +20,8 @@
                     <thead>
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.Id)
+                                @*@Html.DisplayNameFor(model => model.FullName)*@
+                                Student
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.GPA)
@@ -33,7 +34,7 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
+                                    @Html.DisplayFor(modelItem => item.FullName)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.GPA)
