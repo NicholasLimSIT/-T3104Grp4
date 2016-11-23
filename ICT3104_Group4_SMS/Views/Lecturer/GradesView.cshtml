@@ -1,4 +1,6 @@
-﻿@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
+﻿@Scripts.Render("~/bundles/notifications")
+
+@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
 
 @{
     ViewBag.Title = "Module details";
@@ -91,7 +93,7 @@
                                         @Html.DisplayFor(modelItem => item.RecItem.status)
                                     </td>
                                     <td>
-                                        @if (ViewBag.moduleStatus == "Created")
+                                        @if (ViewBag.moduleStatus == "Created" || ViewBag.moduleStatus == "Inserted")
                                         {
                                             if (item.RecItem.recommendation == "-")
                                             {
@@ -100,6 +102,10 @@
                                             else if (item.RecItem.status == "Pending")
                                             {
                                                 <button onclick="location.href='@Url.Action("RecommendationEdit", "Lecturer", new { id = item.RecItem.Id, gradeId = item.GradeItem.Id })';return false;" class="btn btn-primary"><i class="pe-7s-star"></i> Update Recommendation</button>
+                                            }
+                                            else if (item.RecItem.status == "Approved")
+                                            {
+                                                <button onclick="location.href='@Url.Action("GradesUpdate", "Lecturer", new { id = item.GradeItem.Id, recId = item.RecItem.Id, moduleId = ViewBag.moduleId })';return false;" class="btn btn-primary"><i class="pe-7s-note"></i> Update Grade</button>
                                             }
                                         }
                                     </td>
@@ -114,7 +120,7 @@
         @if (Model.Count() > 0)
         {
         <div class="card">
-                @if (ViewBag.moduleStatus == "Created")
+                @if (ViewBag.moduleStatus == "Created" || ViewBag.moduleStatus == "Inserted")
                 {
                     <div class="header">
                         <h4 class="title">Grade Lock</h4>
@@ -123,7 +129,7 @@
                     <div class="content">
                         @if (ViewBag.pendingRec)
                         {
-                            <p class="text-warning">All recommendations have to be reviewed first before the grades can be locked.</p>
+                            <p>All recommendations have to be reviewed first before the grades can be locked.</p>
                         }
                         else
                         {
@@ -148,3 +154,13 @@
         </div>
     </div>
 </div>
+
+@if (TempData["GradeUpdateSuccess"] != null)
+{
+    if ((bool)TempData["GradeUpdateSuccess"])
+    {
+        <script>
+            notifSuccess.showNotification("Grades updated successfully.");
+        </script>
+    }
+}

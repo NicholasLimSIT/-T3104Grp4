@@ -240,6 +240,14 @@ namespace ICT3104_Group4_SMS.Controllers
                     }
 
                 }
+
+                Module module = ModuleGateway.SelectById(modId);
+                module.status = "Inserted";
+                if (ModelState.IsValid)
+                {
+                    ModuleGateway.Update(module);
+                }
+
                 db.SaveChanges();
                 ViewBag.Message = "Successfully Updated";
 
@@ -284,6 +292,58 @@ namespace ICT3104_Group4_SMS.Controllers
             return View(gradeWithRecList);
         }
 
+        // GET: Grades
+        [HttpGet]
+        public ActionResult GradesUpdate(int? id, int recId, int moduleId)
+        {
+            // check if user has passed 2FA verification. if no, redirect to login page
+            if (IfUserSkipTwoFA())
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Grade gradeItem = GradesGateway.SelectById(id);
+            Recommendation recItem = RecommendationGateway.SelectById(recId);
+
+            ViewBag.RecItem = recItem;
+            ViewBag.moduleId = moduleId;
+            ViewBag.moduleName = ModuleGateway.SelectById(moduleId).name;
+            ViewBag.studentName = UserManager.FindById(gradeItem.studentId).FullName;
+
+            return View(gradeItem);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GradesUpdate([Bind(Include = "Id,score")] Grade model, int recId, int moduleId)
+        {
+            //int? modId = Convert.ToInt32(moduleId);
+            if (ModelState.IsValid)
+            {
+                var c = db.Grades.Where(a => a.Id.Equals(model.Id)).FirstOrDefault();
+                if (c != null)
+                {
+                    c.score = model.score;
+                }
+
+                db.SaveChanges();
+                TempData["GradeUpdateSuccess"] = true;
+
+                //return View("GradeAssign(" + modId+")");
+                return RedirectToAction("GradesView/" + moduleId);
+
+            }
+            else
+            {
+                TempData["GradeUpdateSuccess"] = false;
+                return RedirectToAction("GradesUpdate", new { model.Id, recId, moduleId });
+                //return View(list);
+            }
+
+        }
         // GET: Programmes
         public ActionResult ProgrammeIndex()
         {
@@ -293,7 +353,7 @@ namespace ICT3104_Group4_SMS.Controllers
 
             return View(db.Programmes.ToList());
         }
-
+        
         // GET: Programmes/Create
         public ActionResult ProgrammeCreate()
         {

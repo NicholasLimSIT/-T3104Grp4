@@ -264,12 +264,6 @@ C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.
 C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
 C:\Users\Anita Koo\Documents\GitHub\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Init.resources
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Third.resources
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Fourth.resources
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Fifth.resources
-C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\ApplicationInsights.config
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\csc.exe
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -354,5 +348,11 @@ C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Init.resources
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Third.resources
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Fourth.resources
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Fifth.resources
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csproj.GenerateResource.Cache
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache

@@ -100,3 +100,18 @@ notifInfo = {
         });
     }
 }
+
+notifFail = {
+    showNotification: function (message) {
+        $.notify({
+            message: message
+        }, {
+            type: type[4],
+            timer: 4000,
+            placement: {
+                from: "top",
+                align: "center"
+            }
+        });
+    }
+}
