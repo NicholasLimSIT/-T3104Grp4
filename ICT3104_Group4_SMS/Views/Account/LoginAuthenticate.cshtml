@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="">
                                         <label class="col-md-12 control-label">Manual Entry Code</label>
-                                        <p>@ViewBag.ManualEntryCode</p>
+                                        <p style="font-size: 16px;">@ViewBag.ManualEntryCode</p>
                                     </div>
                                     
                                     <div class="form-group">
@@ -73,7 +73,7 @@
                                         if (TempData["SignInFail"].Equals("2"))
                                         {
                                             <span class="field-validation-error text-danger">
-                                                Invalid Password / Authenticator Pin.
+                                                Invalid Credentials / Authenticator Pin.
                                             </span>
                                         }
                                     }
@@ -82,7 +82,9 @@
                                             <input type="submit" value="Log in" class="btn btn-default" />
                                         </div>
                                     </div>
-                                    
+                                    <div class="text-center col-md-12">
+                                        @Html.ActionLink("Login with a different username", "LoginNonStudent")
+                                    </div>
                                 }
                             </div>
                         @*</div>
