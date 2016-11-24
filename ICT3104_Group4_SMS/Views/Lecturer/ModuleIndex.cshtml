@@ -37,7 +37,7 @@
                                 @Html.DisplayNameFor(model => model.year)
                             </th>
 
-                            <th></th>
+
                         </tr>
                     </thead>
 
@@ -59,10 +59,7 @@
                                     @Html.DisplayFor(modelItem => item.year)
                                 </td>
 
-                                <td>
-                                    @Html.ActionLink("Edit", "ModuleEdit", new { id = item.Id }) |
-                                    @Html.ActionLink("Delete", "ModuleDelete", new { id = item.Id })
-                                </td>
+
                             </tr>
                         }
                     </tbody>

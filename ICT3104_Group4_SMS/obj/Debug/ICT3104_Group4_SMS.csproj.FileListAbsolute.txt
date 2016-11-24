@@ -38,7 +38,6 @@ C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_S
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.dll
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Owin.dll
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Helpers.dll
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\System.Web.Mvc.dll
@@ -356,3 +355,6 @@ C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.dll
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.pdb
 C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
+C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Fifth.resources
+C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Google.Authenticator.dll
+C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\SendGrid.dll
