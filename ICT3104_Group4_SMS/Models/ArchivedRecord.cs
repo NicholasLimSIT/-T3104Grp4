@@ -16,6 +16,7 @@
         public string moduleName { get; set; }
         public double score { get; set; }
         public string grade { get; set; }
+        public string GPA { get; set; }
 
 
     }

@@ -97,7 +97,10 @@ namespace ICT3104_Group4_SMS.DAL
                 else        // no recommendation found, use the object created for no recommendation
                     tempModel.RecItem = noRec;
 
-                tempModel.StudentName = userList.Where(u => u.Id == tempModel.GradeItem.studentId).Select(u => u.FullName).Take(1).First();
+                var student = userList.Where(u => u.Id == tempModel.GradeItem.studentId).Select(u => u.FullName);
+                if (student != null)
+                    continue;
+                tempModel.StudentName = student.Take(1).First();
                 gradeRecList.Add(tempModel);
             }
 

@@ -4,6 +4,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -45,6 +47,13 @@ namespace ICT3104_Group4_SMS.DAL
                         }
                         record.score = g.score;
                         record.grade = g.grade;
+                        if (i.GPA != null && i.encryptionKey != null)
+                        {
+                            string encrypt = i.encryptionKey;
+                            string decrypt = Decrypt(i.GPA, encrypt);
+                            record.GPA = decrypt;                           
+                        }
+                        
                         db.ArchivedRecords.Add(record);
                         db.SaveChanges();                     
                         ApplicationUser user =db.Users.Find(i.Id);
@@ -58,6 +67,20 @@ namespace ICT3104_Group4_SMS.DAL
                 }
             }
             return 0;
+        }
+        internal static string Decrypt(string input, string key)
+        {
+
+            byte[] inputArray = Convert.FromBase64String(input);
+            TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
+            tripleDES.Key = UTF8Encoding.UTF8.GetBytes(key);
+            tripleDES.Mode = CipherMode.ECB;
+            tripleDES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tripleDES.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(inputArray, 0, inputArray.Length);
+            tripleDES.Clear();
+            return UTF8Encoding.UTF8.GetString(resultArray);
+
         }
     }
 }
