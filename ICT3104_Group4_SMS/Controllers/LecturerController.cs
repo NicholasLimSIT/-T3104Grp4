@@ -275,7 +275,7 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-         
+
             ViewBag.moduleId = id;
             ViewBag.moduleName = moduleName;
             if (moduleName == null)
@@ -353,7 +353,7 @@ namespace ICT3104_Group4_SMS.Controllers
 
             return View(db.Programmes.ToList());
         }
-        
+
         // GET: Programmes/Create
         public ActionResult ProgrammeCreate()
         {
@@ -612,7 +612,7 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 return HttpNotFound();
             }
-            
+
             Grade gradeItem = GradesGateway.SelectById(gradeId);
             var student = UserManager.FindById(gradeItem.studentId);
 
@@ -734,8 +734,9 @@ namespace ICT3104_Group4_SMS.Controllers
             module.status = "Locked";
             ModuleGateway.Update(module);
             ViewBag.moduleStatus = "Locked";
+        
+            return RedirectToAction("GradesView", new { module.Id, module.name });
 
-            return View();
         }
         public ActionResult StudentGPA()
         {

@@ -27,7 +27,7 @@
                 if (@ViewBag.moduleStatus.Equals("Created"))
                 {
                     <div class="col-md-12">
-                        <button onclick="location.href='@Url.Action("GradeAssign", "Lecturer", new { id = ViewBag.moduleId })';return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Update Grades</button>
+                        <button onclick="location.href='@Url.Action("GradeAssign", "Lecturer", new { id = ViewBag.moduleId })';return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Assign Grades</button>
                     </div>
                     <br />
                 }
@@ -133,7 +133,7 @@
                         }
                         else
                         {
-                            <button onclick="location.href = '@Url.Action("LockGrade", "Lecturer", new { id = ViewBag.moduleId })';return false;'; return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Lock Grade</button>
+                            <button onclick="location.href = '@Url.Action("LockGrade", "Lecturer", new { id = ViewBag.moduleId })';return false;" class="btn btn-primary"><i class="pe-7s-pen"></i> Lock Grade</button>
                         }
                     </div>       
                 }
