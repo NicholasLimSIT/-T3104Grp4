@@ -14,6 +14,7 @@ using System.Data.Entity;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
+    [Authorize(Roles = "HOD")]
     public class HODController : Controller
     {
         private SmsContext db = new SmsContext();

@@ -79,7 +79,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (name != null)
             {
@@ -97,7 +97,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -140,7 +140,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -169,7 +169,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             var userID = User.Identity.GetUserId();
             return View(lmDW.selectModuleByLecturer(userID));
@@ -181,7 +181,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -269,7 +269,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -298,7 +298,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -349,7 +349,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             return View(db.Programmes.ToList());
         }
@@ -359,7 +359,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             return View();
         }
@@ -387,7 +387,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -423,7 +423,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -454,7 +454,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             return View(db.Modules.ToList());
         }
@@ -465,7 +465,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             ViewBag.List = ((ProgrammeDataGateway)ProgrammeGateway).GetAllProgrammes();
 
@@ -504,7 +504,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -539,7 +539,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -569,7 +569,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             Grade gradeItem = GradesGateway.SelectById(id);
             ViewBag.gradeItem = gradeItem;
@@ -600,7 +600,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -643,7 +643,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             var userID = User.Identity.GetUserId();
             return View(lmDW.selectModuleByLecturer(userID));
@@ -654,7 +654,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             if (id == null)
             {
@@ -742,7 +742,7 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
+                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
             var userID = User.Identity.GetUserId();
             IEnumerable<Module> LecModule = lmDW.selectModuleByLecturer(userID);

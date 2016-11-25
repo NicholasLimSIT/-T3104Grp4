@@ -37,7 +37,7 @@
                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                     <div class="form-group">
                                         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", Value=ViewBag.Email, @readonly = true })
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", Value = ViewBag.Email, @readonly = true })
                                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="form-group">
@@ -53,7 +53,7 @@
                                         <label class="col-md-12 control-label">Manual Entry Code</label>
                                         <p style="font-size: 16px;">@ViewBag.ManualEntryCode</p>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label class="col-md-12 control-label" for="GaPin">Google Authenticator PIN</label>
                                         <input class="form-control" data-val="true" data-val-required="The Authenticator PIN field is required." id="enteredPin" name="enteredPin">
@@ -82,10 +82,15 @@
                                             <input type="submit" value="Log in" class="btn btn-default" />
                                         </div>
                                     </div>
-                                    <div class="text-center col-md-12">
-                                        @Html.ActionLink("Login with a different username", "LoginNonStudent")
-                                    </div>
                                 }
+                                    <div class="text-center col-md-12">
+                                        @using (Html.BeginForm("LoginWithDiffUser", "Account", FormMethod.Post, new { @class = "", role = "form" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <input type="submit" value="Log in with a different username" class="btn btn-link" style="border: none; color: #1DC7EA;"/>
+                                        }
+                                    </div>
+                                
                             </div>
                         @*</div>
                     </div>*@

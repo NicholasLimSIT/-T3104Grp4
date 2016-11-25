@@ -56,7 +56,37 @@ namespace ICT3104_Group4_SMS.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (Request.IsAuthenticated)
+            {
+                if (User.IsInRole("Student"))
+                {
+                    if (returnUrl == null || returnUrl.Trim().Equals("") || !returnUrl.Contains("Student"))
+                        return RedirectToAction("Index", "Home");
+                    else
+                        return RedirectToLocal(returnUrl);
+                }
+                else
+                {
+                    if (Session == null)
+                    { }
+                    else if (Session["Verified"] != null)
+                    {
+                        if (returnUrl == null || returnUrl.Trim().Equals("") ||
+                            !(User.IsInRole("Admin") && !returnUrl.Contains("Admin")) ||
+                            !(User.IsInRole("HOD") && !returnUrl.Contains("HOD")) ||
+                            !!(User.IsInRole("Lecturer") && !returnUrl.Contains("Lecturer")))
+                            return RedirectToAction("Index", "Home");
+                        else
+                            return RedirectToLocal(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("LoginAuthenticate", "Account", new { Email = User.Identity.Name, ReturnUrl = returnUrl });
+                    }
+                }
+            }
             ViewBag.ReturnUrl = returnUrl;
+            
             return View();
         }
 
@@ -97,6 +127,35 @@ namespace ICT3104_Group4_SMS.Controllers
         public ActionResult LoginNonStudent(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+            if (Request.IsAuthenticated)
+            {
+                if (User.IsInRole("Student"))
+                {
+                    if (returnUrl == null || returnUrl.Trim().Equals("") || !returnUrl.Contains("Student"))
+                        return RedirectToAction("Index", "Home");
+                    else
+                        return RedirectToLocal(returnUrl);
+                }
+                else
+                {
+                    if (Session == null)
+                    { }
+                    else if (Session["Verified"] != null)
+                    {
+                        if (returnUrl == null || returnUrl.Trim().Equals("") ||
+                            !(User.IsInRole("Admin") && !returnUrl.Contains("Admin")) ||
+                            !(User.IsInRole("HOD") && !returnUrl.Contains("HOD")) ||
+                            !!(User.IsInRole("Lecturer") && !returnUrl.Contains("Lecturer")))
+                            return RedirectToAction("Index", "Home");
+                        else
+                            return RedirectToLocal(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("LoginAuthenticate", "Account", new { Email = User.Identity.Name, ReturnUrl = returnUrl });
+                    }
+                }
+            }
             return View();
         }
 
@@ -121,6 +180,33 @@ namespace ICT3104_Group4_SMS.Controllers
         {
             if (email == null || email.Trim().Equals(""))
                 return RedirectToAction("LoginNonStudent", new { returnUrl });
+
+            if (Request.IsAuthenticated)
+            {
+                if (User.IsInRole("Student"))
+                {
+                    if (returnUrl == null || returnUrl.Trim().Equals("") || !returnUrl.Contains("Student"))
+                        return RedirectToAction("Index", "Home");
+                    else
+                        return RedirectToLocal(returnUrl);
+                }
+                else
+                {
+                    if (Session == null)
+                    { }
+                    else if (Session["Verified"] != null)
+                    {
+                        if (returnUrl == null || returnUrl.Trim().Equals("") ||
+                            !(User.IsInRole("Admin") && !returnUrl.Contains("Admin")) ||
+                            !(User.IsInRole("HOD") && !returnUrl.Contains("HOD")) ||
+                            !!(User.IsInRole("Lecturer") && !returnUrl.Contains("Lecturer")))
+                            return RedirectToAction("Index", "Home");
+                        else
+                            return RedirectToLocal(returnUrl);
+                    }
+                }
+            }
+
             ViewBag.ReturnUrl = returnUrl;
 
             //var user = UserManager.FindById(User.Identity.GetUserId());
@@ -171,7 +257,10 @@ namespace ICT3104_Group4_SMS.Controllers
             if (result.Equals(SignInStatus.Success) && isCorrectPIN)
             {
                 Session["Verified"] = true;
-                if(returnUrl == null || returnUrl.Trim().Equals(""))
+                if (returnUrl == null || returnUrl.Trim().Equals("") ||
+                            !(User.IsInRole("Admin") && !returnUrl.Contains("Admin")) ||
+                            !(User.IsInRole("HOD") && !returnUrl.Contains("HOD")) ||
+                            !!(User.IsInRole("Lecturer") && !returnUrl.Contains("Lecturer")))
                     return RedirectToAction("Index", "Home");
                 else
                     return RedirectToLocal(returnUrl);
@@ -181,6 +270,18 @@ namespace ICT3104_Group4_SMS.Controllers
                 TempData["SignInFail"] = "2";
                 return RedirectToAction("LoginAuthenticate", new { Email = model.Email, ReturnUrl = returnUrl });
             }     
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LoginWithDiffUser()
+        {
+            if (Request.IsAuthenticated)
+            {
+                AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                Session.Clear();
+            }
+            return RedirectToAction("LoginNonStudent", "Account");
         }
 
         //
