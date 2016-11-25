@@ -56,21 +56,27 @@
                                 </td>
                                 @if (item.status == "Frozen")
                                 {
-
                                     <td>
                                         <button onclick="location.href='@Url.Action("PublishGrade", "HOD", new { id = item.Id })';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> Publish</button>
                                     </td>
                                 }
                                 else if (item.status == "Published")
                                 {
-                                <td>
-                                    <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD", new { id = item.Id, moduleName = item.name , moduleStatus = item.status })';return false;" class="btn btn-primary"><i class="pe-7s-look"></i> View Grade</button>
-                                </td>}
+                                    <td>
+                                        <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD", new { id = item.Id, moduleName = item.name , moduleStatus = item.status })';return false;" class="btn btn-primary"><i class="pe-7s-look"></i> View Grade</button>
+                                    </td>
+                                }
+                                else if (item.status == "Locked")
+                                {
+                                    <td>
+                                        <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD", new { id = item.Id, moduleName = item.name, moduleStatus = item.status })';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> Moderate Mark</button>
+                                    </td>
+                                }
                                 else
                                 {
-                                <td>
-                                    <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD", new { id = item.Id, moduleName = item.name, moduleStatus = item.status })';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> Moderate Mark</button>
-                                </td>
+                                    <td>
+                                        <button onclick="location.href='@Url.Action("ModerateMarkView", "HOD", new { id = item.Id, moduleName = item.name, moduleStatus = item.status })';return false;" class="btn btn-primary"><i class="pe-7s-study"></i> View Students</button>
+                                    </td>
                                 }
                             </tr>
                         }

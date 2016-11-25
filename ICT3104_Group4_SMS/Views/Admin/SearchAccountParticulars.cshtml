@@ -1,7 +1,23 @@
-﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
+﻿@Scripts.Render("~/bundles/notifications")
+@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
 @{
     ViewBag.Title = "Edit Account's Particular";
 }
+
+@if (TempData["Message"] == "Mail Sent.")
+{
+    <script type="text/javascript">
+        notifInfo.showNotification("Email to reset password has been sent successfully.");
+    </script>
+}
+else if (TempData["Message"] == "Account Deleted")
+{
+    <script type="text/javascript">
+        notifFailArchive.showNotification("Account has been successfully deleted.");
+    </script>
+
+}
+
 @using (Html.BeginForm("SearchAccountParticulars", "Admin", FormMethod.Get))
 {
     <div class="row">

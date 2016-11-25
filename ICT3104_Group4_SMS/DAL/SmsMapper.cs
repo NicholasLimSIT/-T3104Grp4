@@ -36,10 +36,15 @@ namespace ICT3104_Group4_SMS.DAL
 
             foreach (var grade in gradeList)
             {
-
-                double newScore = (grade.score * (100 + Double.Parse(moderationPercentage)))/100;
-
-                gradeGateway.updateGrade(grade.Id, newScore);
+                try
+                {
+                    double newScore = (grade.score * (100 + Double.Parse(moderationPercentage))) / 100;
+                    gradeGateway.updateGrade(grade.Id, newScore);
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
             }
             
             // mapping of grade to recommendation
@@ -98,9 +103,10 @@ namespace ICT3104_Group4_SMS.DAL
                     tempModel.RecItem = noRec;
 
                 var student = userList.Where(u => u.Id == tempModel.GradeItem.studentId).Select(u => u.FullName);
-                if (student != null)
+                if (student.Count() == 0)
                     continue;
                 tempModel.StudentName = student.Take(1).First();
+
                 gradeRecList.Add(tempModel);
             }
 
@@ -137,7 +143,11 @@ namespace ICT3104_Group4_SMS.DAL
 
                 Lecturer_Module tempLecMod = lecmodList.Where(lm => lm.Id == tempModel.GradeItem.lecturermoduleId).Take(1).First();
                 tempModel.ModuleName = modList.Where(m => m.Id == tempLecMod.moduleId).Select(m => m.name).Take(1).First();
-                tempModel.StudentName = userList.Where(u => u.Id == tempModel.GradeItem.studentId).Select(u => u.FullName).Take(1).First();
+
+                var student = userList.Where(u => u.Id == tempModel.GradeItem.studentId).Select(u => u.FullName);
+                if (student.Count() == 0)
+                    continue;
+                tempModel.StudentName = student.Take(1).First();
 
                 modGradeRecList.Add(tempModel);
             }

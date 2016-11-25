@@ -242,23 +242,24 @@ namespace ICT3104_Group4_SMS.Controllers
                 }
 
                 Module module = ModuleGateway.SelectById(modId);
-                module.status = "Inserted";
+                module.status = "Assigned";
                 if (ModelState.IsValid)
                 {
                     ModuleGateway.Update(module);
                 }
 
                 db.SaveChanges();
-                ViewBag.Message = "Successfully Updated";
+                TempData["GradesAssigned"] = true;
 
                 //return View("GradeAssign(" + modId+")");
-                return RedirectToAction("GradeAssign/" + modId);
+                return RedirectToAction("GradesView", new { id = moduleId, moduleName = module.name });
 
             }
             else
             {
-                ViewBag.Message = "Failed! Please try again";
-                return RedirectToAction("ModuleTeach");
+                TempData["GradesAssigned"] = false;
+                String moduleName = ((ModuleGateway)ModuleGateway).SelectById(modId).name;
+                return RedirectToAction("GradesView", new { id = moduleId, moduleName = moduleName });
                 //return View(list);
             }
 
@@ -692,12 +693,14 @@ namespace ICT3104_Group4_SMS.Controllers
         // GET: Grades
         public ActionResult StudentEnrol(string studentId, string moduleName)
         {
+            int moduleId = 0;
+
             if (studentId.Length != 0)
             {
                 Grade newGrade = new Grade();
                 newGrade.studentId = studentId;
                 IEnumerable<Module> modList = ModuleGateway.SelectAll();
-
+                
                 foreach (var i in modList)
                 {
                     if (i.name.Equals(moduleName))
@@ -708,17 +711,16 @@ namespace ICT3104_Group4_SMS.Controllers
                             if (j.moduleId == i.Id)
                             {
                                 newGrade.lecturermoduleId = j.Id;
+                                moduleId = j.moduleId;
                             }
                         }
                     }
                 }
-
                 GradesGateway.Insert(newGrade);
+                TempData["StudentEnrolDone"] = true;
             }
-
-
-
-            return RedirectToAction("StudentEnrolment");
+            
+            return RedirectToAction("StudentEnrolView", new { id = moduleId, moduleName });
         }
 
         // GET: Grades

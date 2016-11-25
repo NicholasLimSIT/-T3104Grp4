@@ -358,3 +358,5 @@ C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Fifth.resources
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\Google.Authenticator.dll
 C:\Users\Nicholas\Source\Repos\-T3104Grp4\-T3104Grp4\-T3104Grp4\ICT3104_Group4_SMS\bin\SendGrid.dll
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.addonetable.resources
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.Seventh.resources

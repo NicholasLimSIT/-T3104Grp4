@@ -33,20 +33,23 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.status)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.year)
-                                </td>
-                                <td>
-                                    <button onclick="location.href='@Url.Action("StudentEnrolView", "Lecturer",new { id = item.Id, moduleName = item.name})';return false;" class="btn btn-primary"><i class="pe-7s-study"></i>Enrol</button>                                
-                                </td>
-                            </tr>
+                            if (item.status == "Created")
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.status)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.year)
+                                    </td>
+                                    <td>
+                                        <button onclick="location.href='@Url.Action("StudentEnrolView", "Lecturer", new { id = item.Id, moduleName = item.name })';return false;" class="btn btn-primary"><i class="pe-7s-study"></i>Enrol</button>                                                                   
+                                    </td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>

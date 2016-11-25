@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
+﻿@Scripts.Render("~/bundles/notifications")
+@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
 
 @{
     ViewBag.Title = "Enrol Student";
@@ -62,3 +63,10 @@
         </div>
     </div>
 </div>
+
+@if (TempData["StudentEnrolDone"] != null)
+{
+    <script>
+        notifSuccess.showNotification("Student is enrolled successfully.");
+    </script>
+}

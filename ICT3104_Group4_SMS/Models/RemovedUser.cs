@@ -8,7 +8,8 @@
     public partial class RemovedUser
     {
 
-        public string Id { get; set; }
+        public int Id { get; set; }
+        public string FulName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string year { get; set; }

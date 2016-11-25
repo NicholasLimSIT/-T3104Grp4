@@ -1,4 +1,6 @@
-﻿@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
+﻿@Scripts.Render("~/bundles/notifications")
+
+@model IEnumerable<ICT3104_Group4_SMS.Models.GradeRecViewModel>
 
 @{
     ViewBag.Title = "Moderate Mark View";
@@ -13,14 +15,15 @@
             <div class="header">
                 <h4 class="title">Moderation for Module @ViewBag.moduleName</h4>
                 <p class="category">List of student's grade</p>
+                @if (Model.Count() == 0)
+                {
+                    <p style="padding-bottom: 5px;">
+                        <br />There are no students taking this module.
+                    </p>
+                }
             </div>
-            @if (Model.Count() == 0)
-            {
-                <p class="text-danger">
-                    There are no students taking this module.
-                </p>
-            }
-            else
+
+            @if (Model.Count() != 0)
             {
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
@@ -79,42 +82,60 @@
             }
         </div>
 
-        <div class="card">
-@if (ViewBag.moduleStatus != "Published")
-{
-            <div class="header">
-                <h4 class="title">Setting</h4>
-            </div>     
-            <div class="content">
-                @using (Html.BeginForm("ModerateAction", "HOD", FormMethod.Post))
-                {
-                @Html.Hidden("moduleId", (string)(ViewBag.moduleId.ToString()))
-                <div class="form-group">
-                    <label for="moderationPercentage">Moderation Percentage</label>
-                    <input class="form-control" id="moderationPercentage" placeholder="Moderation %" name="moderationPercentage">
-                </div>
-                <button class="btn btn-primary"><i class="pe-7s-pen"></i> Moderate Mark</button>
-                }
-
-                <hr>
+        @if (Model.Count() > 0)
+        {
+            <div class="card">
+            @if (ViewBag.moduleStatus == "Locked")
+            {
                 <div class="header">
-                    <h4 class="title">Freeze</h4>
-                    <p class="category">Finalize moderation and freeze the mark</p>
-                </div>
+                    <h4 class="title">Setting</h4>
+                </div>     
                 <div class="content">
-                @using (Html.BeginForm("FreezeGrade", "HOD", FormMethod.Post))
-                {
+                    @using (Html.BeginForm("ModerateAction", "HOD", FormMethod.Post))
+                    {
                     @Html.Hidden("moduleId", (string)(ViewBag.moduleId.ToString()))
-                    <button class="btn btn-primary" type="submit"><i class="pe-7s-pen"></i> Freeze Mark</button>
-                }
-                </div>
-            </div>
-}
-        </div>
+                    <div class="form-group">
+                        <label for="moderationPercentage">Moderation Percentage</label>
+                        <input class="form-control" id="moderationPercentage" placeholder="Moderation %" name="moderationPercentage">
+                    </div>
+                    <button class="btn btn-primary"><i class="pe-7s-pen"></i> Moderate Mark</button>
+                    }
 
-            <div>
-                @Html.ActionLink("Back to modules list", "ModerateMark", "HOD", null, null)
+                    <hr>
+                    <div class="header">
+                        <h4 class="title">Freeze</h4>
+                        <p class="category">Finalize moderation and freeze the mark</p>
+                    </div>
+                    <div class="content">
+                    @using (Html.BeginForm("FreezeGrade", "HOD", FormMethod.Post))
+                    {
+                        @Html.Hidden("moduleId", (string)(ViewBag.moduleId.ToString()))
+                        <button class="btn btn-primary" type="submit"><i class="pe-7s-pen"></i> Freeze Mark</button>
+                    }
+                    </div>
+                </div>
+            }
             </div>
+        }
+        <div>
+            @Html.ActionLink("Back to modules list", "ModerateMark", "HOD", null, null)
+        </div>
 
         </div>
 </div>
+
+@if(TempData["moderationAction"] != null)
+{
+    if((bool)TempData["moderationAction"])
+    {
+        <script>
+            notifSuccess.showNotification("Marks have been moderated successfully.");
+        </script>
+    }
+    else
+    {
+        <script>
+            notifInfo.showNotification("An error has occured while moderating marks.");
+        </script>
+    }
+}

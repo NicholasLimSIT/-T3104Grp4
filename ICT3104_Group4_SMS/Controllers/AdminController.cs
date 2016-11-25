@@ -319,7 +319,8 @@ namespace ICT3104_Group4_SMS.Controllers
                 db.Entry(Applicationuser).State = EntityState.Modified;
                 db.SaveChanges();
             }
-           
+
+            TempData["SearchLockAccount"] = 2;
             return RedirectToAction("SearchLockAccount");
         }
 
@@ -408,6 +409,7 @@ namespace ICT3104_Group4_SMS.Controllers
 
             //db.Users.Remove(Applicationuser);
             //db.SaveChanges();
+            TempData["Message"] = "Account Deleted";
             return RedirectToAction("SearchAccountParticulars");
         }
 
@@ -464,6 +466,9 @@ namespace ICT3104_Group4_SMS.Controllers
                     }
                 }
             }
+
+            TempData["SearchLockAccount"] = 1;
+
             return RedirectToAction("SearchLockAccount");
         }
 

@@ -273,6 +273,14 @@
     <Compile Include="Migrations\201611230251486_Fifth.Designer.cs">
       <DependentUpon>201611230251486_Fifth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611252007506_addonetable.cs" />
+    <Compile Include="Migrations\201611252007506_addonetable.Designer.cs">
+      <DependentUpon>201611252007506_addonetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611252012080_Seventh.cs" />
+    <Compile Include="Migrations\201611252012080_Seventh.Designer.cs">
+      <DependentUpon>201611252012080_Seventh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArchivedRecord.cs" />
@@ -285,6 +293,7 @@
     <Compile Include="Models\Module_Programme.cs" />
     <Compile Include="Models\Programme.cs" />
     <Compile Include="Models\Recommendation.cs" />
+    <Compile Include="Models\RemovedUser.cs" />
     <Compile Include="Models\StudentModuleGrade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -425,6 +434,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611230251486_Fifth.resx">
       <DependentUpon>201611230251486_Fifth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611252007506_addonetable.resx">
+      <DependentUpon>201611252007506_addonetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611252012080_Seventh.resx">
+      <DependentUpon>201611252012080_Seventh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

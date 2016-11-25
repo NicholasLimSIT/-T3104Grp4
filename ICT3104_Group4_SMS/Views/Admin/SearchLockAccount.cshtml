@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
+﻿@Scripts.Render("~/bundles/notifications")
+@model IEnumerable<ICT3104_Group4_SMS.Models.ApplicationUser>
 @{
     ViewBag.Title = "Unlock Account";
 }
@@ -39,7 +40,7 @@
         <div class="card">
             <div class="header">
                 <h4 class="title">Search Result</h4>
-                <p class="category">List of student</p>
+                <p class="category">List of users</p>
             </div>
             <div class="content table-responsive table-full-width">
                 <table class="table table-hover table-striped">
@@ -97,9 +98,18 @@
     </div>
 </div>
 
-
-
-
-
-
-
+@if(TempData["SearchLockAccount"] != null)
+{
+    if(TempData["SearchLockAccount"].Equals(1))
+    {
+        <script>
+            notifInfo.showNotification("Email reminders have been sent to those with expiring/expired passwords.");
+        </script>
+    }
+    else if (TempData["SearchLockAccount"].Equals(2))
+    {
+        <script>
+            notifInfo.showNotification("Account has been unlocked.");
+        </script>
+    }
+}

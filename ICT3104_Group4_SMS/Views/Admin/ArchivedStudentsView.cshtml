@@ -71,10 +71,32 @@
                                     @Html.DisplayFor(modelItem => item.score)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.grade)
+                                    @if (item.score > 100.0)
+                                    { @Html.Raw("Error") }
+                                    else if (item.score >= 85.0)
+                                    { @Html.Raw("A+") }
+                                    else if (item.score >= 80.0)
+                                    { @Html.Raw("A")  }
+                                    else if (item.score >= 75.0)
+                                    { @Html.Raw("B+") }
+                                    else if (item.score >= 70.0)
+                                    { @Html.Raw("B")  }
+                                    else if (item.score >= 50.0)
+                                    { @Html.Raw("C+") }
+                                    else if (item.score >= 30.0)
+                                    { @Html.Raw("C")  }
+                                    else
+                                    { @Html.Raw("F")  }
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.GPA)
+                                    @if (item.GPA != null)
+                                    {
+                                        @Html.DisplayFor(modelItem => item.GPA)
+                                    }
+                                    else
+                                    {
+                                        <p>-</p>
+                                    }
                                 </td>
                                
                             </tr>

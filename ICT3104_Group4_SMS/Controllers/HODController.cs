@@ -202,10 +202,11 @@ namespace ICT3104_Group4_SMS.Controllers
             ViewBag.moduleId = moduleId;
             ViewBag.moduleName = ModuleGateway.GetModuleName(id);
 
+            Module currentModule = ModuleGateway.SelectById(id);
             int id2 = id ?? default(int);
 
-            ViewBag.moderationAction = smsMapper.moderateGrade(id2, moderationPercentage);
-            return RedirectToAction("ModerateMarkView", new { id = id });
+            TempData["moderationAction"] = smsMapper.moderateGrade(id2, moderationPercentage);
+            return RedirectToAction("ModerateMarkView", new { id = id, moduleName = currentModule.name, moduleStatus = currentModule.status });
         }
 
         internal static string Encrypt(double grade, Random random)

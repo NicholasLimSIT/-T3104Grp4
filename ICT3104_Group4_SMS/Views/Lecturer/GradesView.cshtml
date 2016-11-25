@@ -14,8 +14,8 @@
                 <h4 class="title">Grades for Module @ViewBag.moduleName</h4>
                 @if (Model.Count() == 0)
                 {
-                    <p class="text-danger">
-                        There are no students taking this module.
+                    <p style="padding-bottom: 5px;">
+                        <br />There are no students taking this module.
                     </p>
                 }
             </div>
@@ -93,7 +93,7 @@
                                         @Html.DisplayFor(modelItem => item.RecItem.status)
                                     </td>
                                     <td>
-                                        @if (ViewBag.moduleStatus == "Created" || ViewBag.moduleStatus == "Inserted")
+                                        @if (ViewBag.moduleStatus == "Created" || ViewBag.moduleStatus == "Assigned")
                                         {
                                             if (item.RecItem.recommendation == "-")
                                             {
@@ -120,7 +120,7 @@
         @if (Model.Count() > 0)
         {
         <div class="card">
-                @if (ViewBag.moduleStatus == "Created" || ViewBag.moduleStatus == "Inserted")
+                @if (ViewBag.moduleStatus == "Created" || ViewBag.moduleStatus == "Assigned")
                 {
                     <div class="header">
                         <h4 class="title">Grade Lock</h4>
@@ -161,6 +161,22 @@
     {
         <script>
             notifSuccess.showNotification("Grades updated successfully.");
+        </script>
+    }
+}
+
+@if (TempData["GradesAssigned"] != null)
+{
+    if ((bool)TempData["GradesAssigned"])
+    {
+        <script>
+            notifSuccess.showNotification("Grades have been assigned.");
+        </script>
+    }
+    else
+    {
+        <script>
+            notifSuccess.showNotification("Assigning of grades is unsuccessful.");
         </script>
     }
 }
