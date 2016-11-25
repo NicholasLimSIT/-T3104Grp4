@@ -109,6 +109,8 @@ namespace ICT3104_Group4_SMS.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (returnUrl != null && returnUrl.Equals("/Account/LoginWithDiffUser"))
+                        return RedirectToAction("Index", "Home");
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
