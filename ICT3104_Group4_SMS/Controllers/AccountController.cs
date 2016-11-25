@@ -126,7 +126,7 @@ namespace ICT3104_Group4_SMS.Controllers
             //var user = UserManager.FindById(User.Identity.GetUserId());
             ViewBag.Email = email;
             TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
-            var setupInfo = tfa.GenerateSetupCode("ICT3104_Group4_SMS", email, "asecretkeyfor3104groupproj", 300, 300);
+            var setupInfo = tfa.GenerateSetupCode("ICT3104_Group4_SMS", email, email, 300, 300);
 
             string qrCodeImageUrl = setupInfo.QrCodeSetupImageUrl;
             string manualEntrySetupCode = setupInfo.ManualEntryKey;
@@ -150,7 +150,7 @@ namespace ICT3104_Group4_SMS.Controllers
 
             if (!ModelState.IsValid)
             {
-                var setupInfo = tfa.GenerateSetupCode("ICT3104_Group4_SMS", model.Email, "asecretkeyfor3104groupproj", 300, 300);
+                var setupInfo = tfa.GenerateSetupCode("ICT3104_Group4_SMS", model.Email, model.Email, 300, 300);
 
                 string qrCodeImageUrl = setupInfo.QrCodeSetupImageUrl;
                 string manualEntrySetupCode = setupInfo.ManualEntryKey;
@@ -167,7 +167,7 @@ namespace ICT3104_Group4_SMS.Controllers
             }
 
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            bool isCorrectPIN = tfa.ValidateTwoFactorPIN("asecretkeyfor3104groupproj", enteredPin);
+            bool isCorrectPIN = tfa.ValidateTwoFactorPIN(model.Email, enteredPin);
             if (result.Equals(SignInStatus.Success) && isCorrectPIN)
             {
                 Session["Verified"] = true;
