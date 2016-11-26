@@ -402,6 +402,7 @@
     <Content Include="Views\Account\LoginAuthenticate.cshtml" />
     <Content Include="Views\Account\LoginNonStudent.cshtml" />
     <Content Include="Views\Lecturer\GradesUpdate.cshtml" />
+    <Content Include="Views\Home\AccountLockout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

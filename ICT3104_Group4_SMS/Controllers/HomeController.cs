@@ -6,6 +6,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using ICT3104_Group4_SMS.DAL;
+using System.Net;
+using Microsoft.Owin.Security;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -13,15 +15,28 @@ namespace ICT3104_Group4_SMS.Controllers
     {
         private ApplicationUserManager _userManager;
         private SmsContext db = new SmsContext();
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
         public ActionResult Index()
         {
+            
             var currentUserId = User.Identity.GetUserId();
             Models.ApplicationUser Applicationuser = db.Users.Find(currentUserId);
             //check if status is lock
-             if (Applicationuser != null && Applicationuser.lockStatus.Equals("Lock") || Applicationuser.status.Equals("inactive"))
+            if (Applicationuser != null && Applicationuser.lockStatus.Equals("Lock") || Applicationuser != null && Applicationuser.status.Equals("inactive"))
             {
-                return RedirectToAction("Login", "Account");
+                AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                Session.Clear();
+                return RedirectToAction("AccountLockout", "Home");
+
             }
+
             if (User.IsInRole("Student"))
             {
                 return RedirectToAction("ViewGrade", "Student");
@@ -66,6 +81,12 @@ namespace ICT3104_Group4_SMS.Controllers
         }
 
         public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult AccountLockout()
         {
             ViewBag.Message = "Your contact page.";
 

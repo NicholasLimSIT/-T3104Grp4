@@ -8,6 +8,7 @@ using Microsoft.Owin.Security;
 using ICT3104_Group4_SMS.Models;
 using System.Web.Security;
 using Google.Authenticator;
+using ICT3104_Group4_SMS.DAL;
 
 namespace ICT3104_Group4_SMS.Controllers
 {
@@ -60,10 +61,11 @@ namespace ICT3104_Group4_SMS.Controllers
             {
                 if (User.IsInRole("Student"))
                 {
-                    if (returnUrl == null || returnUrl.Trim().Equals("") || !returnUrl.Contains("Student"))
-                        return RedirectToAction("Index", "Home");
-                    else
-                        return RedirectToLocal(returnUrl);
+                        if (returnUrl == null || returnUrl.Trim().Equals("") || !returnUrl.Contains("Student"))
+                            return RedirectToAction("Index", "Home");
+                        else
+                            return RedirectToLocal(returnUrl);
+                   
                 }
                 else
                 {
@@ -590,6 +592,8 @@ namespace ICT3104_Group4_SMS.Controllers
             Session.Clear();
             return RedirectToAction("Login", "Account");
         }
+        //
+       
 
         //
         // GET: /Account/ExternalLoginFailure

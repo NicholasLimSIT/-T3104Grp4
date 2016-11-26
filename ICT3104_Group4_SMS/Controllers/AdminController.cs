@@ -26,7 +26,6 @@ namespace ICT3104_Group4_SMS.Controllers
     {
         private SmsContext db = new SmsContext();
         private ApplicationUserManager _userManager;
-
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<ArchivedRecord> ArchiveGateway;
 
@@ -43,6 +42,7 @@ namespace ICT3104_Group4_SMS.Controllers
 
         public AdminController()
         {
+            
             ApplicationUserGateway = new ApplicationUserDataGateway();
             ArchiveGateway = new ArchiveDataGateway();
         }
@@ -81,6 +81,7 @@ namespace ICT3104_Group4_SMS.Controllers
             return View();
   
         }
+        
 
         // GET: /Admin/ArchivedStudentsView
         public ActionResult ArchivedStudentsView()
@@ -245,7 +246,7 @@ namespace ICT3104_Group4_SMS.Controllers
                 ViewBag.createNotif = "not-active";
                 // get the index of @ of the email to remove
                 int index = model.Email.IndexOf("@");              
-                var user = new ApplicationUser { FullName = model.FullName, UserName = model.Email.Substring(0, index), Email = model.Email, PhoneNumber = model.PhoneNumber, year = DateTime.Now.Year.ToString(), lastChangedPWd = DateTime.Now, lockStatus = "clear" };
+                var user = new ApplicationUser { FullName = model.FullName, UserName = model.Email.Substring(0, index), Email = model.Email, PhoneNumber = model.PhoneNumber, year = DateTime.Now.Year.ToString(), lastChangedPWd = DateTime.Now, lockStatus = "clear", status ="active" };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
