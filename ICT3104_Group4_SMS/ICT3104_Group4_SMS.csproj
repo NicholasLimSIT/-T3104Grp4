@@ -250,7 +250,6 @@
     <Compile Include="DAL\Lecturer_ModuleDataGateway.cs" />
     <Compile Include="DAL\ModuleGateway.cs" />
     <Compile Include="DAL\RecommendationGateway.cs" />
-    <Compile Include="DAL\ProgrammeDataGateway.cs" />
     <Compile Include="DAL\SmsContext.cs" />
     <Compile Include="DAL\SmsInitializer.cs" />
     <Compile Include="DAL\SmsMapper.cs" />
@@ -290,10 +289,7 @@
     <Compile Include="Models\Lecturer_Module.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Module.cs" />
-    <Compile Include="Models\Module_Programme.cs" />
-    <Compile Include="Models\Programme.cs" />
     <Compile Include="Models\Recommendation.cs" />
-    <Compile Include="Models\RemovedUser.cs" />
     <Compile Include="Models\StudentModuleGrade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -366,10 +362,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Lecturer\ProgrammeCreate.cshtml" />
-    <Content Include="Views\Lecturer\ProgrammeDelete.cshtml" />
-    <Content Include="Views\Lecturer\ProgrammeEdit.cshtml" />
-    <Content Include="Views\Lecturer\ProgrammeIndex.cshtml" />
     <Content Include="Views\Admin\CreateAccount.cshtml" />
     <Content Include="Views\Lecturer\EditStudentParticulars.cshtml" />
     <Content Include="Views\Lecturer\GradeAssign.cshtml" />

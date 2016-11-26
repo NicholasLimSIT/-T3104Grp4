@@ -18,7 +18,7 @@ namespace ICT3104_Group4_SMS.Models
         public Module()
         {
             this.Lecturer_Module = new HashSet<Lecturer_Module>();
-            this.Module_Programme = new HashSet<Module_Programme>();
+            
         }
     
         public int Id { get; set; }
@@ -31,9 +31,8 @@ namespace ICT3104_Group4_SMS.Models
         [Display(Name = "Year")]
         public int year { get; set; }
         public string hodId { get; set; }
-        public string lecturerId { get; set; }
-    
+        public string lecturerId { get; set; }    
         public virtual ICollection<Lecturer_Module> Lecturer_Module { get; set; }
-        public virtual ICollection<Module_Programme> Module_Programme { get; set; }
+
     }
 }

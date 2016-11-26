@@ -18,7 +18,6 @@ namespace ICT3104_Group4_SMS.Controllers
     public class LecturerController : Controller
     {
         private SmsContext db = new SmsContext();
-        internal IDataGateway<Programme> ProgrammeGateway;
         internal IDataGateway<Lecturer_Module> Lecturer_ModuleGateway;
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<Grade> GradesGateway;
@@ -45,7 +44,6 @@ namespace ICT3104_Group4_SMS.Controllers
         public LecturerController()
         {
             Lecturer_ModuleGateway = new Lecturer_ModuleDataGateway();
-            ProgrammeGateway = new ProgrammeDataGateway();
             ApplicationUserGateway = new ApplicationUserDataGateway();
             GradesGateway = new GradesGateway();
             RecommendationGateway = new RecommendationGateway();
@@ -54,7 +52,6 @@ namespace ICT3104_Group4_SMS.Controllers
         public LecturerController(ApplicationUserManager userManager)
         {
             Lecturer_ModuleGateway = new Lecturer_ModuleDataGateway();
-            ProgrammeGateway = new ProgrammeDataGateway();
             ApplicationUserGateway = new ApplicationUserDataGateway();
             GradesGateway = new GradesGateway();
             RecommendationGateway = new RecommendationGateway();
@@ -345,110 +342,7 @@ namespace ICT3104_Group4_SMS.Controllers
             }
 
         }
-        // GET: Programmes
-        public ActionResult ProgrammeIndex()
-        {
-            // check if user has passed 2FA verification. if no, redirect to login page
-            if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
-
-            return View(db.Programmes.ToList());
-        }
-
-        // GET: Programmes/Create
-        public ActionResult ProgrammeCreate()
-        {
-            // check if user has passed 2FA verification. if no, redirect to login page
-            if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
-
-            return View();
-        }
-
-        // POST: Programmes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ProgrammeCreate([Bind(Include = "Id,programmeName")] Programme programme)
-        {
-            if (ModelState.IsValid)
-            {
-                programme.lecturerId = User.Identity.GetUserId();
-                db.Programmes.Add(programme);
-                db.SaveChanges();
-                return RedirectToAction("ProgrammeIndex");
-            }
-
-            return View(programme);
-        }
-
-        // GET: Programmes/Edit/5
-        public ActionResult ProgrammeEdit(int? id)
-        {
-            // check if user has passed 2FA verification. if no, redirect to login page
-            if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Programme programme = db.Programmes.Find(id);
-            if (programme == null)
-            {
-                return HttpNotFound();
-            }
-            return View(programme);
-        }
-
-        // POST: Programmes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ProgrammeEdit([Bind(Include = "Id,programmeName")] Programme programme)
-        {
-            if (ModelState.IsValid)
-            {
-
-                db.Entry(programme).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("ProgrammeIndex");
-            }
-            return View(programme);
-        }
-
-        // GET: Programmes/Delete/5
-        public ActionResult ProgrammeDelete(int? id)
-        {
-            // check if user has passed 2FA verification. if no, redirect to login page
-            if (IfUserSkipTwoFA())
-                return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Programme programme = db.Programmes.Find(id);
-            if (programme == null)
-            {
-                return HttpNotFound();
-            }
-            return View(programme);
-        }
-
-        // POST: Programmes/Delete/5
-        [HttpPost, ActionName("ProgrammeDelete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Programme programme = db.Programmes.Find(id);
-            db.Programmes.Remove(programme);
-            db.SaveChanges();
-            return RedirectToAction("ProgrammeIndex");
-        }
-
+       
 
         // GET: Modules
         public ActionResult ModuleIndex()
@@ -468,7 +362,7 @@ namespace ICT3104_Group4_SMS.Controllers
             if (IfUserSkipTwoFA())
                 return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = Request.Url.PathAndQuery });
 
-            ViewBag.List = ((ProgrammeDataGateway)ProgrammeGateway).GetAllProgrammes();
+            //ViewBag.List = ((ProgrammeDataGateway)ProgrammeGateway).GetAllProgrammes();
 
             return View();
         }

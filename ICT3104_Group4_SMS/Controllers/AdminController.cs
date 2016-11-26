@@ -400,17 +400,12 @@ namespace ICT3104_Group4_SMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-
             Models.ApplicationUser Applicationuser = db.Users.Find(id);
-            
-
-            ((ApplicationUserDataGateway)ApplicationUserGateway).MovedUser(id);
-
-
-            //db.Users.Remove(Applicationuser);
-            //db.SaveChanges();
+            Applicationuser.status = "inactive";        
+            db.Entry(Applicationuser).State = EntityState.Modified;
+            db.SaveChanges();
             TempData["Message"] = "Account Deleted";
-            return RedirectToAction("SearchAccountParticulars");
+            return RedirectToAction("Index");
         }
 
         // GET: /Admin/BackupAccount
@@ -419,7 +414,6 @@ namespace ICT3104_Group4_SMS.Controllers
             // check if user has passed 2FA verification. if no, redirect to login page
             if (IfUserSkipTwoFA())
                 return RedirectToAction("LoginNonStudent", "Account", new { ReturnUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri });
-
             return View();
         }
 
@@ -540,47 +534,5 @@ namespace ICT3104_Group4_SMS.Controllers
 
             client.Send(msg);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public ActionResult DeleteStudent(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Models.ApplicationUser Applicationuser = db.Users.Find(id);
-        //    if (Applicationuser == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(Applicationuser);
-        //}
-
-        //[HttpPost, ActionName("DeleteStudent")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(string id)
-        //{
-        //    Models.ApplicationUser Applicationuser = db.Users.Find(id);
-        //    db.Users.Remove(Applicationuser);
-        //    db.SaveChanges();
-        //    return RedirectToAction("SearchStudentParticulars");
-        //}
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace ICT3104_Group4_SMS.Models
 {
@@ -18,6 +19,8 @@ namespace ICT3104_Group4_SMS.Models
         public string year { get; set; }
         public string lockStatus { get; set; }
         public DateTime lastChangedPWd { get; set; }
+        [DefaultValue("active")]
+        public string status { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

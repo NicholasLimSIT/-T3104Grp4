@@ -18,7 +18,7 @@ namespace ICT3104_Group4_SMS.Controllers
     public class HODController : Controller
     {
         private SmsContext db = new SmsContext();
-        internal IDataGateway<Programme> ProgrammeGateway;
+      
         internal IDataGateway<Lecturer_Module> Lecturer_ModuleGateway;
         internal IDataGateway<ApplicationUser> ApplicationUserGateway;
         internal IDataGateway<Grade> GradesGateway;
@@ -44,7 +44,6 @@ namespace ICT3104_Group4_SMS.Controllers
         public HODController()
         {
             Lecturer_ModuleGateway = new Lecturer_ModuleDataGateway();
-            ProgrammeGateway = new ProgrammeDataGateway();
             ApplicationUserGateway = new ApplicationUserDataGateway();
             GradesGateway = new GradesGateway();
             RecommendationGateway = new RecommendationGateway();

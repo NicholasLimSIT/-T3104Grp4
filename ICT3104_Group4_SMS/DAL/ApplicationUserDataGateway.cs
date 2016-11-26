@@ -43,7 +43,7 @@ namespace ICT3104_Group4_SMS.DAL
                 for(int i = 0; i <= rolesArray.Length-1; i++)
                 {
                     bool role = UserManager.IsInRole(item.Id, rolesArray[i]);
-                    if (role)
+                    if (role && item.status != "inactive")
                     {
                         string[] listString = new string[7];
                         listString[0] = item.Id.ToString();
@@ -79,7 +79,7 @@ namespace ICT3104_Group4_SMS.DAL
                 for (int i = 0; i <= lockrolesArray.Length - 1; i++)
                 {
                     bool role = UserManager.IsInRole(item.Id, lockrolesArray[i]);
-                    if (role)
+                    if (role && item.status != "inactive")
                     {
                         string[] listString = new string[7];
                         listString[0] = item.Id.ToString();
@@ -97,23 +97,7 @@ namespace ICT3104_Group4_SMS.DAL
 
         }
 
-        //Function to Move Users to "RemovedUser Table"
-        public void MovedUser (string id)
-        {
-            string sql = "Insert into RemovedUser(Email,FullName,Id,PhoneNumber,UserName,year) SELECT Email, FullName, Id,PhoneNumber,UserName,year FROM AspNetUsers WHERE id = '" +
-                id + "'";
-            //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            //IEnumerable<ApplicationUser> user = UserGateway.data.Where
-            db.Database.ExecuteSqlCommand(sql);
-            db.SaveChanges();
-        }
-
-
-
-
-
-
-
+  
         //Function to return all users
         public List<string[]> searchUsers()
         {
@@ -127,7 +111,7 @@ namespace ICT3104_Group4_SMS.DAL
                 for (int i = 0; i <= rolesArray.Length-1; i++)
                 {
                     bool role = UserManager.IsInRole(item.Id, rolesArray[i]);
-                    if (role)
+                    if (role && item.status!="inactive")
                     {
                         string[] listString = new string[7];
                         listString[0] = item.Id.ToString();
