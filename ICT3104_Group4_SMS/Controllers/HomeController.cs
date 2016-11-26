@@ -18,7 +18,7 @@ namespace ICT3104_Group4_SMS.Controllers
             var currentUserId = User.Identity.GetUserId();
             Models.ApplicationUser Applicationuser = db.Users.Find(currentUserId);
             //check if status is lock
-             if (Applicationuser != null && Applicationuser.lockStatus.Equals("Lock"))
+             if (Applicationuser != null && Applicationuser.lockStatus.Equals("Lock") || Applicationuser.status.Equals("inactive"))
             {
                 return RedirectToAction("Login", "Account");
             }

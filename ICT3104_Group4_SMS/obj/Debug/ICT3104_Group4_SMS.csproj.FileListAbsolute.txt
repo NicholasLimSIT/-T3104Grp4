@@ -448,3 +448,4 @@ F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.OAuth.xml
 F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Google.xml
 F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.xml
 F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
