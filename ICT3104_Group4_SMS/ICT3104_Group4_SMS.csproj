@@ -388,14 +388,6 @@
     <Content Include="Views\Shared\GradePage.cshtml" />
     <Content Include="Views\Student\ViewGrade.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Ui\Dashboard.cshtml" />
-    <Content Include="Views\Ui\Forms.cshtml" />
-    <Content Include="Views\Ui\Grids.cshtml" />
-    <Content Include="Views\Ui\Icons.cshtml" />
-    <Content Include="Views\Ui\Notifications.cshtml" />
-    <Content Include="Views\Ui\Tables.cshtml" />
-    <Content Include="Views\Ui\Typography.cshtml" />
-    <Content Include="Views\Ui\UiElements.cshtml" />
     <Content Include="Views\Lecturer\StudentGPA.cshtml" />
     <Content Include="Views\HOD\StudentGPA.cshtml" />
     <Content Include="Views\Admin\SearchLockAccount.cshtml" />

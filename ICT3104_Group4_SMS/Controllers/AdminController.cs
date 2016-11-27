@@ -442,11 +442,17 @@ namespace ICT3104_Group4_SMS.Controllers
                         mail.Body += "<b>Your password is expiring today.</b><br>";
                         mail.Body += "Please change your password <b>immediately</b> to prevent it from getting locked.<br>";
                     }
-                    else
+                    else if(numOfDays < 100)
                     {
                         mail.Subject = "SMS Password Expired";
                         mail.Body += "<b>Your password has already expired.</b><br>";
                         mail.Body += "Please change your password <b>immediately</b> or else it will be locked in " + (100 - numOfDays) + " days<br>";
+                    }
+                    else
+                    {
+                        mail.Subject = "SMS Account Locked";
+                        mail.Body += "<b>Your account is now locked as you did not change your password frequently.</b><br>";
+                        mail.Body += "You will have to send an email to our admins to unlock your account.<br>";
                     }
 
                     mail.Body += "<br>Regards, <br>SMS Admin";
