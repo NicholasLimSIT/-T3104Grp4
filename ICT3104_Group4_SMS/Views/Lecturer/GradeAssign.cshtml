@@ -45,7 +45,8 @@
                                     <td>@Html.HiddenFor(model => model[i].lecturermoduleId)</td>
                                     <td>@Html.HiddenFor(model => model[i].studentId)</td>
                                     <td>@ViewBag.nameList[i]</td>
-                                    <td>@Html.EditorFor(model => model[i].score)</td>
+                                    <td>@Html.EditorFor(model => model[i].score)
+                                        @Html.ValidationMessageFor(model => model[i].score, "", new { @class = "text-danger" })</td>
                                 </tr>
                                 }
                             }
