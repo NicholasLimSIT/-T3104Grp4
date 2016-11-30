@@ -23,7 +23,7 @@ namespace ICT3104_Group4_SMS.Models
     
         public int Id { get; set; }
         [Display(Name = "Module Name")]
-        [StringLength(50)]
+        [StringLength(20)]
         [Required]
         public string name { get; set; }
         [DefaultValue("Created")]
