@@ -12,10 +12,12 @@ namespace ICT3104_Group4_SMS.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Recommendation
     {
         public int Id { get; set; }
+        [StringLength(1000)]
         public string recommendation { get; set; }   
         public string lecturerId { get; set; }
         public int gradeId { get; set; }
