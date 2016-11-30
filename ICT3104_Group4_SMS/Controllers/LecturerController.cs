@@ -487,6 +487,13 @@ namespace ICT3104_Group4_SMS.Controllers
                 return RedirectToAction("RecommendationEdit", new { id = rec.Id, gradeId = rec.gradeId });
             }
 
+            Grade gradeItem = GradesGateway.SelectById(rec.gradeId);
+            ViewBag.gradeItem = gradeItem;
+            ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
+
+            var student = UserManager.FindById(gradeItem.studentId);
+            ViewBag.name = student.FullName;
+
             return View(rec);
         }
 
@@ -529,6 +536,14 @@ namespace ICT3104_Group4_SMS.Controllers
                 TempData["Success"] = 2;                    // for success message on recommendationedit
                 return RedirectToAction("RecommendationEdit", new { gradeId = rec.gradeId });
             }
+
+            Grade gradeItem = GradesGateway.SelectById(rec.gradeId);
+            var student = UserManager.FindById(gradeItem.studentId);
+
+            ViewBag.gradeItem = gradeItem;
+            ViewBag.moduleId = lmDW.GetModuleIdFromLecModId(gradeItem.lecturermoduleId);
+            ViewBag.name = student.FullName;
+
             return View(rec);
         }
 

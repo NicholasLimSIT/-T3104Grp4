@@ -450,3 +450,4 @@ F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.Twitter.x
 F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.csprojResolveAssemblyReference.cache
 F:\VSProject\-T3104Grp4\ICT3104_Group4_SMS\bin\Newtonsoft.Json.xml
+C:\Users\Meixi\Desktop\meixi laptop\School\Year 3\Trimester 1\ICT3104\Project\-T3104Grp4\ICT3104_Group4_SMS\obj\Debug\ICT3104_Group4_SMS.Migrations.recStringLength.resources

@@ -280,6 +280,10 @@
     <Compile Include="Migrations\201611252012080_Seventh.Designer.cs">
       <DependentUpon>201611252012080_Seventh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611301554042_recStringLength.cs" />
+    <Compile Include="Migrations\201611301554042_recStringLength.Designer.cs">
+      <DependentUpon>201611301554042_recStringLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArchivedRecord.cs" />
@@ -425,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611252012080_Seventh.resx">
       <DependentUpon>201611252012080_Seventh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611301554042_recStringLength.resx">
+      <DependentUpon>201611301554042_recStringLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
