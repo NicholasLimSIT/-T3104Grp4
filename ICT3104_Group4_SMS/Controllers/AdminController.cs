@@ -428,7 +428,7 @@ namespace ICT3104_Group4_SMS.Controllers
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress("azure_666521c32094e0a664354efe513747e6@azure.com", "Student Management System");
-                    mail.To.Add("lim.m3ixi@gmail.com");
+                    mail.To.Add("wenjie.chew@gmail.com");
                     mail.Body = "Dear User (" + act.Email + "), <br><br>";
                     if (numOfDays >= 80 && numOfDays < 90)
                     {
